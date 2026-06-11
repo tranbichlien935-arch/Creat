@@ -1,7 +1,12 @@
 import React from "react";
 import { Coffee, Search, CheckCircle2 } from "lucide-react";
+import { useAppLang } from "../../hooks/useAppLang";
+import { translations } from "../../translations";
 
 export function AboutExperience() {
+    const { lang } = useAppLang();
+    const t = translations[lang];
+
     return (
         <section className="bg-[#EAE4DA] py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
             <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
@@ -29,18 +34,18 @@ export function AboutExperience() {
                 {/* Right Side: Text & Features */}
                 <div className="w-full">
                     <span className="text-[#8C7A60] font-['Josefin_Sans'] text-xs font-semibold tracking-widest uppercase mb-4 block">
-                        Trải Nghiệm Tại Quán
+                        {t.experienceLabel}
                     </span>
                     <h2 className="text-[#1C1A14] font-['Fira_Sans'] font-light text-4xl lg:text-5xl leading-[1.2] mb-6">
-                        Không Gian Thưởng Bia Gần Gũi & Sáng Tạo
+                        {t.experienceTitle}
                     </h2>
 
                     <p className="font-['Josefin_Sans'] text-[#5C4A30] text-[15px] leading-relaxed mb-6 font-light">
-                        Bước chân vào CREAT Craft Beer, bạn sẽ ngay lập tức cảm nhận được bầu không khí thư giãn, hiện đại nhưng vẫn giữ được sự ấm cúng rất riêng. Không gian được thiết kế tinh tế với chất liệu gỗ, ánh sáng dịu nhẹ cùng những điểm nhấn sáng tạo, tạo nên một “chất” rất riêng khi vừa mang hơi hướng craft bar cá tính, vừa là nơi lý tưởng để tụ họp bạn bè.
+                        {t.experienceParagraph1}
                     </p>
 
                     <p className="font-['Josefin_Sans'] text-[#5C4A30] text-[15px] leading-relaxed mb-10 font-light">
-                        Menu bia tại CREAT cũng là điểm cộng đáng chú ý, với sự đa dạng từ các dòng bia nhập khẩu đến bia thủ công Việt Nam được tuyển chọn kỹ lưỡng. Dù bạn chỉ ghé nhanh để nhâm nhi một ly bia sau giờ làm, hay muốn ngồi lại trò chuyện thật lâu, CREAT luôn có một góc phù hợp dành cho bạn.
+                        {t.experienceParagraph2}
                     </p>
 
                     {/* Icon List */}
@@ -51,7 +56,7 @@ export function AboutExperience() {
                                 <Coffee size={20} strokeWidth={1.5} />
                             </div>
                             <span className="font-['Josefin_Sans'] text-[#1C1A14] text-[15px] uppercase tracking-wider font-semibold">
-                                Bia Theo Mùa
+                                {t.seasonalBeer}
                             </span>
                         </div>
 
@@ -60,7 +65,7 @@ export function AboutExperience() {
                                 <Search size={20} strokeWidth={1.5} />
                             </div>
                             <span className="font-['Josefin_Sans'] text-[#1C1A14] text-[15px] uppercase tracking-wider font-semibold">
-                                Đa Dạng Hương Vị
+                                {t.diverseFlavors}
                             </span>
                         </div>
 
@@ -69,7 +74,7 @@ export function AboutExperience() {
                                 <CheckCircle2 size={20} strokeWidth={1.5} />
                             </div>
                             <span className="font-['Josefin_Sans'] text-[#1C1A14] text-[15px] uppercase tracking-wider font-semibold">
-                                Món Nhắm Hoàn Hảo
+                                {t.perfectSnacks}
                             </span>
                         </div>
 
@@ -77,16 +82,16 @@ export function AboutExperience() {
 
                     <div className="mt-10 pt-8 border-t border-[#D4C4A8]/40 flex flex-wrap gap-x-8 gap-y-4">
                         <div className="flex flex-col">
-                            <span className="text-[#8C7A60] text-xs font-semibold uppercase tracking-widest mb-1">Hotline</span>
+                            <span className="text-[#8C7A60] text-xs font-semibold uppercase tracking-widest mb-1">{t.hotlineLabel}</span>
                             <span className="font-['Josefin_Sans'] text-[#1C1A14] font-semibold">0989 354 444</span>
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-[#8C7A60] text-xs font-semibold uppercase tracking-widest mb-1">Email</span>
+                            <span className="text-[#8C7A60] text-xs font-semibold uppercase tracking-widest mb-1">{t.emailLabel}</span>
                             <span className="font-['Josefin_Sans'] text-[#1C1A14] font-semibold">creatcraftbeer@gmail.com</span>
                         </div>
                         <div className="flex flex-col w-full md:w-auto mt-2 md:mt-0">
-                            <span className="text-[#8C7A60] text-xs font-semibold uppercase tracking-widest mb-1">Địa Chỉ</span>
-                            <span className="font-['Josefin_Sans'] text-[#1C1A14] font-semibold">93 Đường số 11, P. Tây Thạnh, TP.HCM</span>
+                            <span className="text-[#8C7A60] text-xs font-semibold uppercase tracking-widest mb-1">{t.addressLabel}</span>
+                            <span className="font-['Josefin_Sans'] text-[#1C1A14] font-semibold">{t.addressValue}</span>
                         </div>
                     </div>
                 </div>

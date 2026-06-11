@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { useAppLang } from '../hooks/useAppLang';
+import { translations } from '../translations';
 
 export const menuItems = [
   {
@@ -58,6 +60,8 @@ export const menuItems = [
 ];
 
 export function BeerMenu() {
+  const { lang } = useAppLang();
+  const t = translations[lang];
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -125,10 +129,10 @@ export function BeerMenu() {
       <div className="absolute inset-0 z-0 flex items-center pointer-events-none opacity-5">
         <div className="flex whitespace-nowrap animate-marquee">
           <h1 className="text-[15rem] md:text-[22rem] font-bold tracking-tighter uppercase mr-16" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
-            MÓN NGON KHÔNG THỂ BỎ QUA - THỰC ĐƠN ĐẶC SẮC -
+            {t.menuMarquee}
           </h1>
           <h1 className="text-[15rem] md:text-[22rem] font-bold tracking-tighter uppercase mr-16" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
-            MÓN NGON KHÔNG THỂ BỎ QUA - THỰC ĐƠN ĐẶC SẮC -
+            {t.menuMarquee}
           </h1>
         </div>
       </div>
@@ -138,13 +142,13 @@ export function BeerMenu() {
         {/* TIÊU ĐỀ */}
         <div className="text-center mb-12 md:mb-20 px-6 relative z-10">
           <span className="text-[#b67e53] font-['Josefin_Sans'] text-xs font-semibold tracking-widest uppercase mb-4 block">
-            Thực Đơn Đặc Sắc
+            {t.menuSectionLabel}
           </span>
           <h2 className="font-bold text-2xl md:text-4xl tracking-wider uppercase" style={{ fontFamily: "'Josefin Sans', sans-serif", color: "#11202e" }}>
-            Những Món Ngon Không Thể Bỏ Qua
+            {t.menuSectionTitle}
           </h2>
           <p className="mt-4 text-[#8C7A60] font-sans max-w-2xl mx-auto text-[15px]">
-            Khám phá hương vị ẩm thực độc bản với những nguyên liệu tươi ngon nhất, được chế biến tỉ mỉ để chiều lòng mọi thực khách.
+            {t.menuSectionDesc}
           </p>
         </div>
 
@@ -181,13 +185,13 @@ export function BeerMenu() {
         <div className="w-full mt-24 px-6 md:px-12">
           <div className="text-center mb-12">
             <span className="text-[#b67e53] font-['Josefin_Sans'] text-xs font-semibold tracking-widest uppercase mb-4 block">
-              Perfect Match
+              {t.pairingLabel}
             </span>
             <h2 className="font-bold text-2xl md:text-3xl tracking-wider uppercase" style={{ fontFamily: "'Josefin Sans', sans-serif", color: "#11202e" }}>
-              Gợi Ý Kết Hợp Tuyệt Hảo
+              {t.pairingTitle}
             </h2>
             <p className="mt-4 text-[#8C7A60] font-sans max-w-2xl mx-auto text-[15px]">
-              Trải nghiệm sự bùng nổ hương vị khi kết hợp đúng dòng bia thủ công cùng các món ăn đặc sắc được chúng tôi tuyển chọn.
+              {t.pairingDesc}
             </p>
           </div>
 
@@ -203,8 +207,8 @@ export function BeerMenu() {
                 />
               </div>
               <div className="text-center pb-4">
-                <h3 className="font-bold text-xl text-[#11202e] mb-2 font-['Josefin_Sans']">Đậm Đà & Chua Thanh</h3>
-                <p className="text-[#b67e53] font-semibold text-sm uppercase tracking-wider">Bia Wheat × Sườn Heo Nướng BBQ</p>
+                <h3 className="font-bold text-xl text-[#11202e] mb-2 font-['Josefin_Sans']">{t.pairing1Title}</h3>
+                <p className="text-[#b67e53] font-semibold text-sm uppercase tracking-wider">{t.pairing1Combo}</p>
               </div>
             </div>
 
@@ -217,8 +221,8 @@ export function BeerMenu() {
                 />
               </div>
               <div className="text-center pb-4">
-                <h3 className="font-bold text-xl text-[#11202e] mb-2 font-['Josefin_Sans']">Béo Ngậy & Đắng Sảng Khoái</h3>
-                <p className="text-[#b67e53] font-semibold text-sm uppercase tracking-wider">Bia IPA × Tuỷ Bò Nướng BBQ</p>
+                <h3 className="font-bold text-xl text-[#11202e] mb-2 font-['Josefin_Sans']">{t.pairing2Title}</h3>
+                <p className="text-[#b67e53] font-semibold text-sm uppercase tracking-wider">{t.pairing2Combo}</p>
               </div>
             </div>
 
@@ -232,8 +236,8 @@ export function BeerMenu() {
                 />
               </div>
               <div className="text-center pb-2">
-                <h3 className="font-bold text-lg text-[#11202e] mb-1 font-['Josefin_Sans']">Chua Ngọt & Đắng Thơm</h3>
-                <p className="text-[#b67e53] font-semibold text-[11px] uppercase tracking-wide">Bia Đen × Gỏi Chuối Tép</p>
+                <h3 className="font-bold text-lg text-[#11202e] mb-1 font-['Josefin_Sans']">{t.pairing3Title}</h3>
+                <p className="text-[#b67e53] font-semibold text-[11px] uppercase tracking-wide">{t.pairing3Combo}</p>
               </div>
             </div>
 
@@ -246,8 +250,8 @@ export function BeerMenu() {
                 />
               </div>
               <div className="text-center pb-2">
-                <h3 className="font-bold text-lg text-[#11202e] mb-1 font-['Josefin_Sans']">Giòn Dai Và Ngọt Dịu</h3>
-                <p className="text-[#b67e53] font-semibold text-[11px] uppercase tracking-wide">Bia Chanh Dây × Sụn Gà Cháy Tỏi</p>
+                <h3 className="font-bold text-lg text-[#11202e] mb-1 font-['Josefin_Sans']">{t.pairing4Title}</h3>
+                <p className="text-[#b67e53] font-semibold text-[11px] uppercase tracking-wide">{t.pairing4Combo}</p>
               </div>
             </div>
 
@@ -260,8 +264,8 @@ export function BeerMenu() {
                 />
               </div>
               <div className="text-center pb-2">
-                <h3 className="font-bold text-lg text-[#11202e] mb-1 font-['Josefin_Sans']">Khám Phá Cùng Creat</h3>
-                <p className="text-[#b67e53] font-semibold text-[11px] uppercase tracking-wide">Beer for an easy life</p>
+                <h3 className="font-bold text-lg text-[#11202e] mb-1 font-['Josefin_Sans']">{t.pairing5Title}</h3>
+                <p className="text-[#b67e53] font-semibold text-[11px] uppercase tracking-wide">{t.pairing5Combo}</p>
               </div>
             </div>
 

@@ -1,4 +1,4 @@
-export const newsContent: Record<string, {
+﻿export const newsContent: Record<string, {
     title: string;
     title_en?: string;
     breadcrumbTitle: string;
@@ -548,12 +548,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Khi quán bắt đầu đông khách hơn, những vấn đề trước đây từng có thể “xoay xở được” dần lộ rõ phần hạn chế của mình như mô hình sản xuất nhỏ lẻ ngay tại quán vốn phù hợp cho giai đoạn khởi đầu, nhưng khi nhu cầu tăng lên, nó lại trở thành điểm nghẽn. Có những ngày bia vừa kịp phục vụ hết trong buổi tối, không còn dư cho ngày hôm sau. Có những mẻ bia dù được chăm chút kỹ lưỡng nhưng vẫn xuất hiện sự chênh lệch nhẹ về hương vị, điều mà trước đây ít ai để ý, nhưng khi khách quay lại nhiều lần, sự không đồng nhất bắt đầu trở thành một vấn đề thực sự.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Những “điểm nghẽn” thúc đẩy chuyển mình
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Trong quá trình vận hành, quán nhận ra không chỉ khách lẻ mà nhiều chủ nhà hàng, quán ăn khác cũng bắt đầu quan tâm đến văn hóa bia thủ công và muốn đưa những dòng bia này vào menu của họ. Nhưng rào cản lớn nhất lại nằm ở nguồn cung, khi phần lớn các quán bia craft địa phương vẫn sản xuất theo quy mô nhỏ, thiếu sự ổn định cả về sản lượng lẫn chất lượng. Nhu cầu có thật, thậm chí đang tăng lên, nhưng thị trường lại chưa có đủ đơn vị đáp ứng một cách bài bản.
                 </p>
                 <p className="mb-6">
@@ -569,12 +564,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Trước tiên là việc đầu tư vào xưởng sản xuất, hệ thống được nâng cấp với các tank chứa dung tích lớn hơn, đi kèm khả năng kiểm soát nhiệt độ chặt chẽ trong từng giai đoạn ủ và lên men. Mỗi thông số, từ thời gian, áp suất đến nhiệt độ, đều được theo dõi sát sao để đảm bảo mỗi mẻ bia khi hoàn thành đều đạt trạng thái ổn định nhất, giảm thiểu tối đa sự sai lệch giữa các lần sản xuất. Đây cũng chính là nền tảng cốt lõi của một xưởng bia đạt chuẩn, với chất lượng không phụ thuộc vào cảm tính mà được kiểm chứng bằng quy trình.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Chuẩn hóa quy trình sản xuất bia thủ công
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Song song đó là việc xây dựng chuỗi lạnh vì bia sau khi hoàn thiện không đơn giản là đóng keg và giao đi, mà được bảo quản xuyên suốt ở mức nhiệt từ 2 đến 4 độ C, từ xưởng cho đến khi đến tay đối tác. Việc duy trì cold-chain giúp giữ trọn hương vị nguyên bản, hạn chế biến đổi do nhiệt độ, đặc biệt quan trọng với các dòng bia tươi không sử dụng chất bảo quản. Đây cũng là điểm khác biệt rõ rệt giữa việc “bán bia” và cung cấp bia tươi giá sỉ theo tiêu chuẩn chuyên nghiệp.
                 </p>
                 <p className="mb-10">
@@ -659,12 +649,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     As foot traffic multiplied, previously manageable minor inefficiencies metastasized into critical operational bottlenecks. Our localized micro-brewing framework outgrew its operational capacity. Frequent inventory shortages meant signature varieties consistently sold out before evening's end. Furthermore, subtle batch-to-batch flavor inconsistencies—previously overlooked by casual drinkers—became increasingly intolerable as our core demographic developed sophisticated palates and demanded rigorous uniformity.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Operational Bottlenecks Forcing Adaptation
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Concurrently, we observed an expanding B2B inquiry curve. Numerous independent restaurant operators and bar owners expressed immense interest in integrating our craft selections into their proprietary menus. Unfortunately, the decentralized state of the local craft brewing industry struggled to provide adequate qualitative stability or volumetric assurance. The commercial demand was overwhelmingly evident, yet systemic supply chains remained critically underdeveloped.
                 </p>
                 <p className="mb-6">
@@ -680,12 +665,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Infrastructural overhauls heavily prioritized advanced brewing hardware. We implemented high-capacity fermentation tanks equipped with robust, hyper-accurate thermodynamic regulators governing both the mashing and fermentation cycles. Strict adherence to calculated protocols fundamentally reduced human error, permanently eliminating erratic flavor deviations.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Standardizing the Artisanal Production Framework
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Simultaneously, we established a comprehensive cold-chain logistics network. Post-production, our kegs and bottles remain systematically chilled between 2 to 4°C throughout the entire transit and storage continuum. This prevents thermal degradation and effectively preserves the native vibrancy of our preservative-free products—a non-negotiable benchmark for premium B2B provisioning.
                 </p>
                 <p className="mb-10">
@@ -765,12 +745,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Cái tên Creat Craft chính là cách thương hiệu định nghĩa bản thân mình. “Creat” không chỉ là sáng tạo, mà còn là sự chủ động phá vỡ giới hạn, dám thử nghiệm những điều mới mẻ. “Craft” lại đại diện cho tay nghề thủ công, cho sự tỉ mỉ, kiên nhẫn và niềm tự hào của người làm nghề. Khi hai yếu tố này kết hợp, Creat Craft không đơn thuần làm bia ngon mà là tạo ra những dòng bia mang dấu ấn cá nhân, cần kỹ thuật và cảm hứng hòa quyện chặt chẽ với nhau.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Creat Craft Beer
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Sự kỹ tính của Creat Craft thể hiện rõ nhất ở khâu lựa chọn nguyên liệu. Hoa bia (hops) được chọn lọc dựa trên hương thơm và tầng vị đặc trưng, không chỉ để tạo độ đắng mà còn để định hình “tính cách” của từng loại bia. Mạch nha (malt) được cân nhắc kỹ lưỡng về độ rang, màu sắc và khả năng tạo thân bia, đảm bảo mỗi ngụm bia đều có chiều sâu và độ cân bằng. Nguồn nước tưởng chừng như đơn giản cũng được kiểm soát nghiêm ngặt về khoáng chất, bởi chỉ cần một thay đổi nhỏ cũng có thể ảnh hưởng đến toàn bộ hương vị cuối cùng. Với Creat Craft, nguyên liệu không phải là đầu vào, mà là nền tảng quyết định chất lượng và bản sắc.
                 </p>
                 <p className="mb-6">
@@ -786,12 +761,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Quy trình này không đơn thuần là “làm bia”, mà là một chuỗi những bước được đo lường, ghi nhận và tối ưu liên tục. Từng mẻ bia đều có hồ sơ riêng, từ nhiệt độ, thời gian, đến các chỉ số lên men, giúp đảm bảo sự đồng nhất về chất lượng trong từng ly bia được phục vụ.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Creat Craft Beer
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Nhịp vận hành phía sau con số 40.000 lít/năm</h3>
                         <p>Nếu chia đều, sản lượng 40.000 lít bia mỗi năm tương đương khoảng hơn 3.300 lít mỗi tháng, hay trung bình hơn 100 lít mỗi ngày. Nhưng thực tế vận hành không diễn ra theo cách “đều đều” như vậy.</p>
@@ -819,12 +789,7 @@ export const newsContent: Record<string, {
                         <p className="mt-2">Hệ thống luôn theo dõi chặt chẽ nhiệt độ, áp suất và thời gian, đảm bảo mỗi mẻ bia đạt đúng “chân dung” đã định hình.</p>
                     </div>
                 </div>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Creat Craft Beer
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Kiểm soát chất lượng cho từng mẻ bia</h3>
                         <p>Trước khi được đưa ra phục vụ, mỗi mẻ bia đều trải qua nhiều bước kiểm tra. Hương vị phải đạt đúng profile mong muốn, độ trong được đảm bảo, bọt bia mịn và bền. Những sai lệch dù nhỏ cũng có thể khiến cả mẻ bị loại bỏ hoặc điều chỉnh lại.</p>
@@ -844,12 +809,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Hành trình phía trước của chúng tôi không được đo bằng những con số đã đạt được, mà được định hình qua cách chúng tôi tiếp tục tìm vị trí của mình trong bản đồ bia thủ công ngày càng sôi động. Bắt đầu từ một xưởng nấu mang tinh thần thử nghiệm, chúng tôi dần tạo nên dấu ấn riêng, không phô trương nhưng đủ sâu để người thưởng thức nhớ đến.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Creat Craft Beer
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Trong bức tranh bia thủ công tại Việt Nam, khi ngày càng nhiều cái tên mới xuất hiện, chúng tôi chọn cho mình một hướng đi bền bỉ hơn. Thay vì chạy theo những xu hướng ngắn hạn, chúng tôi tập trung đào sâu vào trải nghiệm của người uống. Mỗi dòng bia khi hoàn thiện không chỉ dừng lại ở mức “đủ tốt”, mà luôn hướng đến sự tròn vị, cân bằng và có chiều sâu.
                 </p>
                 <p className="mb-6">
@@ -895,12 +855,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Our nomenclature effectively serves as our corporate manifesto. “Creat” aggressively mandates innovation and unyielding boundary disruption. “Craft” embodies exhaustive patience, elite artisanal execution, and deep-seated vocational pride. Synchronized together, Creat Craft architects profound liquid experiences firmly anchored by precision engineering and imaginative artistry.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Creat Craft Beer
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Our uncompromising standards commence forcefully with raw material acquisition. Hops are sourced specifically based on hyper-specific aromatic densities and botanical complexity to unequivocally define our product profiles. Premium malts face rigorous evaluations concerning roast parameters and chromatic yields to guarantee structural depth. Even our hydration matrices endure unyielding mineral monitoring, recognizing that fractional thermodynamic impurities severely compromise output integrity. At Creat Craft, raw inputs remain sacred foundational pillars orchestrating final product fidelity.
                 </p>
                 <p className="mb-6">
@@ -916,12 +871,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     This structure aggressively denounces the passive “making of beer,” demanding an optimized chain of analytically driven metric evaluations. Respective batches feature intensely detailed data logs cataloging thermal outputs, temporal variations, and microscopic fermentation indexing to effectively solidify batch-to-batch uniformity upon deployment.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Creat Craft Beer
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► The Logistics Sustaining 40,000 Liters Mentality</h3>
                         <p>Divorced from abstraction, generating 40,000 liters necessitates scaling roughly 3,300 liters per subsequent operational month. However, standard linear progression is a profound fallacy given biological realities.</p>
@@ -949,12 +899,7 @@ export const newsContent: Record<string, {
                         <p className="mt-2">Extensive digital frameworks proactively police all thermodynamic variables, guaranteeing exact adherence to targeted recipe specifications.</p>
                     </div>
                 </div>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Creat Craft Beer
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Relentless Quality Assurance Checkpoints</h3>
                         <p>Prior to distribution authorizations, batches face exhaustive macroscopic audits targeting chromatic clarity, foam structural durability, and pinpoint flavor profiling. Minimalist deviations automatically trigger full-batch eradication or aggressive real-time countermeasures.</p>
@@ -974,12 +919,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Creat Craft's ongoing evolution fundamentally rejects hollow volumetric vanity in favor of consistently aggressive upward mobility across an increasingly contested landscape. Stemming from experimental roots, we successfully established a formidably authentic corporate signature built on substantive action rather than superficial grandstanding.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Creat Craft Beer
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Amid an explosive domestic craft revolution, we deliberately choose calculated longevity. By aggressively ignoring ephemeral market fads, we continuously refine consumer experience verticals ensuring that our finished outputs consistently provide dense, multidimensional engagements.
                 </p>
                 <p className="mb-6">
@@ -1033,12 +973,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Trước khi hoa bia trở thành một phần “linh hồn” của bia như ngày nay, người xưa từng thử nghiệm đủ loại thảo mộc và rễ cây để tạo hương vị. Tuy nhiên, những phương pháp đó thường thiếu ổn định, mỗi mẻ bia cho ra một kết quả khác nhau, khó kiểm soát chất lượng. Chỉ khi hoa bia xuất hiện và được ứng dụng rộng rãi vào thời Trung Cổ, ngành nấu bia mới thực sự bước sang một giai đoạn hoàn chỉnh hơn với hương vị, cấu trúc và khả năng bảo quản được định hình rõ ràng.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Những loại hoa bia phổ biến
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Tạo độ đắng để cân bằng vị ngọt</h3>
                         <p>Trong quá trình ngâm ủ, mạch nha giải phóng một lượng đường đáng kể, tạo nên nền vị ngọt đặc trưng cho bia. Nếu thiếu đi hoa bia, thành phẩm sau lên men sẽ mang cảm giác ngọt gắt, nặng và kém hài hòa. Khi hoa bia được đun sôi, các hợp chất Alpha Acid sẽ xảy ra quá trình đồng phân hóa, chuyển hóa thành những hợp chất tạo vị đắng. Chính vị đắng này đóng vai trò như một đối trọng, giúp trung hòa độ ngọt của mạch nha, từ đó hình thành nên cấu trúc vị cân bằng, dễ uống và để lại hậu vị khô ráo, sảng khoái.</p>
@@ -1067,12 +1002,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Dựa trên thành phần hóa học và vai trò trong từng công đoạn nấu bia, hoa bia thường được chia thành ba nhóm chính, mỗi nhóm mang một cá tính rất riêng:
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Những loại hoa bia phổ biến
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Hoa bia tạo đắng (Bittering Hops)</h3>
                         <p>Đây là nhóm hoa bia có hàm lượng Alpha Acid cao, thường dao động từ 10% đến 18%. Khi được cho vào ngay từ đầu quá trình đun sôi, các hợp chất này sẽ được chuyển hóa thành iso-alpha acid quyết định vị đắng đặc trưng của bia.</p>
@@ -1105,12 +1035,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Sự phong phú của thế giới bia thủ công không chỉ đến từ công thức hay kỹ thuật lên men, mà còn được định hình rõ nét bởi cách lựa chọn và sử dụng hoa bia. Mỗi phong cách bia là một “bản phối” riêng, trong đó hoa bia có thể đóng vai trò trung tâm hoặc lùi về phía sau để tôn vinh những thành phần khác.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Những loại hoa bia phổ biến
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Các dòng Pale Ale và India Pale Ale (IPA)</h3>
                         <p>Đây chính là “sân khấu chính” nơi hoa bia được khai thác tối đa cả về hương lẫn vị. Với các dòng Pale Ale, đặc biệt là American IPA hay New England IPA, hoa bia không chỉ tạo đắng mà còn trở thành linh hồn của bia.</p>
@@ -1176,12 +1101,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Before hops secured their modern monopoly as beer's "aromatic soul," historical brewers extensively experimented with an array of decentralized roots, spices, and aggressive botanicals. Unsurprisingly, such erratic methodologies lacked volumetric stability; individual batches routinely produced drastically disparate flavor yields, virtually guaranteeing extreme commercial unreliability. Once hops were systematically weaponized spanning the Middle Ages, the brewing apparatus radically matured into a reliable operational science offering controllable flavor architectures and robust preservation mechanics.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Popular Hop Varieties
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Generating Bitterness to Mitigate Saccharine Profiles</h3>
                         <p>During the critical mashing interval, malt forcefully ejects an enormous volume of fermentable sugars, establishing an intensely cloying foundational sweetness. Absent hops, the remaining fermented product operates as a heavy, offensively sweet syrup suffering from structural imbalance. However, introducing hops into the thermal boiling cycle forces a radical chemical isomerization where resident Alpha Acids transmute into intensely potent bittering compounds. This cultivated bitterness functions as the primary counterweight neutralizing malt sugars, architecting a balanced, easily digestible structure that terminates in a clean, aggressively refreshing finish.</p>
@@ -1210,12 +1130,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Relying stringently on chemical anatomy alongside intended manufacturing application, widespread hop variants systematically divide into three distinct, sharply delineated categories. Each demographic exerts a dramatically different structural outcome:
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Popular Hop Varieties
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Bittering Hops</h3>
                         <p>Defining this classification requires assessing a massive internal concentration of Alpha Acids, commonly plateauing between a staggering 10% to 18%. Executing these strains at the very onset of thermal boiling systematically forces maximum extraction, isolating the dominant iso-alpha acids directly dictating a beer's terminal bitterness profile.</p>
@@ -1248,12 +1163,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     The staggering stylistic variety saturating the craft beer vertical rarely originates linearly from altered fermentation dynamics; it relies massively upon how specific hop protocols are heavily utilized. Certain modalities demand hops command the operational forefront, while alternative styles force hops aggressively into supporting roles, deliberately spotlighting varying base ingredients.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Popular Hop Varieties
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Pale Ales and India Pale Ales (IPA)</h3>
                         <p>Undeniably acting as the central theater specifically designed for complete hop weaponization! Evaluating modern Pale Ales—especially heavily concentrated American IPAs or cloudy New England variants—reveals hops no longer act simply as bittering agents; they dominate the entire core profile.</p>
@@ -1330,12 +1240,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Xay malt là bước chuẩn bị nguyên liệu trước khi nấu, với mục tiêu rõ ràng: làm cho tinh bột bên trong hạt có thể tiếp xúc với nước và enzyme. Nếu không xay, nước không thể thấm vào hạt, enzyme không thể hoạt động và quá trình tạo đường sẽ không diễn ra. Từ mục tiêu này, việc xay malt được triển khai theo từng yêu cầu cụ thể, mỗi yêu cầu đều ảnh hưởng trực tiếp đến hiệu quả của quá trình nấu bia phía sau.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Vì sao cần phải xay malt khi nấu bia thủ công?
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Phá vỡ lớp vỏ để tiếp cận nội nhũ</h3>
                         <p>Hạt malt gồm hai phần chính: lớp vỏ bên ngoài và phần nội nhũ chứa tinh bột bên trong. Lớp vỏ khá cứng, có nhiệm vụ bảo vệ nên nước khó đi xuyên qua.</p>
@@ -1373,12 +1278,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Bên trong hạt là phần nội nhũ chứa tinh bột cần được chuyển hóa, nhưng bao bọc bên ngoài lại là lớp vỏ trấu vốn một thành phần tưởng như không cần thiết nhưng lại giữ vai trò quyết định ở giai đoạn lọc. Khi được giữ tương đối nguyên vẹn, lớp vỏ này sẽ tạo thành một lớp nền thoáng, giúp dịch đường có thể chảy qua dễ dàng trong quá trình tách bã.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Vì sao cần phải xay malt khi nấu bia thủ công?
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Vấn đề bắt đầu xuất hiện khi malt bị nghiền quá mịn, bởi lúc này lớp vỏ trấu không còn giữ được hình dạng ban đầu mà bị phá vỡ thành những mảnh nhỏ, trộn lẫn với phần bột mịn của nội nhũ. Thay vì tạo ra một lớp lọc tự nhiên, hỗn hợp này lại khiến khối mash trở nên đặc và bí, các phần tử dễ kết dính với nhau, làm cản trở dòng chảy và dẫn đến hiện tượng tắc lọc. Khi dòng dịch không thể lưu thông ổn định, toàn bộ quá trình phía sau cũng bị ảnh hưởng, từ thời gian nấu cho đến hiệu suất thu hồi.
                 </p>
                 <p className="mb-6">
@@ -1424,12 +1324,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Milling malt constitutes the primary preparation vector with an exceedingly singular objective: physically exposing locked starches directly to hydrating liquid flow and aggressively hyper-activating dormant enzymes. Bypassing the milling stage absolutely prevents liquid permeation, inherently paralyzing enzyme activity and entirely collapsing the saccharification (sugar creation) cycle. Guided directly by this biological reality, the milling procedure is executed via tight, highly specific parameters heavily governing the efficiency of downstream manufacturing processes.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Why Do You Need to Mill Malt When Making Craft Beer?
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Rupturing the Husk to Access the Endosperm</h3>
                         <p>Malt structures fundamentally comprise two primary zones: an external rigid husk heavily fortifying internal starch reserves located directly inside the endosperm. This hardened husk operates entirely as an armored blockade, vehemently restricting fluid penetration.</p>
@@ -1467,12 +1362,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     While the central endosperm heavily contains vital fermentable starches, it is fiercely wrapped within an outer husk. Initially dismissed as trivial organic debris, this specific husk executes a profound operational mandate during the Lautering (drainage) stage. When maintained largely whole, these husks effectively pile upon one another forming a densely ventilated, naturally porous filter bed, effortlessly allowing viscous sugar liquids to cascade rapidly through the thick grain sludge.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Why Do You Need to Mill Malt When Making Craft Beer?
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Catastrophic system failure predictably occurs when malt is pulverized into incredibly fine dust. This action permanently incinerates the husk’s physical integrity, reducing it to microscopic shreds hopelessly tangled within an immensely thick powder sludge. Stripped of a functional internal filtration bed, the entire dense mash quickly solidifies into an impenetrable concrete block. Fine particles violently fuse together, instantly halting liquid flow, prompting severe systemic operational gridlock commonly termed a "stuck mash." Given blocked liquid flow, the entirety of subsequent workflows instantly derail, aggressively penalizing schedule times and heavily suppressing final solvent yields.
                 </p>
                 <p className="mb-6">
@@ -1522,12 +1412,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Đối với quán bar hay nhà hàng, việc nhập sỉ bia thủ công không chỉ đơn giản là thêm một món đồ uống. Thực tế cho thấy giá bán của craft beer thường tốt hơn nên biên lợi nhuận cũng cao hơn. Khi có mặt trong menu, nó giúp quán trông khác biệt hơn, từ đó dễ thu hút nhóm khách thích trải nghiệm hoặc sẵn sàng chi tiêu. Về lâu dài, đây cũng là cách để xây dựng hình ảnh quán theo hướng chất lượng và có gu rõ ràng hơn, thay vì chỉ là một nơi uống bia thông thường.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Giá bia thủ công nhập sỉ cho nhà hàng
-                </div>
-
-                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+<h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
                     Bảng giá cung cấp bia thủ công giá sỉ cho nhà hàng
                 </h2>
                 <p className="mb-6">
@@ -1610,12 +1495,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Trong số các đơn vị đang hoạt động trên thị trường, Creat Craft Beer là cái tên tập trung rõ vào mảng cung cấp bia thủ công giá sỉ cho nhà hàng và quán bar. Bia tại đây được sản xuất theo từng dòng ổn định, giữ được hương vị nhất quán, giúp quán yên tâm xây dựng menu lâu dài mà không bị thay đổi chất lượng qua từng mẻ.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Giá bia thủ công nhập sỉ cho nhà hàng
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Danh mục sản phẩm của CREAT cũng rất đa dạng, bao gồm cả những dòng dễ uống dành cho khách phổ thông lẫn các dòng đậm vị hơn cho nhóm khách đã quen với craft beer. Nhờ vậy, nhà hàng có thể linh hoạt lựa chọn để phục vụ nhiều tệp khách khác nhau, thay vì bị giới hạn trong một vài kiểu bia quen thuộc. Bia cũng được cung cấp dưới dạng keg và chai, phù hợp với nhiều mô hình vận hành từ nhỏ đến lớn.
                 </p>
                 <p className="mb-6">
@@ -1631,12 +1511,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Trong kinh doanh nhà hàng, việc lựa chọn đơn vị cung cấp bia thủ công không đơn thuần là tìm một nguồn hàng, mà là tìm một đối tác có thể đồng hành lâu dài trong việc xây dựng trải nghiệm đồ uống. Một danh mục bia phù hợp, chất lượng ổn định và cách hỗ trợ triển khai thực tế sẽ giúp nhà hàng vận hành trơn tru hơn, đồng thời tạo được dấu ấn riêng với khách hàng.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Giá bia thủ công nhập sỉ cho nhà hàng
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Đó cũng là cách Creat Craft định vị vai trò của mình không chỉ cung cấp sản phẩm, mà mang đến giải pháp phù hợp với từng mô hình kinh doanh.
                 </p>
 
@@ -1695,12 +1570,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     For commercial restaurants and specialized bars, integrating wholesale craft beer heavily transcends safely adding another standard beverage option. Operational data consistently proves that craft beer commands significantly higher retail price points, directly generating vastly superior profit margins. Additionally, featuring a curated craft portfolio instantly elevates the establishment's aesthetic, effortlessly attracting demographics highly willing to spend heavily on premium sensory experiences. Long-term, this functions as a critical infrastructural tactic to definitively establish a highly cultured, quality-driven brand identity.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Wholesale Craft Beer Pricing for Restaurants
-                </div>
-
-                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+<h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
                     Standardized Commercial B2B Price Matrix
                 </h2>
                 <p className="mb-6">
@@ -1783,12 +1653,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Against the volatile market landscape, Creat Craft Beer consistently emerges as the definitive logistical anchor, radically committed to wholesale B2B distribution scaling. Our output remains aggressively regimented within established parameters, flawlessly guaranteeing unwavering taste parity, thus enabling restaurant managers to construct long-term aesthetic menus completely immune to batch-variance instability.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Wholesale Craft Beer Pricing for Restaurants
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Our dynamic product portfolio encompasses all operational sectors, housing everything from highly accessible mainstream hybrids to formidable, hyper-concentrated formulas tailored for advanced connoisseurs. Consequently, operational clients retain immense flexibility to precisely target diverse demographics rather than suffering constraints enforced by typical monotonous lagers. Distribution occurs across standard keg and bottled configurations heavily optimized for both micro-establishments and massive, multi-tiered operations.
                 </p>
                 <p className="mb-6">
@@ -1804,12 +1669,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     In high-stakes hospitality mechanics, selecting a dedicated craft supplier utterly exceeds finding basic product availability; it dictates successfully identifying a robust logistical ally capable of ensuring long-term systemic stability regarding the overall beverage experience. Flawlessly integrating the correct brand portfolio actively streamlines floor operations while establishing unshakeable, unique prestige among customers.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Wholesale Craft Beer Pricing for Restaurants
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     This fundamental ideology heavily grounds Creat Craft's entire corporate mission: we refuse to merely drop inventory, instead prioritizing the implementation of highly engineered infrastructural solutions tailor-made for each discrete operational dynamic.
                 </p>
 
@@ -1886,12 +1746,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Không bị ràng buộc bởi những quy chuẩn khắt khe như Bộ luật Reinheitsgebot, bia thủ công mở ra một không gian sáng tạo rộng rãi hơn với mỗi công thức đều có thể được điều chỉnh linh hoạt để tạo nên những trải nghiệm hương vị riêng biệt. Chính sự “mở” này đã khiến bia thủ công không chỉ dừng lại ở một thức uống, mà còn trở thành cách để người nấu thể hiện cá tính và gu thẩm mỹ của mình qua từng mẻ bia.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Quy trình nấu bia thủ công diễn ra như thế nào?
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Lúa mạch (Malt)</h3>
                         <p>Malt đóng vai trò là nền tảng của bia, cung cấp nguồn đường và dưỡng chất cần thiết cho quá trình lên men. Sau khi được cho nảy mầm, lúa mạch sẽ trải qua công đoạn sấy và rang với nhiều mức độ khác nhau, từ đó tạo nên màu sắc cũng như hương vị đặc trưng cho từng loại bia. Những loại malt sáng thường mang lại cảm giác nhẹ nhàng, thanh thoát, trong khi malt rang đậm lại đem đến các nốt hương caramel, chocolate hoặc cà phê rõ rệt, giúp người nấu dễ dàng điều chỉnh cấu trúc vị theo mong muốn.</p>
@@ -1923,12 +1778,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Là một chuỗi các công đoạn liên kết chặt chẽ với nhau, bắt đầu từ khâu chuẩn bị nguyên liệu cho đến khi hoàn thiện sản phẩm đóng gói. Mỗi bước đều đòi hỏi sự kiểm soát chính xác về nhiệt độ, thời gian và điều kiện vệ sinh, bởi chỉ cần một sai lệch nhỏ cũng có thể ảnh hưởng đến hương vị và chất lượng của cả mẻ bia. Không chỉ là quy trình kỹ thuật, đây còn là quá trình thể hiện kinh nghiệm và sự tỉ mỉ của người nấu.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Quy trình nấu bia thủ công diễn ra như thế nào?
-                </div>
-
-                <div className="space-y-6 mb-10 pl-4 border-l border-[#D5C6B1]">
+<div className="space-y-6 mb-10 pl-4 border-l border-[#D5C6B1]">
                     <div>
                         <h3 className="text-lg font-bold text-[#1C1A14]">1. Chuẩn bị nguyên liệu</h3>
                         <p className="mt-2">Trước khi bắt đầu, toàn bộ nguyên liệu như malt, hoa bia, nước và men sẽ được cân đong theo công thức đã định. Song song đó, hệ thống nấu, đường ống và các thiết bị liên quan được vệ sinh bằng quy trình CIP để đảm bảo môi trường vô trùng. Các thông số vận hành, phần mềm điều khiển cũng được kiểm tra kỹ lưỡng nhằm đảm bảo mẻ nấu diễn ra ổn định ngay từ đầu.</p>
@@ -1994,12 +1844,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Trong quá trình nấu bia thủ công, việc phát sinh lỗi là điều khó tránh khỏi, đặc biệt khi có nhiều yếu tố như nguyên liệu, nhiệt độ, vệ sinh và quá trình lên men cùng tác động đồng thời. Những sai lệch dù nhỏ cũng có thể ảnh hưởng rõ rệt đến màu sắc, hương thơm và cấu trúc vị của bia thành phẩm. Việc hiểu rõ nguyên nhân và hệ quả của từng lỗi sẽ giúp người nấu kiểm soát quy trình tốt hơn và nâng cao chất lượng sản phẩm theo thời gian.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Quy trình nấu bia thủ công diễn ra như thế nào?
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6 mb-10">
+<div className="grid md:grid-cols-2 gap-6 mb-10">
                     <div className="bg-[#F8F3EB] p-6 rounded-md shadow-sm border border-[#E8DFC8]">
                         <h3 className="text-lg font-bold text-[#1C1A14] mb-2">Bia bị đục</h3>
                         <p className="text-sm">Hiện tượng bia không đạt độ trong thường xuất phát từ việc lọc dịch nha chưa triệt để, protein và cặn chưa được loại bỏ hoàn toàn, hoặc quá trình làm lạnh diễn ra chậm khiến các hợp chất không kịp kết tủa. Ngoài ra, lên men chưa hoàn tất hoặc thời gian ủ chưa đủ cũng khiến các hạt lơ lửng chưa kịp lắng xuống.</p>
@@ -2080,12 +1925,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Unlike macro-lagers completely paralyzed by restrictive regulatory doctrine like the Reinheitsgebot purity law, the craft ecosystem violently rips open immense exploratory bandwidth, routinely modifying standard chemistry to forge incredibly distinctive sensory excursions. This aggressive "open-architecture" transforms rudimentary consumption from a mere beverage deeply into a highly expressive art form, explicitly showcasing the technical audacity corresponding to the master brewer’s personal vision.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    How the Craft Beer Brewing Process Works?
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div>
                         <h3 className="text-lg font-bold text-[#C8963E] mb-2 flex items-center gap-2">► Malt (Barley)</h3>
                         <p>Malt operates forcefully as the foundational baseline underpinning the entire structure, supplying massive sugar yields and required nutrients to engine fermentation. Subjected to controlled germination cycles, raw barley subsequently faces intensive heating and roasting tolerances spanning broad spectrums. This directly synthesizes both the final chromatic color scale and precise flavor properties unique to specific styles. Pale malts intrinsically deploy a very light, highly refreshing baseline, whereas heavily charred malts abruptly force dense caramel, thick chocolate, or intensely clear coffee layers, effectively enabling operators to seamlessly adjust the structural frame.</p>
@@ -2117,12 +1957,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Operating explicitly as a completely interlinked cascade of profoundly tightly bound operational sequences, the entire process bridges from fundamental ingredient staging immediately toward terminal packing metrics. Every discrete motion forces an aggressive requirement regarding flawless environmental parameters, primarily policing severe temperature tolerances, duration controls, and uncompromising systemic sterilization. A highly transient deviation absolutely devastates both the exact target flavor and overall compound integrity. Consequently, this far exceeds raw engineering; it functions as the absolute physical manifestation of profound professional mastery combined alongside microscopic operator diligence.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    How the Craft Beer Brewing Process Works?
-                </div>
-
-                <div className="space-y-6 mb-10 pl-4 border-l border-[#D5C6B1]">
+<div className="space-y-6 mb-10 pl-4 border-l border-[#D5C6B1]">
                     <div>
                         <h3 className="text-lg font-bold text-[#1C1A14]">1. Ingredient Logistics and Preparation</h3>
                         <p className="mt-2">Preceding physical execution, total raw assets—malt, hop pellets, engineered water lines, and active yeast cultures—are strictly segregated to align with exact formulation schematics. Concurrently, all massive brewhouse thermal machinery, fluid networks, and terminal components undergo an exhaustive CIP (Clean-In-Place) blast to establish a hospital-grade sterile environment. Advanced metric readouts and hardware controls face rigorous audits ensuring absolute mechanical baseline stability.</p>
@@ -2188,12 +2023,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Executing physical operations practically guarantees the emergence of structural aberrations, largely due to fiercely complex overlaps spanning raw ingredients, heat matrices, hygiene vectors, and extremely volatile biological actors operating uniformly. Negligible deviances routinely inflict fatal consequences violently altering visual tones, aromatic throw, and base gustatory structure characterizing the finalized batch. Completely understanding both the root catalyst and systemic fallout regarding explicit anomalies drastically empowers operations to fiercely command their workflows while perpetually maximizing output superiority over prolonged lifecycles.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    How the Craft Beer Brewing Process Works?
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6 mb-10">
+<div className="grid md:grid-cols-2 gap-6 mb-10">
                     <div className="bg-[#F8F3EB] p-6 rounded-md shadow-sm border border-[#E8DFC8]">
                         <h3 className="text-lg font-bold text-[#1C1A14] mb-2">Severe Systemic Haze</h3>
                         <p className="text-sm">Extensive visual cloudiness typically erupts originating entirely from lethargic lautering sequences completely failing to strip dense proteins and heavy sediment. Alternatively, incredibly sluggish chilling protocols directly inhibit required compound coagulation. Moreover, stunted fermentation limits alongside truncated cold conditioning durations actively trap rampant suspended particulate lacking sufficient timeline to drop naturally.</p>
@@ -2262,9 +2092,12 @@ export const newsContent: Record<string, {
     },
     "bang-gia-bia-thu-cong-moi-nhat": {
         breadcrumbTitle: "Bảng giá bia thủ công...",
+        breadcrumbTitle_en: "Craft Beer Pricing...",
         title: "Bảng giá bia thủ công mới nhất",
+        title_en: "Latest Craft Beer Price List 2026",
         date: "02 Tháng 4, 2026",
         category: "Kinh doanh",
+        category_en: "Business",
         author: "Creat Craft",
         image: "https://creatcraft.com.vn/upload/news/creat-craft-11-8005.jpg",
         content: (
@@ -2279,12 +2112,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Mỗi yếu tố đều tác động trực tiếp vào giá thành, và khi một trong các yếu tố này thay đổi, giá bán cuối cùng cũng buộc phải điều chỉnh theo để đảm bảo cân đối chi phí.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bảng giá bia thủ công mới nhất
-                </div>
-
-                <div className="space-y-6 mb-10 pl-4 border-l-2 border-[#C8963E]">
+<div className="space-y-6 mb-10 pl-4 border-l-2 border-[#C8963E]">
                     <div>
                         <h3 className="text-lg font-bold text-[#1C1A14]">► Thuế tiêu thụ đặc biệt</h3>
                         <p className="mt-2">Thuế tiêu thụ đặc biệt là khoản chi phí được cộng trực tiếp vào giá bán, nên bất kỳ sự thay đổi nào về thuế đều tác động ngay đến giá bia trên thị trường. Khi thuế tăng, doanh nghiệp không có nhiều dư địa để hấp thụ mà thường phải phân bổ vào giá bán lẻ.</p>
@@ -2390,12 +2218,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     CREAT Craft Beer được xây dựng với định hướng trở thành nơi hội tụ của cộng đồng yêu bia thủ công tại Tân Phú nói riêng và TP.HCM nói chung. Quán sở hữu danh sách bia được chọn lọc kỹ càng từ các microbrewery uy tín trong và ngoài nước, đảm bảo mỗi dòng bia đều mang hương vị độc đáo và câu chuyện riêng. Từ IPA thơm ngát hoa bia, Stout đậm vị cà phê, cacao, Wheat Ale nhẹ nhàng, cho đến các dòng Saison, Sour hay những loại bia theo mùa được cập nhật liên tục, tất cả đều được tuyển chọn nhằm mang đến trải nghiệm “đúng chất” craft beer.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bảng giá bia thủ công mới nhất
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Không chỉ tập trung vào chất lượng bia, CREAT còn chú trọng tạo nên một không gian thưởng thức hài hòa giữa nghệ thuật và sự thư giãn. Thiết kế quán kết hợp ánh sáng ấm, nội thất gỗ, điểm nhấn sáng tạo giúp người uống cảm thấy thoải mái từ lần đầu bước vào. Đây là nơi lý tưởng để bạn nhâm nhi một ly bia sau giờ làm, tụ họp bạn bè cuối tuần hoặc đơn giản là tìm một không gian nhẹ nhàng để “chill”.
                 </p>
                 <p className="mb-6">
@@ -2408,12 +2231,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Khi bia thủ công ngày càng trở nên phổ biến, không chỉ người mới mà ngay cả những người đã uống lâu năm cũng thường có những thắc mắc xoay quanh cách bảo quản, cách chọn và cách thưởng thức sao cho đúng. Những câu hỏi dưới đây là những điều thường gặp nhất, giúp bạn hiểu rõ hơn và tận hưởng bia craft một cách trọn vẹn hơn.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bảng giá bia thủ công mới nhất
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div className="bg-[#F8F3EB] p-5 rounded-md border border-[#E8DFC8]">
                         <h3 className="font-bold text-[#1C1A14] mb-2">Bia thủ công để được bao lâu?</h3>
                         <p className="text-[#2C2416]">Thời gian bảo quản của bia thủ công thường ngắn hơn so với bia công nghiệp do không sử dụng chất bảo quản và ít qua xử lý tiệt trùng sâu. Phần lớn các dòng bia nên được uống trong khoảng 3–6 tháng kể từ ngày sản xuất để giữ được hương vị tốt nhất. Một số dòng đặc biệt như Imperial Stout hoặc Barleywine có thể để lâu hơn, thậm chí vài năm nếu bảo quản đúng cách, nhưng đa số bia craft vẫn ngon nhất khi còn “tươi”.</p>
@@ -2477,12 +2295,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Every isolated logistical variable directly strikes the baseline production expenditure. Consequently, whenever sudden volatility occurs within these sectors, terminal retail pricing invariably adjusts upward to forcefully maintain essential corporate margins and operational equilibrium.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Latest Craft Beer Pricing
-                </div>
-
-                <div className="space-y-6 mb-10 pl-4 border-l-2 border-[#C8963E]">
+<div className="space-y-6 mb-10 pl-4 border-l-2 border-[#C8963E]">
                     <div>
                         <h3 className="text-lg font-bold text-[#1C1A14]">► Specialized Consumption Protocols (Taxes)</h3>
                         <p className="mt-2">Aggressive excise taxation undeniably constitutes a massive fixed liability forcibly bundled straight into the retail tag, ensuring any legislative shifts immediately cascade directly into live market pricing. Confronting elevated tax burdens, manufacturing outfits possess extremely limited financial elasticity, typically forcing them to immediately pass structural increases completely onto the retail consumer.</p>
@@ -2588,12 +2401,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     CREAT Craft Beer fundamentally operates acting entirely as the paramount convergence singularity serving the hyper-dedicated artisanal community active within Tan Phu and actively extending outward across massive HCMC. Operations harbor aggressively optimized beverage arrays actively sourced directly from profoundly respected micro-breweries operating domestically alongside heavy international imports strictly guaranteeing every isolated variation successfully generates unprecedented sensory metrics entirely backing extremely unique narratives. Ranging aggressively from ultra-floral IPA matrices, heavily dense coffee/cacao Stout blocks, extremely smooth Wheat integrations, entirely to sharply complex Sours and continuously rotating hyper-experimental seasonal launches, the entire portfolio is brutally curated to effortlessly yield an absolutely unfiltered craft reality.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Latest Craft Beer Pricing
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Never restricting operational focus solely atop raw liquid metrics, CREAT heavily engineers profoundly engaging physical environments effectively marrying complex progressive modern aesthetics completely alongside intense relaxation. Structural configurations routinely merge extremely warm ambient illumination, heavy organic wood architectures, and profound creative focal points strictly ensuring consumers seamlessly enter highly comfortable states instantly upon breaching the perimeter. Fundamentally identifying as the ultimate staging ground accommodating high-stress corporate decompression, heavy weekend social synchronization, or acting merely as a profoundly quiet sector specifically designated for pure environmental appreciation.
                 </p>
 
@@ -2611,9 +2419,12 @@ export const newsContent: Record<string, {
     },
     "bia-thu-cong-viet-nam": {
         breadcrumbTitle: "Bia thủ công Việt Nam",
+        breadcrumbTitle_en: "Vietnamese Craft Beer",
         title: "Bia thủ công Việt Nam",
+        title_en: "Vietnamese Craft Beer: A Rising Movement",
         date: "28 Tháng 3, 2026",
         category: "Kiến thức",
+        category_en: "Knowledge",
         author: "Creat Craft",
         image: "https://creatcraft.com.vn/upload/news/creat-craft-10-5345.jpg",
         content: (
@@ -2631,12 +2442,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Từ sự thay đổi trong cách cảm nhận đó, thói quen uống bia cũng dần chuyển dịch sang một nhịp chậm hơn, nơi người ta sẵn sàng dành thời gian để quan sát, để thử và để hiểu rõ hơn về thứ mình đang uống, thay vì chỉ uống theo quán tính như trước. Chính điều này đã mở ra không gian cho các mô hình taproom và quán bia thủ công phát triển với những không gian được đầu tư bài bản, từ cách thiết kế, ánh sáng cho đến cách giới thiệu từng dòng bia, người uống dễ dàng cảm nhận được rằng mỗi ly bia không chỉ là sản phẩm, mà còn là kết quả của một quá trình sáng tạo và thử nghiệm.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bia thủ công Việt Nam
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Nếu nhìn sâu hơn vào bản chất, bia thủ công không chỉ khác biệt ở quy mô sản xuất mà còn nằm ở tư duy làm bia với từng mẻ bia thường được sản xuất với số lượng nhỏ hơn, cho phép người nấu bia kiểm soát tốt hơn từng công đoạn, từ lựa chọn nguyên liệu cho đến quá trình lên men và hoàn thiện sản phẩm. Nhờ có sự linh hoạt đó, họ có thể thử nghiệm nhiều hướng đi khác nhau, kết hợp nguyên liệu, điều chỉnh công thức và tạo ra những dòng bia mang dấu ấn riêng biệt. Chính yếu tố này đã tạo nên sức hấp dẫn đặc trưng của bia thủ công, khi mỗi dòng bia không chỉ khác nhau về hương vị mà còn mang một cá tính rõ ràng, có thể nhẹ nhàng và dễ tiếp cận, nhưng cũng có thể đậm đà, phức tạp với nhiều tầng hương vị thay đổi theo thời gian.
                 </p>
                 <p className="mb-6">
@@ -2649,12 +2455,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Một trong những điểm dễ nhận ra ở bia thủ công Việt Nam là cách người làm bia khai thác nguyên liệu bản địa một cách khá linh hoạt, khi không chỉ dừng lại ở malt, hoa bia hay men nhập khẩu. Nhiều brewmaster đã chủ động đưa những nguyên liệu quen thuộc như thanh long, hoa nhài, tiêu Phú Quốc, cacao hay cà phê Tây Nguyên vào công thức với mỗi nguyên liệu không chỉ góp thêm một tầng hương vị mà còn tạo ra cảm giác rất riêng khi thưởng thức. Có loại bia mang vị trái cây nhẹ, dễ uống; có loại lại thiên về hương thơm, hoặc đậm hơn với hậu vị rang, đắng dịu. Chính sự đa dạng này khiến người uống không bị nhàm chán, đồng thời cũng dễ nhận ra dấu ấn “rất Việt” trong từng dòng bia.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bia thủ công Việt Nam
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Nhiều dòng bia tại Việt Nam được phát triển dựa trên nền tảng các phong cách bia phương Tây như IPA, Stout hay Lager, nhưng không giữ nguyên hoàn toàn. Người làm bia thường điều chỉnh lại tỷ lệ nguyên liệu, độ đắng, độ cồn hoặc cách kết hợp hương vị để phù hợp hơn với khẩu vị người Việt. Vì vậy, bia thường có xu hướng dễ tiếp cận hơn, hương vị rõ ràng hơn, không quá nặng nhưng vẫn đủ chiều sâu để người uống cảm nhận.
                 </p>
                 <p className="mb-6">
@@ -2694,9 +2495,12 @@ export const newsContent: Record<string, {
     },
     "bia-thu-cong-len-men-nhu-the-nao": {
         breadcrumbTitle: "Bia thủ công lên men...",
+        breadcrumbTitle_en: "How Craft Beer Ferments...",
         title: "Bia thủ công lên men như thế nào?",
+        title_en: "How Does Craft Beer Ferment? The Science Behind Brewing Yeast",
         date: "25 Tháng 3, 2026",
         category: "Kiến thức",
+        category_en: "Knowledge",
         author: "Creat Craft",
         image: "https://creatcraft.com.vn/upload/news/bia-thu-cong-len-men-nhu-the-nao1-4867.jpg",
         content: (
@@ -2717,12 +2521,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Nổi bật nhất phải kể đến nhóm vitamin B, với sự hiện diện của nhiều loại như B1, B2, B3, B5, B6, B7 và B9. Đây đều là những vitamin quen thuộc, thường liên quan đến quá trình chuyển hóa năng lượng và giúp cơ thể duy trì các hoạt động thường ngày.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bia thủ công lên men như thế nào?
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Không chỉ dừng lại ở đó, men bia còn cung cấp một số khoáng chất quan trọng như crom, selen, sắt, kali, magie và kẽm. Dù hàm lượng không quá lớn, nhưng các vi chất này vẫn đóng vai trò cần thiết trong nhiều chức năng sinh lý.
                 </p>
                 <p className="mb-6">
@@ -2738,12 +2537,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Trong quá trình nấu bia, men không chỉ đơn thuần là “tác nhân lên men” mà còn là yếu tố định hình rõ ràng phong cách của từng dòng bia. Chỉ cần thay đổi loại men, cùng một công thức nguyên liệu cũng có thể cho ra hai kết quả rất khác nhau. Về cơ bản, men bia thường được chia thành hai nhóm chính, dựa trên cách chúng hoạt động trong quá trình lên men.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bia thủ công lên men như thế nào?
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6 my-8">
+<div className="grid md:grid-cols-2 gap-6 my-8">
                     <div className="bg-[#F8F3EB] p-6 rounded-md shadow-sm border border-[#E8DFC8]">
                         <h3 className="text-xl font-bold text-[#1C1A14] mb-3">Men lên men nổi (Ale yeast)</h3>
                         <p className="text-sm mb-3">Men lên men nổi, hay còn gọi là men ale, thuộc chủng Saccharomyces cerevisiae. Khi hoạt động, các tế bào men này có xu hướng nổi lên trên bề mặt dịch nha, tạo thành lớp bọt dày mà người nấu có thể quan sát khá rõ trong quá trình lên men.</p>
@@ -2769,12 +2563,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Men bia luôn là thành phần “kích hoạt” toàn bộ quá trình nấu bia, nhưng giá trị của nó không chỉ nằm ở việc biến đường thành cồn. Từ cách men hoạt động, người nấu có thể kiểm soát được hương vị, cấu trúc và cả phong cách của bia. Mỗi loại men, mỗi điều kiện lên men đều sẽ dẫn đến một kết quả khác nhau.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bia thủ công lên men như thế nào?
-                </div>
-
-                <div className="space-y-6 mb-10 pl-4 border-l-2 border-[#C8963E]">
+<div className="space-y-6 mb-10 pl-4 border-l-2 border-[#C8963E]">
                     <div>
                         <h3 className="text-lg font-bold text-[#1C1A14]">► Chuyển hóa đường thành cồn và CO₂</h3>
                         <p className="mt-2">Khi được bổ sung vào dịch nha, men bắt đầu tiêu thụ lượng đường có sẵn và chuyển hóa chúng thành cồn cùng khí CO₂. Đây là nền tảng để bia hình thành đúng nghĩa. Cồn quyết định độ mạnh, còn CO₂ tạo nên độ sủi bọt và cảm giác tươi mát khi uống. Tùy theo loại men và cách kiểm soát quá trình lên men, mức độ chuyển hóa này có thể nhanh hoặc chậm, ảnh hưởng trực tiếp đến thành phẩm cuối cùng.</p>
@@ -2810,12 +2599,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Khi dịch nha vừa nấu xong và được làm mát xuống mức phù hợp, nó sẽ được chuyển sang thùng lên men. Lúc này, dịch vẫn chỉ là một dạng “nước đường”, và phải nhờ đến men thì mọi thứ mới thật sự thay đổi. Men được bổ sung vào ngay sau đó và bắt đầu hoạt động, tiêu thụ lượng đường có sẵn rồi dần chuyển hóa thành cồn và khí CO₂.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bia thủ công lên men như thế nào?
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Tuy nhiên, điều làm nên sự khác biệt của bia thủ công không nằm ở việc tạo cồn, mà nằm ở những hợp chất được hình thành trong suốt quá trình này. Tùy vào loại men, nhiệt độ và cách kiểm soát, men có thể tạo ra nhiều tầng hương khác nhau, từ trái cây, thảo mộc cho đến những nốt hương phức tạp hơn. Chính vì vậy, cùng một công thức nguyên liệu nhưng chỉ cần thay đổi men, kết quả cuối cùng cũng có thể khác đi khá rõ.
                 </p>
                 <p className="mb-6">
@@ -2834,12 +2618,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     CREAT Craft Beer được xây dựng với định hướng trở thành nơi hội tụ của cộng đồng yêu bia thủ công tại Tân Phú nói riêng và TP.HCM nói chung. Quán sở hữu danh sách bia được chọn lọc kỹ càng từ các microbrewery uy tín trong và ngoài nước, đảm bảo mỗi dòng bia đều mang hương vị độc đáo và câu chuyện riêng. Từ IPA thơm ngát hoa bia, Stout đậm vị cà phê, cacao, Wheat Ale nhẹ nhàng, cho đến các dòng Saison, Sour hay những loại bia theo mùa được cập nhật liên tục, tất cả đều được tuyển chọn nhằm mang đến trải nghiệm “đúng chất” craft beer.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bia thủ công Tân Phú
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Không chỉ tập trung vào chất lượng bia, CREAT còn chú trọng tạo nên một không gian thưởng thức hài hòa giữa nghệ thuật và sự thư giãn. Thiết kế quán kết hợp ánh sáng ấm, nội thất gỗ, điểm nhấn sáng tạo giúp người uống cảm thấy thoải mái từ lần đầu bước vào. Đây là nơi lý tưởng để bạn nhâm nhi một ly bia sau giờ làm, tụ họp bạn bè cuối tuần hoặc đơn giản là tìm một không gian nhẹ nhàng để “chill”.
                 </p>
                 <p className="mb-6">
@@ -2852,6 +2631,107 @@ export const newsContent: Record<string, {
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
                         <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                    </ul>
+                </div>
+
+            </>
+        ),
+        content_en: (
+            <>
+                <p className="text-lg leading-relaxed text-[#2C2416] font-medium mb-8">
+                    Brewing yeast rarely commands immediate attention when discussing beer, yet it represents the most critical "living" component within every glass. Fundamentally, yeast comprises highly purified microorganisms from the fungal kingdom, specifically cultivated for beer production. When introduced into a nutrient-rich wort environment, yeast metabolizes fermentable sugars, converting them into alcohol and carbon dioxide. This biochemical transformation not only generates alcohol content but also produces countless aromatic and flavor compounds that define a beer's sensory character.
+                </p>
+                <p className="mb-6">
+                    Among beer's four foundational ingredients—water, malt, hops, and yeast—each fulfills distinct roles. Yet yeast uniquely initiates and sustains fermentation, the most critical transformation converting sweet wort into finished beer. If we analogize the brewing process: water provides the canvas, malt constructs the framework, hops refine flavor profiles, while yeast breathes life and personality into every batch.
+                </p>
+
+                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+                    Nutritional Profile of Brewing Yeast
+                </h2>
+                <p className="mb-6">
+                    From a nutritional perspective, brewing yeast extends far beyond its fermentative function—it's remarkably rich in beneficial compounds. Its microscopic cellular structure houses an impressive array of vitamins, minerals, proteins, and bioactive molecules. Most notably, it's exceptionally abundant in B-complex vitamins including B1, B2, B3, B5, B6, B7, and B9, all crucial for energy metabolism and general physiological maintenance.
+                </p>
+                <p className="mb-6">
+                    Additionally, brewing yeast supplies essential trace minerals such as chromium, selenium, iron, potassium, magnesium, and zinc. While present in modest concentrations, these micronutrients support numerous vital biological functions. Perhaps most impressive is yeast's protein content—approximately 40% by mass consists of amino acids, including all seven essential amino acids (leucine, isoleucine, methionine, phenylalanine, valine, tryptophan, and threonine) that the human body cannot synthesize independently.
+                </p>
+
+                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+                    Yeast Classification in Brewing
+                </h2>
+                <p className="mb-6">
+                    In brewing contexts, yeast serves far more than a mere "fermentation catalyst"—it fundamentally defines stylistic identity. Identical ingredient formulations fermented with different yeast strains yield dramatically divergent results. Brewing yeasts broadly divide into two primary categories based on fermentation behavior.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-6 my-8">
+                    <div className="bg-[#F8F3EB] p-6 rounded-md shadow-sm border border-[#E8DFC8]">
+                        <h3 className="text-xl font-bold text-[#1C1A14] mb-3">Top-Fermenting Yeast (Ale Yeast)</h3>
+                        <p className="text-sm mb-3">Saccharomyces cerevisiae, commonly known as ale yeast, exhibits top-fermenting characteristics—yeast cells rise to form visible foam layers during active fermentation. Operating optimally between 15–24°C, ale yeast ferments rapidly, typically completing primary fermentation within days. Critically, this yeast produces substantial aromatic esters, imparting fruity, spicy, or phenolic notes that define ales' complex flavor profiles.</p>
+                        <p className="text-sm text-[#C8963E] font-medium pt-3 border-t border-[#D5C6B1]">Typical Styles: Stout, Belgian Ale, IPA. Bold, layered flavors with elevated alcohol content.</p>
+                    </div>
+
+                    <div className="bg-[#F8F3EB] p-6 rounded-md shadow-sm border border-[#E8DFC8]">
+                        <h3 className="text-xl font-bold text-[#1C1A14] mb-3">Bottom-Fermenting Yeast (Lager Yeast)</h3>
+                        <p className="text-sm mb-3">Saccharomyces pastorianus (lager yeast) settles to fermentation vessel bottoms during activity. Thriving at cooler temperatures (7–13°C), lager fermentation proceeds more slowly—often requiring weeks rather than days. This extended, controlled fermentation produces exceptionally "clean" flavor profiles with minimal ester production, yielding crisp, balanced beers.</p>
+                        <p className="text-sm text-[#C8963E] font-medium pt-3 border-t border-[#D5C6B1]">Typical Styles: Lager, Pilsner, Bock. Balanced, smooth, and exceptionally clean finishing.</p>
+                    </div>
+                </div>
+
+                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+                    Yeast's Multifaceted Roles in Craft Brewing
+                </h2>
+                <p className="mb-6">
+                    Yeast continuously "activates" the entire brewing process, yet its value transcends simple sugar-to-alcohol conversion. Through controlled yeast management, brewers precisely manipulate flavor profiles, structural characteristics, and stylistic expression.
+                </p>
+
+                <div className="space-y-6 mb-10 pl-4 border-l-2 border-[#C8963E]">
+                    <div>
+                        <h3 className="text-lg font-bold text-[#1C1A14]">► Sugar-to-Alcohol Conversion</h3>
+                        <p className="mt-2">Upon wort inoculation, yeast consumes available fermentable sugars, metabolizing them into ethanol and CO₂. Alcohol determines strength, while CO₂ generates carbonation and refreshing effervescence. Fermentation kinetics—rapid versus slow—directly influence finished beer characteristics.</p>
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-bold text-[#1C1A14]">► Flavor and Aroma Development</h3>
+                        <p className="mt-2">During fermentation, yeast generates numerous secondary metabolites beyond alcohol. These compounds—esters, phenols, and fusel alcohols—create signature aromatic profiles ranging from fruity to spicy to warming. Strain selection alone can radically alter sensory outcomes from identical base recipes.</p>
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-bold text-[#1C1A14]">► Stylistic Definition</h3>
+                        <p className="mt-2">Initial yeast selection essentially predetermines stylistic trajectory. Ale yeasts typically produce bold, complex, aromatic beers, while lager yeasts deliver clean, crisp, refreshingly straightforward profiles.</p>
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-bold text-[#1C1A14]">► Mouthfeel and Texture</h3>
+                        <p className="mt-2">Yeast significantly influences perceived body and texture. Certain strains enhance fullness and viscosity, while others yield drier, more attenuated finishes.</p>
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-bold text-[#1C1A14]">► Stability and Preservation</h3>
+                        <p className="mt-2">During fermentation, yeast scavenges residual oxygen and reduces pH, inhibiting spoilage organisms and extending shelf stability without artificial preservatives.</p>
+                    </div>
+                </div>
+
+                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+                    The Craft Beer Fermentation Process
+                </h2>
+                <p className="mb-6">
+                    Transforming freshly brewed wort into finished craft beer fundamentally depends on fermentation—the stage where sugars convert to alcohol and signature flavors crystallize. After boiling and cooling to appropriate temperatures, wort transfers to fermentation vessels. At this stage, it remains essentially "sugar water," requiring yeast inoculation to initiate transformation.
+                </p>
+                <p className="mb-6">
+                    However, craft beer's distinction emerges not from mere alcohol production, but from the nuanced secondary compounds generated throughout fermentation. Depending on yeast strain, temperature regimes, and fermentation management, brewers cultivate layered aromatics ranging from tropical fruit to herbaceous to profoundly complex flavor dimensions. Consequently, identical ingredient recipes fermented with different yeasts can yield strikingly divergent sensory profiles.
+                </p>
+                <p className="mb-6">
+                    Fermentation duration varies considerably—light styles may complete primary fermentation within days, while complex, high-gravity beers benefit from extended multi-week fermentations. Post-primary conditioning periods, ranging from weeks to months, allow flavor integration, harsh edges to mellow, and overall profiles to achieve harmonious balance.
+                </p>
+
+                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+                    Premium Craft Brewery in Ho Chi Minh City
+                </h2>
+                <p className="mb-4">
+                    For an authentic craft beer experience in Tan Phu District, CREAT Craft Beer remains the definitive destination. Located at 93 Street 11, Tay Thanh Ward, CREAT delivers an inviting, creatively designed space ideal for exploring the craft beer universe.
+                </p>
+
+                <div className="bg-white p-6 border-l-4 border-[#C8963E] shadow-sm my-8">
+                    <h3 className="text-xl font-bold text-[#C8963E] mb-3">CREAT - CRAFT BEER</h3>
+                    <ul className="space-y-2 text-[#2C2416]">
+                        <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghi)</li>
+                        <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
+                        <li><strong>Address:</strong> 93 Street 11, Tay Thanh Ward, Ho Chi Minh City</li>
                     </ul>
                 </div>
 
@@ -2886,12 +2766,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Xét về hình thái, cây hoa bia thuộc nhóm thân thảo, thân mềm nhưng phát triển rất nhanh theo dạng quấn. Lá có chiều dài khoảng 4–8cm, phần gốc có dạng hình tim, sau đó xẻ sâu thành nhiều thùy với đỉnh nhọn và mép có răng cưa. Hoa đực thường mọc thành chùm màu vàng lục ở nách lá, còn hoa cái tập trung ở đầu cành và kết lại thành các nón nhỏ, mỗi nón gồm nhiều lớp lá bắc xếp chồng lên nhau, bên trong chứa các hoa cái nhỏ và về sau có thể phát triển thành quả.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Hoa bia là gì? Vai trò của hoa bia trong bia thủ công
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Đi sâu vào bên trong nón hoa, lớp lupulin màu vàng là phần quan trọng nhất vì đây là nơi tập trung gần như toàn bộ các hợp chất tạo nên hương và vị của bia. Khi chà nhẹ, có thể cảm nhận rõ mùi thơm và độ dính, cũng từ đây mà các nhóm chất chính được hình thành:
                 </p>
 
@@ -2920,12 +2795,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Khi hoa bia được đưa vào nồi nấu, nhiệt độ cao sẽ giúp phần nhựa chuyển hóa và tạo ra vị đắng, nhưng cái hay là vị đắng này không đứng riêng lẻ mà đi cùng với malt, làm cho tổng thể cân lại, uống vào không bị ngọt gắt. Cùng lúc đó, tinh dầu trong hoa bia cũng bắt đầu giải phóng, chỉ là nếu để lâu ở nhiệt cao thì mùi sẽ bay đi mất, nên người nấu thường phải canh thời điểm. Cho vào sớm thì lấy vị, giữ lại về cuối hoặc thêm sau khi lên men thì giữ được hương, và chỉ cần thay đổi một chút ở bước này thôi là bia đã ra hai kiểu khác nhau rồi.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Hoa bia là gì? Vai trò của hoa bia trong bia thủ công
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Cũng vì vậy mà không có chuyện dùng loại hoa bia nào cũng giống nhau. Có loại cho vị đắng rất rõ, có loại lại thơm kiểu cam quýt, có loại thì thiên về mùi trái cây nhiệt đới, và khi đem phối với nhau thì hương lại thay đổi thêm một lần nữa. Người nấu bia lúc này không chỉ chọn nguyên liệu, mà gần như đang “pha trộn mùi vị”, thử cái này một chút, thêm cái kia một chút, đến khi thấy hợp thì giữ lại thành công thức riêng.
                 </p>
                 <p className="mb-6">
@@ -2938,12 +2808,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     Khi bắt đầu làm quen với hoa bia, nhiều người thường nghĩ mỗi loại chỉ khác nhau ở tên gọi. Nhưng khi đi sâu vào cách sử dụng trong nấu bia thủ công, người ta lại nhìn theo một hướng khác: hoa bia được chọn dựa trên việc nó đóng góp gì cho bia, thiên về hương, về vị đắng hay cân bằng cả hai. Từ đó, có thể chia thành ba nhóm khá rõ ràng để dễ hình dung khi sử dụng.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Creat Craft Beer
-                </div>
-
-                <div className="space-y-6 mb-10">
+<div className="space-y-6 mb-10">
                     <div className="bg-[#1C1A14] text-[#F8F3EB] p-6 rounded-md shadow-lg border-l-4 border-[#C8963E]">
                         <h3 className="text-xl font-bold text-[#C8963E] mb-2">► Hoa bia tạo hương (Aroma hops)</h3>
                         <p className="text-sm mb-3 text-[#D5C6B1]">Nhóm này thường được dùng khi người nấu muốn giữ lại mùi hương rõ ràng trong bia. Những giống như Saaz, Hallertau hay Tettnang không tạo vị đắng quá mạnh, nhưng lại mang đến cảm giác nhẹ nhàng, thiên về thảo mộc, hoa hoặc một chút gia vị. Fuggle thì khác hơn một chút, hương trầm hơn, gợi cảm giác gỗ và đất, rất đặc trưng trong các dòng bia Anh.</p>
@@ -2976,12 +2841,7 @@ export const newsContent: Record<string, {
                 <p className="mb-6">
                     CREAT Craft Beer được xây dựng với định hướng trở thành nơi hội tụ của cộng đồng yêu bia thủ công tại Tân Phú nói riêng và TP.HCM nói chung. Quán sở hữu danh sách bia được chọn lọc kỹ càng từ các microbrewery uy tín trong và ngoài nước, đảm bảo mỗi dòng bia đều mang hương vị độc đáo và câu chuyện riêng. Từ IPA thơm ngát hoa bia, Stout đậm vị cà phê, cacao, Wheat Ale nhẹ nhàng, cho đến các dòng Saison, Sour hay những loại bia theo mùa được cập nhật liên tục, tất cả đều được tuyển chọn nhằm mang đến trải nghiệm “đúng chất” craft beer.
                 </p>
-
-                <div className="w-full aspect-[16/9] overflow-hidden my-8 rounded-sm shadow-md bg-[#DFD8C8] flex items-center justify-center italic text-gray-600">
-                    Bia thủ công Tân Phú
-                </div>
-
-                <p className="mb-6">
+<p className="mb-6">
                     Không chỉ tập trung vào chất lượng bia, CREAT còn chú trọng tạo nên một không gian thưởng thức hài hòa giữa nghệ thuật và sự thư giãn. Thiết kế quán kết hợp ánh sáng ấm, nội thất gỗ, điểm nhấn sáng tạo giúp người uống cảm thấy thoải mái từ lần đầu bước vào. Đây là nơi lý tưởng để bạn nhâm nhi một ly bia sau giờ làm, tụ họp bạn bè cuối tuần hoặc đơn giản là tìm một không gian nhẹ nhàng để “chill”.
                 </p>
                 <p className="mb-6">
@@ -2998,6 +2858,88 @@ export const newsContent: Record<string, {
                 </div>
 
             </>
+        ),
+        content_en: (
+            <>
+                <p className="text-lg leading-relaxed text-[#2C2416] font-medium mb-8">
+                    At first glance, hops appear deceptively simple—small, greenish cone-shaped flowers from the Humulus lupulus plant. Yet these modest botanical structures have become absolutely fundamental to modern beer production, particularly within the craft brewing sector. When you gently separate a fresh hop cone, you'll immediately encounter a vibrant yellow substance called lupulin. A light rub releases an intense, resinous aroma alongside a subtle stickiness on your fingertips. This lupulin is precisely what brewers prize, as it fundamentally determines bitterness profiles, aromatic complexity, and overall flavor depth in finished beer.
+                </p>
+                <p className="mb-6">
+                    Globally, hop cultivation concentrates in temperate climate zones offering stable weather patterns conducive to consistent quality—regions like Germany, Czech Republic, the United States, and New Zealand. In Vietnam, while not yet widespread, experimental cultivation has emerged in cooler highland areas including Son La, Lang Son, Moc Chau, and Da Lat, progressively opening pathways toward domestic ingredient sourcing.
+                </p>
+
+                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+                    Botanical Overview
+                </h2>
+                <p className="mb-6">
+                    Carl von Linné first documented hops scientifically in 1753, and they remain an irreplaceable brewing ingredient to this day. This perennial climbing plant can survive 30–40 years, reaching impressive heights of 10–15 meters under optimal conditions. Hops are dioecious, meaning male and female flowers grow on separate plants. For brewing purposes, only unpollinated female flowers are utilized, as these contain the highest concentration of flavor-active compounds.
+                </p>
+                <p className="mb-6">
+                    The lupulin glands nestled within hop cones house virtually all compounds responsible for beer's signature aroma and bitterness. Key constituents include:
+                </p>
+
+                <ul className="list-disc pl-6 space-y-2 mb-6 text-[#2C2416]">
+                    <li>Essential oils (1–2%), which primarily dictate aromatic character</li>
+                    <li>Resins and bitter acids, directly influencing bitterness and aftertaste</li>
+                    <li>Tannins (3–5%) and secondary compounds, affecting mouthfeel and structural integrity</li>
+                </ul>
+
+                <p className="mb-6">
+                    Within the essential oil fraction, humulene and myrcene typically account for 80–90% of total oils, essentially defining the dominant aromatic direction.
+                </p>
+
+                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+                    Functional Roles in Craft Brewing
+                </h2>
+                <p className="mb-6">
+                    Describing hops merely as "bittering agents" grossly oversimplifies their multifaceted contributions. When introduced during the boil, elevated temperatures isomerize alpha acids, generating the characteristic bitterness that counterbalances malt sweetness. Simultaneously, volatile aromatic compounds are released—though prolonged exposure to high heat causes these delicate elements to dissipate. Strategic timing is critical: early additions maximize bitterness extraction, while late additions or post-fermentation "dry hopping" preserve aromatic intensity.
+                </p>
+<p className="mb-6">
+                    Different hop varieties impart distinctly different sensory profiles—some deliver clean bitterness, others contribute citrus notes, while still others evoke tropical fruit or earthy, herbaceous qualities. Skilled brewers don't merely select ingredients; they orchestrate complex flavor symphonies through precise varietal blending and meticulous addition scheduling.
+                </p>
+
+                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+                    Hop Classifications for Brewing
+                </h2>
+                <p className="mb-6">
+                    Hops are functionally categorized based on their primary contributions to finished beer rather than botanical taxonomy. This practical framework helps brewers select appropriate varieties for specific stylistic objectives.
+                </p>
+
+                <div className="space-y-6 mb-10">
+                    <div className="bg-[#1C1A14] text-[#F8F3EB] p-6 rounded-md shadow-lg border-l-4 border-[#C8963E]">
+                        <h3 className="text-xl font-bold text-[#C8963E] mb-2">► Aroma Hops</h3>
+                        <p className="text-sm mb-3 text-[#D5C6B1]">Varieties like Saaz, Hallertau, and Tettnang are prized for their delicate, refined aromatic profiles featuring floral, herbaceous, or subtly spicy notes. These low-alpha varieties contribute minimal bitterness, making them ideal for late-stage or post-fermentation additions that preserve volatile aromatics. They're foundational to traditional European styles including Pilsner, Helles, and Wheat Beer.</p>
+                    </div>
+
+                    <div className="bg-[#1C1A14] text-[#F8F3EB] p-6 rounded-md shadow-lg border-l-4 border-[#C8963E]">
+                        <h3 className="text-xl font-bold text-[#C8963E] mb-2">► Bittering Hops</h3>
+                        <p className="text-sm mb-3 text-[#D5C6B1]">High-alpha varieties such as Magnum, Warrior, and Columbus are selected primarily for efficient bitterness delivery with minimal aromatic contribution. Added early in the boil, these hops provide a clean, assertive bitter backbone essential for balanced Lagers, IPAs, and Double IPAs.</p>
+                    </div>
+
+                    <div className="bg-[#1C1A14] text-[#F8F3EB] p-6 rounded-md shadow-lg border-l-4 border-[#C8963E]">
+                        <h3 className="text-xl font-bold text-[#C8963E] mb-2">► Dual-Purpose Hops</h3>
+                        <p className="text-sm mb-3 text-[#D5C6B1]">Versatile varieties like Cascade and Centennial effectively serve both bittering and aromatic functions. Their balanced alpha acid content combined with pronounced citrus and floral aromatics make them workhorses in American Pale Ales and IPAs, offering brewers exceptional formulation flexibility.</p>
+                    </div>
+                </div>
+
+                <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+                    Premium Craft Beer Experience in Ho Chi Minh City
+                </h2>
+                <p className="mb-4">
+                    For those seeking an authentic craft beer experience in Tan Phu District, CREAT Craft Beer stands as the definitive destination. Located at 93 Street 11, Tay Thanh Ward, CREAT offers an inviting, creatively designed space perfect for exploring the craft beer universe.
+                </p>
+
+                <div className="bg-white p-6 border-l-4 border-[#C8963E] shadow-sm my-8">
+                    <h3 className="text-xl font-bold text-[#C8963E] mb-3">CREAT - CRAFT BEER</h3>
+                    <ul className="space-y-2 text-[#2C2416]">
+                        <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghi)</li>
+                        <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
+                        <li><strong>Address:</strong> 93 Street 11, Tay Thanh Ward, Ho Chi Minh City</li>
+                    </ul>
+                </div>
+
+            </>
         )
     }
 }
+

@@ -1,4 +1,6 @@
 import { Link } from "react-router";
+import { useAppLang } from "../hooks/useAppLang";
+import { translations } from "../translations";
 
 interface PageBannerProps {
     title: string;
@@ -6,6 +8,9 @@ interface PageBannerProps {
 }
 
 export function PageBanner({ title, breadcrumb }: PageBannerProps) {
+    const { lang } = useAppLang();
+    const t = translations[lang];
+
     // Common theme background for all inner pages
     const bgImage = "/page-banner.jpg?v=2";
 
@@ -35,7 +40,7 @@ export function PageBanner({ title, breadcrumb }: PageBannerProps) {
                     className="text-[#C8963E] text-[10px] md:text-xs tracking-[0.25em] uppercase flex items-center justify-center gap-3 drop-shadow"
                     style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}
                 >
-                    <Link to="/" className="text-white hover:text-[#C8963E] transition-colors">TRANG CHỦ</Link>
+                    <Link to="/" className="text-white hover:text-[#C8963E] transition-colors">{t.home.toUpperCase()}</Link>
                     <span className="text-white/50">/</span>
                     <span>{breadcrumb}</span>
                 </div>

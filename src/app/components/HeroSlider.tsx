@@ -3,34 +3,36 @@ import gsap from "gsap";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useAppLang } from "../hooks/useAppLang";
-
-const slides = [
-  {
-    id: 1,
-    bg: "/page-banner.jpg?v=2",
-    tag: "Bia Thủ Công Cao Cấp",
-    heading1: "Hương Vị Tinh Tế,",
-    heading2: "Được Chứng Nhận",
-    sub: "Creat Craft Beer — mỗi chai bia là một hành trình khám phá hương vị thuần túy, ủ từ nguyên liệu tự nhiên tốt nhất.",
-    cta: "Mua Ngay",
-    ctaLink: "/san-pham",
-  },
-  {
-    id: 2,
-    bg: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop",
-    tag: "Dòng Bia Giới Hạn",
-    heading1: "Craft Beer",
-    heading2: "Thuần Việt",
-    sub: "Từ đồng lúa mạch vàng đến từng giọt bia trong chai — nghệ thuật ủ bia truyền thống kết hợp hiện đại.",
-    cta: "Khám Phá Menu",
-    ctaLink: "/menu",
-  }
-];
+import { translations } from "../translations";
 
 export function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
   const { lang } = useAppLang();
+  const t = translations[lang];
+
+  const slides = [
+    {
+      id: 1,
+      bg: "/page-banner.jpg?v=2",
+      tag: t.heroSlide1Tag,
+      heading1: t.heroSlide1Heading1,
+      heading2: t.heroSlide1Heading2,
+      sub: t.heroSlide1Sub,
+      cta: t.heroSlide1CTA,
+      ctaLink: "/san-pham",
+    },
+    {
+      id: 2,
+      bg: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop",
+      tag: t.heroSlide2Tag,
+      heading1: t.heroSlide2Heading1,
+      heading2: t.heroSlide2Heading2,
+      sub: t.heroSlide2Sub,
+      cta: t.heroSlide2CTA,
+      ctaLink: "/menu",
+    }
+  ];
 
   const tagRef = useRef<HTMLDivElement>(null);
   const h1Ref = useRef<HTMLHeadingElement>(null);
@@ -130,14 +132,14 @@ export function HeroSlider() {
             className="px-6 py-3 md:px-8 md:py-4 bg-[#C8963E] text-white text-[11px] md:text-[13px] tracking-[0.15em] uppercase hover:bg-[#b0802e] hover:shadow-[0_8px_20px_rgba(200,150,62,0.4)] hover:-translate-y-1 transform transition-all duration-300 cursor-pointer border-none outline-none"
             style={{ fontFamily: "'Lato', sans-serif", fontWeight: 600 }}
           >
-            {lang === 'en' ? <span className="notranslate">{slide.cta === "Mua Ngay" ? "BUY NOW" : slide.cta}</span> : <span>{slide.cta}</span>}
+            {slide.cta}
           </button>
           <button
             onClick={() => handleCTA("/gioi-thieu")}
             className="px-6 py-3 md:px-8 md:py-4 bg-transparent border border-white/30 text-white text-[11px] md:text-[13px] tracking-[0.15em] uppercase hover:bg-white/10 hover:-translate-y-1 transform transition-all duration-300 cursor-pointer outline-none"
             style={{ fontFamily: "'Lato', sans-serif", fontWeight: 600 }}
           >
-            {lang === 'en' ? <span className="notranslate">GET IN TOUCH</span> : <span>Liên Hệ Ngay</span>}
+            {t.heroCTASecondary}
           </button>
         </div>
       </div>

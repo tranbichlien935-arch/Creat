@@ -2,8 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import { products } from "../Products";
 import { Link } from "react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useAppLang } from "../../hooks/useAppLang";
+import { translations } from "../../translations";
 
 export function AboutFeatureProducts() {
+    const { lang } = useAppLang();
+    const t = translations[lang];
     const scrollRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -66,10 +70,10 @@ export function AboutFeatureProducts() {
 
                 <div className="text-center mb-10">
                     <span className="text-[#8C7A60] font-['Josefin_Sans'] text-xs font-semibold tracking-widest uppercase mb-4 block">
-                        Danh Sách Sản Phẩm
+                        {t.productListLabel}
                     </span>
                     <h2 className="text-[#1C1A14] font-['Fira_Sans'] font-light text-4xl leading-[1.3]">
-                        Sản Phẩm Của Chúng Tôi
+                        {t.ourProductsTitle}
                     </h2>
                 </div>
 
@@ -133,7 +137,7 @@ export function AboutFeatureProducts() {
                                             {product.desc}
                                         </p>
                                         <div className="mt-auto pt-4 border-t border-[#D4C4A8]/50 text-xs font-semibold text-[#1C1A14] uppercase tracking-widest hover:text-[#b67e53] transition-colors">
-                                            Chi Tiết →
+                                            {t.detailsLink}
                                         </div>
                                     </div>
                                 </Link>

@@ -1,6 +1,11 @@
 import React from "react";
+import { useAppLang } from "../../hooks/useAppLang";
+import { translations } from "../../translations";
 
 export function AboutStory() {
+    const { lang } = useAppLang();
+    const t = translations[lang];
+
     return (
         <section className="bg-[#F8F3EB] pt-24 pb-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
             {/* Inline Marquee bypassing CSS cache */}
@@ -39,11 +44,11 @@ export function AboutStory() {
                         <div className="flex items-center gap-3 mb-4">
                             <span className="w-8 h-[1px] bg-[#8C7A60]"></span>
                             <span className="text-[#8C7A60] font-['Josefin_Sans'] text-xs font-semibold tracking-widest uppercase">
-                                Về Chúng Tôi
+                                {t.aboutUsLabel}
                             </span>
                         </div>
                         <h2 className="text-[#1C1A14] font-['Fira_Sans'] font-light text-4xl leading-[1.3] text-balance">
-                            Giới Thiệu Về Creat Craft Beer
+                            {t.aboutTitle}
                         </h2>
                     </div>
 
@@ -68,15 +73,15 @@ export function AboutStory() {
 
                     <div className="max-w-[90%] md:max-w-xl mx-auto lg:mx-0">
                         <p className="font-['Josefin_Sans'] text-[#5C4A30] text-[15px] leading-relaxed mb-6 font-light">
-                            Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
+                            {t.aboutParagraph1}
                         </p>
                         <p className="font-['Josefin_Sans'] text-[#5C4A30] text-[15px] leading-relaxed mb-8 font-light">
-                            CREAT Craft Beer được xây dựng với định hướng trở thành nơi hội tụ của cộng đồng yêu bia thủ công tại Tân Phú nói riêng và TP.HCM nói chung. Quán sở hữu danh sách bia được chọn lọc kỹ càng từ các microbrewery uy tín trong và ngoài nước, đảm bảo mỗi dòng bia đều mang hương vị độc đáo và câu chuyện riêng.
+                            {t.aboutParagraph2}
                         </p>
 
                         <div className="mt-8 flex justify-end pr-10">
                             <span className="font-['Clicker_Script',cursive] text-4xl text-[#1C1A14]/80 -rotate-3">
-                                Creat Craft Beer
+                                {t.aboutSignature}
                             </span>
                         </div>
                     </div>

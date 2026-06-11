@@ -37,7 +37,7 @@ export function HomeJourney() {
                         <path id="journeyCircle" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none" />
                         <text className="text-[12.5px] uppercase fill-[#dfa173]/80 group-hover:fill-[#C8963E] transition-colors duration-500 font-bold" style={{ letterSpacing: "0.15em" }}>
                             <textPath href="#journeyCircle" startOffset="0%">
-                                KHÁM PHÁ • THƯỞNG THỨC • MUA LẺ • HỢP TÁC SỈ • KHÁM PHÁ • THƯỞNG THỨC • MUA LẺ • HỢP TÁC SỈ •
+                                {t.circleText}
                             </textPath>
                         </text>
                     </svg>

@@ -1,31 +1,35 @@
 import React, { useState } from "react";
 import { Plus, Minus, Leaf } from "lucide-react";
-
-const reasons = [
-    {
-        title: "Giá trị thực chất",
-        content: "Cam kết mức giá hợp lý đi đôi với chất lượng cao cấp, mang đến trải nghiệm xứng tầm cho khách hàng."
-    },
-    {
-        title: "Phục vụ tận tâm",
-        content: "Đội ngũ am hiểu bia thủ công luôn sẵn sàng tư vấn để bạn tìm thấy dòng bia phù hợp nhất với khẩu vị."
-    },
-    {
-        title: "Nguyên liệu thượng hạng",
-        content: "Cam kết sử dụng nguồn nguyên liệu tự nhiên, được tuyển chọn khắt khe từ những microbrewery uy tín nhất."
-    },
-    {
-        title: "Hương vị độc bản",
-        content: "Sáng tạo không ngừng để mang đến những dòng bia thủ công độc đáo, mang đậm dấu ấn cá nhân của Creat."
-    },
-    {
-        title: "Bảo quản tiêu chuẩn",
-        content: "Hệ thống bảo quản lạnh chuyên nghiệp, đảm bảo giữ trọn vẹn hương vị tinh túy nhất trong từng giọt bia."
-    }
-];
+import { useAppLang } from "../../hooks/useAppLang";
+import { translations } from "../../translations";
 
 export function AboutWhyUs() {
+    const { lang } = useAppLang();
+    const t = translations[lang];
     const [openIndex, setOpenIndex] = useState<number>(0);
+
+    const reasons = [
+        {
+            title: t.reason1Title,
+            content: t.reason1Content
+        },
+        {
+            title: t.reason2Title,
+            content: t.reason2Content
+        },
+        {
+            title: t.reason3Title,
+            content: t.reason3Content
+        },
+        {
+            title: t.reason4Title,
+            content: t.reason4Content
+        },
+        {
+            title: t.reason5Title,
+            content: t.reason5Content
+        }
+    ];
 
     return (
         <section className="bg-[#F8F3EB] py-24 px-6 md:px-12 lg:px-24">
@@ -35,13 +39,13 @@ export function AboutWhyUs() {
                 <div className="w-full">
                     <div className="mb-10">
                         <span className="text-[#8C7A60] font-['Josefin_Sans'] text-xs font-semibold tracking-widest uppercase mb-4 block">
-                            Vì Sao Nên Chọn Creat Craft
+                            {t.whyUsLabel}
                         </span>
                         <h2 className="text-[#1C1A14] font-['Fira_Sans'] font-light text-4xl leading-[1.3] mb-6">
-                            Sự Khác Biệt
+                            {t.differenceTitle}
                         </h2>
                         <p className="font-['Josefin_Sans'] text-[#5C4A30] text-[15px] leading-relaxed font-light mb-8">
-                            Bia thủ công không chỉ là đồ uống mà là một nghệ thuật tận hưởng. Chúng tôi đặt tâm huyết vào từng chi tiết để đem lại cho bạn những ly bia hoàn hảo nhất.
+                            {t.whyUsIntro}
                         </p>
                     </div>
 
@@ -86,7 +90,7 @@ export function AboutWhyUs() {
                             </text>
                         </svg>
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-[#7CB342]">
-                            <span className="font-bold text-[10px] mb-1">NATURAL</span>
+                            <span className="font-bold text-[10px] mb-1">{t.organicBadge}</span>
                             <Leaf size={28} fill="#7CB342" strokeWidth={1} />
                             <div className="flex gap-1 mt-1">
                                 <span className="text-[10px]">★</span>

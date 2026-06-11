@@ -1,7 +1,12 @@
 import React from "react";
 import { Wheat, Beer, Droplet, Leaf } from "lucide-react";
+import { useAppLang } from "../../hooks/useAppLang";
+import { translations } from "../../translations";
 
 export function AboutValues() {
+    const { lang } = useAppLang();
+    const t = translations[lang];
+
     return (
         <section className="bg-[#EBE5DB] w-full py-12 lg:py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
             {/* Background watermark icon/pattern (optional) */}
@@ -17,14 +22,14 @@ export function AboutValues() {
                 {/* Left Side: Large Statement */}
                 <div className="lg:col-span-7 pr-0 lg:pr-10">
                     <h2 className="text-[#1C1A14] font-['Outfit'] font-light text-[32px] md:text-[40px] leading-[1.3] tracking-wide">
-                        Cam kết mang đến những giá trị nguyên bản từ nghệ thuật nấu bia thủ công độc bản dành cho khách hàng.
+                        {t.valuesStatement}
                     </h2>
                 </div>
 
                 {/* Right Side: Small Text + Core Values (Stats layout) */}
                 <div className="lg:col-span-5 flex flex-col gap-8">
                     <p className="font-['Josefin_Sans'] text-[#5C4A30] text-sm md:text-[14px] leading-[1.8] font-light">
-                        GIÁ TRỊ CỐT LÕI TẠI CREAT CRAFT: Mọi loại bia tại CREAT đều được lựa chọn khắt khe từ những nhà sản xuất bia thủ công (microbrewery) uy tín, được xây dựng dựa trên hệ sinh thái gắn kết dành cho những người yêu bia thực thụ với các tiêu chí vững chắc.
+                        {t.valuesCoreLabel}
                     </p>
 
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -33,32 +38,32 @@ export function AboutValues() {
                             <div className="text-[#b67e53] mb-1 transform group-hover:-translate-y-1 transition-transform duration-300">
                                 <Wheat size={32} strokeWidth={1} />
                             </div>
-                            <span className="text-[#b67e53] font-['Fira_Sans'] text-2xl lg:text-3xl font-light">100%</span>
-                            <span className="text-[#1C1A14] font-['Josefin_Sans'] text-[11px] font-semibold uppercase tracking-widest">Chất Lượng<br />Thủ Công</span>
+                            <span className="text-[#b67e53] font-['Fira_Sans'] text-2xl lg:text-3xl font-light">{t.craftQuality}</span>
+                            <span className="text-[#1C1A14] font-['Josefin_Sans'] text-[11px] font-semibold uppercase tracking-widest whitespace-pre-line">{t.craftQualityLabel}</span>
                         </div>
 
                         <div className="flex flex-col gap-2 group">
                             <div className="text-[#b67e53] mb-1 transform group-hover:-translate-y-1 transition-transform duration-300">
                                 <Beer size={32} strokeWidth={1} />
                             </div>
-                            <span className="text-[#b67e53] font-['Fira_Sans'] text-2xl lg:text-3xl font-light">Độc Lạ</span>
-                            <span className="text-[#1C1A14] font-['Josefin_Sans'] text-[11px] font-semibold uppercase tracking-widest">Tính Sáng<br />Tạo</span>
+                            <span className="text-[#b67e53] font-['Fira_Sans'] text-2xl lg:text-3xl font-light">{t.creativityUnique}</span>
+                            <span className="text-[#1C1A14] font-['Josefin_Sans'] text-[11px] font-semibold uppercase tracking-widest whitespace-pre-line">{t.creativityLabel}</span>
                         </div>
 
                         <div className="flex flex-col gap-2 group">
                             <div className="text-[#b67e53] mb-1 transform group-hover:-translate-y-1 transition-transform duration-300">
                                 <Droplet size={32} strokeWidth={1.2} />
                             </div>
-                            <span className="text-[#b67e53] font-['Fira_Sans'] text-2xl lg:text-3xl font-light">Real</span>
-                            <span className="text-[#1C1A14] font-['Josefin_Sans'] text-[11px] font-semibold uppercase tracking-widest">Kết Nối<br />Cộng Đồng</span>
+                            <span className="text-[#b67e53] font-['Fira_Sans'] text-2xl lg:text-3xl font-light">{t.communityReal}</span>
+                            <span className="text-[#1C1A14] font-['Josefin_Sans'] text-[11px] font-semibold uppercase tracking-widest whitespace-pre-line">{t.communityLabel}</span>
                         </div>
 
                         <div className="flex flex-col gap-2 group">
                             <div className="text-[#b67e53] mb-1 transform group-hover:-translate-y-1 transition-transform duration-300">
                                 <Leaf size={32} strokeWidth={1} />
                             </div>
-                            <span className="text-[#b67e53] font-['Fira_Sans'] text-2xl lg:text-3xl font-light">Hợp Lý</span>
-                            <span className="text-[#1C1A14] font-['Josefin_Sans'] text-[11px] font-semibold uppercase tracking-widest">Giá Trị Cùng<br />Chất Lượng</span>
+                            <span className="text-[#b67e53] font-['Fira_Sans'] text-2xl lg:text-3xl font-light">{t.valueReasonable}</span>
+                            <span className="text-[#1C1A14] font-['Josefin_Sans'] text-[11px] font-semibold uppercase tracking-widest whitespace-pre-line">{t.valueLabel}</span>
                         </div>
 
                     </div>
