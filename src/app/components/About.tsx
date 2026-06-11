@@ -5,50 +5,46 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const TRANSITION = "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)";
+
 const features = [
   {
-    icon: <Leaf size={28} strokeWidth={1.5} />,
+    icon: <Leaf size={32} strokeWidth={1.5} />,
     title: "Nguyên Liệu Tự Nhiên",
     desc: "Lúa mạch, hoa bia và nước tinh khiết từ thiên nhiên, không chất bảo quản, không phẩm màu nhân tạo.",
   },
   {
-    icon: <FlaskConical size={28} strokeWidth={1.5} />,
+    icon: <FlaskConical size={32} strokeWidth={1.5} />,
     title: "Công Thức Độc Quyền",
     desc: "Mỗi dòng bia được nghiên cứu và phát triển bởi đội ngũ Brewmaster giàu kinh nghiệm quốc tế.",
   },
   {
-    icon: <Award size={28} strokeWidth={1.5} />,
+    icon: <Award size={32} strokeWidth={1.5} />,
     title: "Chất Lượng Được Công Nhận",
     desc: "Đạt nhiều giải thưởng quốc tế, được chứng nhận bởi các tổ chức bia thủ công uy tín.",
   },
 ];
 
+const stats = [
+  { value: "10+", label: "Năm kinh nghiệm" },
+  { value: "20+", label: "Dòng bia thủ công" },
+  { value: "5", label: "Giải thưởng quốc tế" },
+];
+
 export function About() {
-  const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
   const imgWrapRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Floating icons
-    iconRefs.current.forEach((el, i) => {
-      if (!el) return;
-      gsap.to(el, {
-        y: -16,
-        duration: 2.2 + i * 0.4,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        delay: i * 0.5,
-      });
-    });
-
     // Floating badge
     if (badgeRef.current) {
       gsap.to(badgeRef.current, {
-        y: -12,
-        rotation: 8,
+        y: -10,
+        rotation: 6,
         duration: 3,
         repeat: -1,
         yoyo: true,
@@ -56,149 +52,350 @@ export function About() {
       });
     }
 
-    // ScrollTrigger fade-in
+    // Scroll-triggered fade-in for image
     if (imgWrapRef.current) {
       gsap.fromTo(imgWrapRef.current,
         { x: -60, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.9, ease: "power2.out",
-          scrollTrigger: { trigger: imgWrapRef.current, start: "top 80%" } }
+        {
+          x: 0, opacity: 1, duration: 0.9, ease: "power2.out",
+          scrollTrigger: { trigger: imgWrapRef.current, start: "top 80%" },
+        }
       );
     }
+
+    // Scroll-triggered fade-in for text block
     if (textRef.current) {
       gsap.fromTo(textRef.current,
         { x: 60, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.9, ease: "power2.out",
-          scrollTrigger: { trigger: textRef.current, start: "top 80%" } }
+        {
+          x: 0, opacity: 1, duration: 0.9, ease: "power2.out",
+          scrollTrigger: { trigger: textRef.current, start: "top 80%" },
+        }
+      );
+    }
+
+    // Stagger feature cards
+    featureRefs.current.forEach((el, i) => {
+      if (!el) return;
+      gsap.fromTo(el,
+        { y: 40, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.7, ease: "power2.out", delay: i * 0.15,
+          scrollTrigger: { trigger: el, start: "top 85%" },
+        }
+      );
+    });
+
+    // Stats counter animation
+    if (statsRef.current) {
+      gsap.fromTo(statsRef.current,
+        { y: 30, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.8, ease: "power2.out",
+          scrollTrigger: { trigger: statsRef.current, start: "top 85%" },
+        }
       );
     }
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-24 bg-[#F8F3EB]">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="w-8 h-px bg-[#C8963E]" />
-            <span className="text-[#C8963E] text-xs tracking-[0.3em] uppercase" style={{ fontFamily: "'Lato', sans-serif" }}>
+    <section
+      ref={sectionRef}
+      id="about"
+      style={{
+        backgroundColor: "#fdf3f2",
+        padding: "96px 0",
+        boxSizing: "border-box",
+        position: "relative",
+      }}
+    >
+      <div className="marquee-wrapper overflow-hidden">
+        <div className="marquee-inner">
+          ABOUT &nbsp; ABOUT &nbsp; ABOUT &nbsp; ABOUT &nbsp; ABOUT &nbsp; ABOUT
+        </div>
+      </div>
+
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 1 }}>
+
+        {/* Section label */}
+        <div style={{ textAlign: "center", marginBottom: 56 }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, marginBottom: 16 }}>
+            <span style={{ display: "block", width: 40, height: 1, background: "#b67e53" }} />
+            <span style={{ fontFamily: "'Quicksand', sans-serif", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: "#b67e53" }}>
               Về Chúng Tôi
             </span>
-            <span className="w-8 h-px bg-[#C8963E]" />
+            <span style={{ display: "block", width: 40, height: 1, background: "#b67e53" }} />
           </div>
-          <h2 className="text-[#1C1A14] mb-4" style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)" }}>
+          <h2 style={{
+            fontFamily: "'Quicksand', sans-serif",
+            fontWeight: 700,
+            fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+            lineHeight: 1.3,
+            color: "#202020",
+            margin: 0,
+          }}>
             Câu Chuyện Của Creat
           </h2>
-          <p className="text-[#8C7A60] max-w-xl mx-auto leading-relaxed" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
+          <p style={{
+            fontFamily: "'Quicksand', sans-serif",
+            fontWeight: 400,
+            fontSize: 16,
+            lineHeight: 1.6,
+            color: "#8C7A60",
+            maxWidth: 560,
+            margin: "16px auto 0",
+          }}>
             Được sáng lập với niềm đam mê thuần túy, Creat Craft Beer mang đến những chai bia thủ công
             chất lượng cao, tôn vinh hương vị tự nhiên và nghệ thuật ủ bia truyền thống.
           </p>
         </div>
 
-        {/* Main content */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          {/* Image */}
-          <div ref={imgWrapRef} className="relative">
-            <div className="aspect-[4/5] overflow-hidden">
+        {/* 2-column main content */}
+        <div style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 64,
+          alignItems: "center",
+          marginBottom: 80,
+        }}>
+          {/* Image column — asymmetric 2-image mosaic */}
+          <div
+            ref={imgWrapRef}
+            style={{ flex: "1 1 360px", minWidth: 280, position: "relative", paddingTop: 60 }}
+          >
+            {/* Large left image — positioned lower */}
+            <div style={{
+              position: "relative",
+              zIndex: 2,
+              borderRadius: 10,
+              overflow: "hidden",
+              width: "70%",
+              aspectRatio: "4/5",
+              boxShadow: "0 8px 40px rgba(44,36,22,0.12)",
+            }}>
               <img
-                src="https://images.unsplash.com/photo-1779591211763-7a54431e16ab?w=800&h=1000&fit=crop&auto=format"
-                alt="Xưởng bia Creat"
-                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&h=750&fit=crop&auto=format"
+                alt="Bia thủ công Creat"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                  transition: TRANSITION,
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLImageElement).style.transform = "scale(1.03)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLImageElement).style.transform = "scale(1)"; }}
               />
             </div>
-            {/* Badge */}
-            <div ref={badgeRef} className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#1C1A14] rounded-full flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-[#C8963E] text-2xl" style={{ fontFamily: "'Josefin Sans', sans-serif", fontWeight: 700 }}>10+</div>
-                <div className="text-[#D4C4A8] text-[10px] tracking-widest uppercase" style={{ fontFamily: "'Lato', sans-serif" }}>Năm<br/>kinh nghiệm</div>
-              </div>
+
+            {/* Small right image — offset to top right */}
+            <div style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+              zIndex: 3,
+              borderRadius: 10,
+              overflow: "hidden",
+              width: "48%",
+              aspectRatio: "4/3",
+              boxShadow: "0 8px 32px rgba(44,36,22,0.15)",
+            }}>
+              <img
+                src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=400&h=300&fit=crop&auto=format"
+                alt="Nguyên liệu bia tự nhiên"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                  transition: TRANSITION,
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLImageElement).style.transform = "scale(1.03)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLImageElement).style.transform = "scale(1)"; }}
+              />
+            </div>
+
+            {/* Floating badge */}
+            <div
+              ref={badgeRef}
+              style={{
+                position: "absolute",
+                bottom: -8,
+                right: "8%",
+                zIndex: 4,
+                width: 110,
+                height: 110,
+                borderRadius: "50%",
+                background: "#1C1A14",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                border: "2px solid #C8963E",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+              }}
+            >
+              <span style={{ fontFamily: "'Quicksand', sans-serif", fontWeight: 700, fontSize: 22, color: "#C8963E", lineHeight: 1 }}>10+</span>
+              <span style={{ fontFamily: "'Quicksand', sans-serif", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "#D4C4A8", textAlign: "center", marginTop: 4 }}>Năm<br />Kinh nghiệm</span>
             </div>
           </div>
 
-          {/* Text */}
-          <div ref={textRef}>
-            <h3 className="text-[#1C1A14] mb-6" style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)" }}>
-              Nghệ Thuật Ủ Bia<br /><em className="text-[#C8963E]">Thuần Việt</em>
+          {/* Text column */}
+          <div ref={textRef} style={{ flex: "1 1 360px", minWidth: 280 }}>
+            <h3 style={{
+              fontFamily: "'Quicksand', sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(1.4rem, 3vw, 2rem)",
+              lineHeight: 1.3,
+              color: "#202020",
+              marginBottom: 20,
+            }}>
+              Nghệ Thuật Ủ Bia{" "}
+              <em style={{ color: "#b67e53", fontStyle: "normal" }}>Thuần Việt</em>
             </h3>
-            <p className="text-[#5C4A30] mb-5 leading-relaxed" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
+            <p style={{
+              fontFamily: "'Quicksand', sans-serif",
+              fontWeight: 400,
+              fontSize: 16,
+              lineHeight: 1.6,
+              color: "#5C4A30",
+              marginBottom: 16,
+            }}>
               Hành trình của Creat bắt đầu từ một garage nhỏ với khát vọng tạo ra những chai bia
               khác biệt — không chỉ là đồ uống mà còn là nghệ thuật. Chúng tôi tìm kiếm và
               tuyển chọn những nguyên liệu tốt nhất từ khắp Việt Nam và thế giới.
             </p>
-            <p className="text-[#5C4A30] mb-8 leading-relaxed" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
+            <p style={{
+              fontFamily: "'Quicksand', sans-serif",
+              fontWeight: 400,
+              fontSize: 16,
+              lineHeight: 1.6,
+              color: "#5C4A30",
+              marginBottom: 32,
+            }}>
               Với hơn 10 năm kinh nghiệm, đội ngũ Brewmaster của chúng tôi không ngừng sáng tạo
-              và hoàn thiện từng công thức, mang đến trải nghiệm hương vị độc đáo cho người yêu bia thủ công.
+              và hoàn thiện từng công thức, mang đến trải nghiệm hương vị độc đáo.
             </p>
+
+            {/* Stats row */}
+            <div
+              ref={statsRef}
+              style={{ display: "flex", gap: 32, flexWrap: "wrap", marginBottom: 36 }}
+            >
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <div style={{ fontFamily: "'Quicksand', sans-serif", fontWeight: 700, fontSize: 32, color: "#b67e53", lineHeight: 1 }}>{s.value}</div>
+                  <div style={{ fontFamily: "'Quicksand', sans-serif", fontSize: 12, color: "#8C7A60", marginTop: 4, letterSpacing: "0.08em", textTransform: "uppercase" }}>{s.label}</div>
+                </div>
+              ))}
+            </div>
+
             <button
-              onClick={() => {}}
-              className="flex items-center gap-3 text-[#C8963E] text-sm tracking-widest uppercase hover:gap-5 transition-all duration-300 cursor-pointer"
-              style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 12,
+                fontFamily: "'Quicksand', sans-serif",
+                fontWeight: 700,
+                fontSize: 12,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#b67e53",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                transition: TRANSITION,
+                padding: 0,
+              }}
+              onMouseEnter={e => {
+                const btn = e.currentTarget;
+                btn.style.gap = "20px";
+                btn.style.opacity = "0.8";
+              }}
+              onMouseLeave={e => {
+                const btn = e.currentTarget;
+                btn.style.gap = "12px";
+                btn.style.opacity = "1";
+              }}
             >
               Xem thêm về chúng tôi
-              <span className="w-8 h-px bg-[#C8963E]" />
+              <span style={{ display: "block", width: 32, height: 1, background: "#b67e53", transition: TRANSITION }} />
             </button>
           </div>
         </div>
 
-        {/* Features */}
-        <div className="grid md:grid-cols-3 gap-12">
-          {features.map((f) => (
+        {/* Feature cards */}
+        <div style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 20,
+          justifyContent: "center",
+        }}>
+          {features.map((f, i) => (
             <div
               key={f.title}
-              className="text-center group cursor-pointer px-4 py-6"
-              style={{ transition: "all 0.4s ease", background: "transparent", border: "none" }}
+              ref={el => { featureRefs.current[i] = el; }}
+              style={{
+                flex: "1 1 260px",
+                maxWidth: 360,
+                padding: "32px 28px",
+                background: "#fff",
+                borderRadius: 10,
+                textAlign: "center",
+                transition: TRANSITION,
+                cursor: "pointer",
+                boxSizing: "border-box",
+                boxShadow: "0 2px 12px rgba(44,36,22,0.06)",
+              }}
+              onMouseEnter={e => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.transform = "translateY(-6px)";
+                el.style.boxShadow = "0 12px 32px rgba(182,126,83,0.15)";
+              }}
+              onMouseLeave={e => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.transform = "translateY(0)";
+                el.style.boxShadow = "0 2px 12px rgba(44,36,22,0.06)";
+              }}
             >
-              {/* Icon — no circle, just the icon itself */}
-              <div
-                ref={(el) => { iconRefs.current[features.indexOf(f)] = el; }}
-                className="w-16 h-16 mx-auto mb-6 flex items-center justify-center"
-                style={{
-                  transition: "all 0.4s ease",
-                  color: "#2C2416",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.color = "#C8963E";
-                  (e.currentTarget as HTMLDivElement).style.transform = "scale(1.1)";
-                  (e.currentTarget as HTMLDivElement).style.opacity = "0.85";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.color = "#2C2416";
-                  (e.currentTarget as HTMLDivElement).style.transform = "scale(1)";
-                  (e.currentTarget as HTMLDivElement).style.opacity = "1";
-                }}
-              >
+              <div style={{
+                width: 64,
+                height: 64,
+                borderRadius: "50%",
+                background: "#fdf3f2",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0 auto 20px",
+                color: "#b67e53",
+                transition: TRANSITION,
+              }}>
                 {f.icon}
               </div>
-
-              {/* Title — shifts right on hover */}
-              <h4
-                className="text-[#1C1A14] mb-3 group-hover:text-[#C8963E]"
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontSize: "1.1rem",
-                  fontWeight: 300,
-                  transition: "all 0.4s ease",
-                  display: "inline-block",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLHeadingElement).style.transform = "translateX(5px)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLHeadingElement).style.transform = "translateX(0)";
-                }}
-              >
+              <h4 style={{
+                fontFamily: "'Quicksand', sans-serif",
+                fontWeight: 700,
+                fontSize: "1.05rem",
+                lineHeight: 1.3,
+                color: "#202020",
+                marginBottom: 10,
+              }}>
                 {f.title}
               </h4>
-
-              <p className="text-[#8C7A60] text-sm leading-relaxed mt-1" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
+              <p style={{
+                fontFamily: "'Quicksand', sans-serif",
+                fontWeight: 400,
+                fontSize: 14,
+                lineHeight: 1.6,
+                color: "#8C7A60",
+                margin: 0,
+              }}>
                 {f.desc}
               </p>
-
-              <button className="mt-5 text-[#C8963E] text-xs tracking-widest uppercase cursor-pointer group-hover:tracking-[0.35em] transition-all duration-400" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>
-                Chi Tiết
-              </button>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

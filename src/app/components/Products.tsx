@@ -1,212 +1,616 @@
-import { useState, useRef } from "react";
-import { ShoppingCart } from "lucide-react";
-import gsap from "gsap";
+import { useState, useEffect, useRef } from "react";
+import { ChevronDown, Grid3x3, LayoutGrid, List } from "lucide-react";
+import { useNavigate } from "react-router";
+import { useAppLang } from "../hooks/useAppLang";
 
-const categories = ["Tất cả", "Ale", "Lager", "IPA", "Stout", "Seasonal"];
+// ─── Data ──────────────────────────────────────────────────────────────────────
+export const categories = ["Tất cả", "Ale", "Lager", "IPA", "Stout", "Seasonal"];
 
-const products = [
+export const categoryImages: Record<string, string> = {
+  "Tất cả": "https://www.creatcraft.com.vn/upload/news/z7280671479593e04e59b7aaba8f9169f802b1081bcb9f-7740.jpg",
+  "Ale": "https://www.creatcraft.com.vn/upload/news/cozy1-7545.jpg",
+  "Lager": "https://www.creatcraft.com.vn/upload/news/z72832389307424972c2602148258d8b9b021126d539c1-9022.jpg",
+  "IPA": "https://www.creatcraft.com.vn/upload/news/4995248311222069405161271862481539073063223609n-7880.jpg",
+  "Stout": "https://www.creatcraft.com.vn/upload/news/untitled-session5217-6008-9171.jpg",
+  "Seasonal": "https://www.creatcraft.com.vn/upload/news/bia-thu-cong-tphcm-5155.png",
+};
+
+export const products = [
   {
     id: 1,
-    name: "Creat Golden Ale",
-    category: "Ale",
-    price: "85,000 ₫",
-    oldPrice: "95,000 ₫",
-    abv: "5.2%",
-    image: "https://images.unsplash.com/photo-1644085159285-5fd924740cb3?w=400&h=500&fit=crop&auto=format",
-    tag: "Best Seller",
-    desc: "Hương vị nhẹ nhàng, cân bằng với thoảng malt ngọt.",
+    name: "IPA India Pale Ale",
+    name_en: "IPA India Pale Ale",
+    category: "IPA",
+    category_en: "IPA",
+    price: "62.000 ₫",
+    oldPrice: null,
+    abv: "6.8%",
+    image: "https://www.creatcraft.com.vn/upload/product/untitled-session6920-2907.jpg",
+    imageAlt: "https://www.creatcraft.com.vn/upload/product/untitled-session89811-8635.jpg",
+    tag: "Signature",
+    desc: "IPA mang phong cách sáng tạo từ vị trứ danh India Pale Ale. Công thức kết hợp giữa lúa mạch, hoa bia đắng, lan toả hương cỏ nồng nàn nơi vòm họng.",
+    desc_en: "Our Signature IPA infused with the iconic India Pale Ale style. A bold blend of premium malt and bitter hops, delivering an intense, grassy hop aroma on the palate.",
+    details: [
+      { label: "Dung tích", value: "330ml/chai" },
+      { label: "Hương vị", value: "Hoa Cỏ, Quýt, Cam" },
+      { label: "Độ cồn", value: "6.8%" },
+      { label: "Độ đắng", value: "40" },
+    ],
+    details_en: [
+      { label: "Volume", value: "330ml/bottle" },
+      { label: "Flavor Profile", value: "Floral, Tangerine, Orange Note" },
+      { label: "ABV", value: "6.8%" },
+      { label: "IBU", value: "40" },
+    ],
+    rating: 5, reviews: 8, timeUntil: "05 hours 12 minutes", receiveDate: "18/06/2026", liveViewers: 142,
   },
   {
     id: 2,
-    name: "Creat Dark Stout",
-    category: "Stout",
-    price: "95,000 ₫",
+    name: "Pilsner Fruity",
+    name_en: "Pilsner Fruity",
+    category: "Lager",
+    category_en: "Lager",
+    price: "58.000 ₫",
     oldPrice: null,
-    abv: "6.5%",
-    image: "https://images.unsplash.com/photo-1518542698889-ca82262f08d5?w=400&h=500&fit=crop&auto=format",
-    tag: null,
-    desc: "Đậm đà, phức hợp với hương cà phê và socola đen.",
+    abv: "5.0%",
+    image: "https://www.creatcraft.com.vn/upload/product/dsc02050-1-1-4865.jpg",
+    imageAlt: "https://www.creatcraft.com.vn/thumbs/600x800x2/upload/product/bai-dang-1312-1000-x-1000-px-600-x-800-px-2-5076.png",
+    tag: "Best Seller",
+    desc: "Pilsner Fruity mang hương vị ngọt ngào, dễ thưởng thức với cốt chanh dây tự nhiên và men tươi.",
+    desc_en: "Pilsner Fruity offers a sweet, highly approachable craft experience crafted with natural passion fruit extract and fresh brewing yeast.",
+    details: [
+      { label: "Dung tích", value: "330ml/chai" },
+      { label: "Hương vị", value: "Chanh Dây tươi" },
+      { label: "Độ cồn", value: "5%" },
+      { label: "Độ đắng", value: "26" },
+    ],
+    details_en: [
+      { label: "Volume", value: "330ml/bottle" },
+      { label: "Flavor Profile", value: "Fresh Passion Fruit" },
+      { label: "ABV", value: "5%" },
+      { label: "IBU", value: "26" },
+    ],
+    rating: 5, reviews: 1, timeUntil: "16 hours 06 minutes", receiveDate: "17/06/2026", liveViewers: 254,
   },
   {
     id: 3,
-    name: "Creat Pale IPA",
-    category: "IPA",
-    price: "90,000 ₫",
-    oldPrice: "105,000 ₫",
-    abv: "6.0%",
-    image: "https://images.unsplash.com/photo-1601912414323-0debc2271e40?w=400&h=500&fit=crop&auto=format",
-    tag: "Sale",
-    desc: "Vị đắng hoa bia cân bằng, hương cam và pine tươi mát.",
+    name: "Midnight Stout",
+    name_en: "Midnight Stout",
+    category: "Stout",
+    category_en: "Stout",
+    price: "65.000 ₫",
+    oldPrice: null,
+    abv: "6.3%",
+    image: "https://www.creatcraft.com.vn/upload/product/4740733791221858832401271865121894443145389519n-3438.jpg",
+    imageAlt: "https://www.creatcraft.com.vn/upload/product/untitled-session5217-5234.jpg",
+    tag: null,
+    desc: "Midnight Stout dậy mùi hương thơm kết hợp giữa cà phê và sô cô la. Dòng bia mang vị đắng mạnh mẽ và hậu vị ngọt nhẹ.",
+    desc_en: "Midnight Stout awakens the senses with a bold fusion of roasted coffee and dark chocolate. This small-batch brew delivers a robust bitterness followed by a subtly sweet, creamy finish.",
+    details: [
+      { label: "Dung tích", value: "330ml/chai" },
+      { label: "Hương vị", value: "Cà phê, Sô cô la" },
+      { label: "Độ cồn", value: "6.3%" },
+      { label: "Độ đắng", value: "36" },
+    ],
+    details_en: [
+      { label: "Volume", value: "330ml/bottle" },
+      { label: "Flavor Profile", value: "Coffee, Dark Chocolate" },
+      { label: "ABV", value: "6.3%" },
+      { label: "IBU", value: "36" },
+    ],
+    rating: 5, reviews: 12, timeUntil: "02 hours 45 minutes", receiveDate: "18/06/2026", liveViewers: 94,
   },
   {
     id: 4,
-    name: "Creat Wheat Beer",
+    name: "Wheat Ale",
+    name_en: "Wheat Ale",
     category: "Ale",
-    price: "80,000 ₫",
+    category_en: "Ale",
+    price: "55.000 ₫",
     oldPrice: null,
-    abv: "4.8%",
-    image: "https://images.unsplash.com/photo-1523567830207-96731740fa71?w=400&h=500&fit=crop&auto=format",
+    abv: "6.0%",
+    image: "https://www.creatcraft.com.vn/upload/product/dsc02154-5836.jpg",
+    imageAlt: "https://www.creatcraft.com.vn/thumbs/600x800x2/upload/product/untitled-session3139-6464.jpg",
     tag: null,
-    desc: "Nhẹ nhàng, tươi mát với hương chuối và đinh hương thoảng nhẹ.",
+    desc: "Wheat Ale thể hiện hương vị cổ điển của nghệ thuật nấu bia thủ công. Lan toả mùi thơm của lúa mì đặc trưng và hậu vị đắng dễ chịu.",
+    desc_en: "Wheat Ale embodies the classic profile of craft brewing art. It radiates a distinctive wheat aroma followed by a pleasantly dry and crisp finish.",
+    details: [
+      { label: "Dung tích", value: "330ml/chai" },
+      { label: "Hương vị", value: "Lúa mì, lúa mạch" },
+      { label: "Độ cồn", value: "6%" },
+      { label: "Độ đắng", value: "28" },
+    ],
+    details_en: [
+      { label: "Volume", value: "330ml/bottle" },
+      { label: "Flavor Profile", value: "Wheat, Barley" },
+      { label: "ABV", value: "6%" },
+      { label: "IBU", value: "28" },
+    ],
+    rating: 5, reviews: 5, timeUntil: "08 hours 15 minutes", receiveDate: "18/06/2026", liveViewers: 67,
   },
   {
     id: 5,
-    name: "Creat Lager Classic",
-    category: "Lager",
-    price: "75,000 ₫",
-    oldPrice: null,
-    abv: "4.5%",
-    image: "https://images.unsplash.com/photo-1595600566063-2863388012be?w=400&h=500&fit=crop&auto=format",
-    tag: null,
-    desc: "Sảng khoái, trong sáng — lựa chọn hoàn hảo mọi dịp.",
-  },
-  {
-    id: 6,
-    name: "Creat Amber Ale",
+    name: "Matcha Ale",
+    name_en: "Matcha Ale",
     category: "Ale",
-    price: "88,000 ₫",
-    oldPrice: "98,000 ₫",
-    abv: "5.5%",
-    image: "https://images.unsplash.com/photo-1681422668808-9a9e8b156545?w=400&h=500&fit=crop&auto=format",
-    tag: "Mới",
-    desc: "Màu hổ phách đẹp mắt, hương caramel và hoa quả thanh tao.",
+    category_en: "Ale",
+    price: "58.000 ₫",
+    oldPrice: null,
+    abv: "5.0%",
+    image: "https://www.creatcraft.com.vn/upload/product/untitled-session5291-5608.jpg",
+    imageAlt: "https://www.creatcraft.com.vn/upload/product/untitled-session3149-1-1-4269.jpg",
+    tag: null,
+    desc: "Matcha Ale mang hương vị kết hợp mới lạ giữa trà và bia. Sự hoà quyện giữa lúa mạch, hoa bia và trà xanh truyền thống, tạo nên hậu vị ngọt thơm dễ chịu.",
+    desc_en: "Matcha Ale presents an innovative cross between traditional Asian tea and craft beer. This harmonious blend of malt, hops, and authentic matcha delivers a soothingly aromatic and sweet finish.",
+    details: [
+      { label: "Dung tích", value: "330ml/chai" },
+      { label: "Hương vị", value: "Trà Xanh" },
+      { label: "Độ cồn", value: "5%" },
+      { label: "Độ đắng", value: "30" },
+    ],
+    details_en: [
+      { label: "Volume", value: "330ml/bottle" },
+      { label: "Flavor Profile", value: "Matcha Green Tea" },
+      { label: "ABV", value: "5%" },
+      { label: "IBU", value: "30" },
+    ],
+    rating: 5, reviews: 18, timeUntil: "06 hours 12 minutes", receiveDate: "19/06/2026", liveViewers: 121,
   },
 ];
 
-function ProductCard({ product }: { product: typeof products[0] }) {
-  const cardRef = useRef<HTMLDivElement>(null);
+// ─── Hooks ────────────────────────────────────────────────────────────────────
+function useReveal(delay = 0) {
+  const ref = useRef<HTMLLIElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return { ref, visible };
+}
+
+// ─── Product Card ─────────────────────────────────────────────────────────────
+function ProductCard({ product, index }: { product: typeof products[0]; index: number }) {
   const [hovered, setHovered] = useState(false);
+  const navigate = useNavigate();
+  const { ref, visible } = useReveal();
+  const { lang } = useAppLang();
+  const onOpen = () => navigate(`/san-pham/chi-tiet?id=${product.id}`);
 
-  const handleMouseEnter = () => {
-    setHovered(true);
-    if (cardRef.current) {
-      gsap.to(cardRef.current, { scale: 1.03, rotation: 0.5, duration: 0.3, ease: "power2.out" });
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false);
-    if (cardRef.current) {
-      gsap.to(cardRef.current, { scale: 1, rotation: 0, duration: 0.3, ease: "power2.out" });
-    }
+  const tagColors: Record<string, string> = {
+    Signature: "#1C1A14",
+    "Best Seller": "#C8963E",
+    New: "#2e7d32",
   };
 
   return (
-    <div
-      ref={cardRef}
-      className="bg-white cursor-pointer"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={{ transformOrigin: "center bottom" }}
+    <li
+      ref={ref}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        listStyle: "none",
+        display: "flex",
+        flexDirection: "column",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(28px)",
+        transition: `opacity 0.6s ease ${index * 0.08}s, transform 0.6s ease ${index * 0.08}s`,
+      }}
     >
-      <div className="relative overflow-hidden aspect-[3/4]">
+      {/* ── Image ── */}
+      <div
+        onClick={onOpen}
+        style={{
+          position: "relative",
+          aspectRatio: "3/4",
+          overflow: "hidden",
+          cursor: "pointer",
+          background: "#F2EEE9",
+        }}
+      >
         <img
           src={product.image}
           alt={product.name}
-          className={`w-full h-full object-cover transition-transform duration-700 ${hovered ? "scale-105" : "scale-100"}`}
+          style={{
+            position: "absolute", inset: 0,
+            width: "100%", height: "100%", objectFit: "cover",
+            transition: "opacity 0.55s ease, transform 0.7s ease",
+            opacity: hovered ? 0 : 1,
+            transform: hovered ? "scale(1.06)" : "scale(1)",
+          }}
         />
+        <img
+          src={product.imageAlt}
+          alt=""
+          style={{
+            position: "absolute", inset: 0,
+            width: "100%", height: "100%", objectFit: "cover",
+            transition: "opacity 0.55s ease, transform 0.7s ease",
+            opacity: hovered ? 1 : 0,
+            transform: hovered ? "scale(1)" : "scale(1.06)",
+          }}
+        />
+
         {product.tag && (
-          <div className="absolute top-4 left-4 bg-[#C8963E] text-white text-[10px] tracking-widest uppercase px-2 py-1" style={{ fontFamily: "'Lato', sans-serif" }}>
+          <div style={{
+            position: "absolute", top: 12, left: 12, zIndex: 10,
+            background: tagColors[product.tag] ?? "#C8963E",
+            color: "#fff", fontSize: 9, letterSpacing: "0.18em",
+            textTransform: "uppercase", padding: "4px 10px",
+            fontFamily: "var(--wdtFontBase)", fontWeight: 700,
+          }}>
             {product.tag}
           </div>
         )}
-        <div className={`absolute inset-0 bg-[#1C1A14]/60 flex items-center justify-center transition-opacity duration-300 ${hovered ? "opacity-100" : "opacity-0"}`}>
-          <button className="flex items-center gap-2 bg-[#C8963E] text-white px-6 py-3 text-xs tracking-widest uppercase hover:bg-[#B8841F] transition-colors cursor-pointer" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>
-            <ShoppingCart size={14} />
-            Thêm vào giỏ
+
+        {/* Hover overlay */}
+        <div style={{
+          position: "absolute", inset: 0,
+          background: "rgba(28,26,20,0.42)",
+          display: "flex", alignItems: "flex-end", justifyContent: "center",
+          paddingBottom: 24,
+          opacity: hovered ? 1 : 0,
+          transition: "opacity 0.3s ease",
+          zIndex: 5,
+        }}>
+          <button
+            onClick={(e) => { e.stopPropagation(); onOpen(); }}
+            style={{
+              background: "transparent", border: "1.5px solid rgba(255,255,255,0.9)",
+              color: "#fff", padding: "8px 22px",
+              fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase",
+              fontFamily: "var(--wdtFontBase)", fontWeight: 700, cursor: "pointer",
+              transform: hovered ? "translateY(0)" : "translateY(8px)",
+              transition: "transform 0.3s ease 0.05s",
+            }}
+          >
+            {lang === 'en' ? "Quick View" : "Khám phá →"}
           </button>
         </div>
       </div>
-      <div className="p-5">
-        <div className="text-[#8C7A60] text-[10px] tracking-widest uppercase mb-1" style={{ fontFamily: "'Lato', sans-serif" }}>
-          {product.category} · ABV {product.abv}
-        </div>
-        <h3 className="text-[#1C1A14] mb-1.5" style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: "1.05rem" }}>
-          {product.name}
+
+      {/* ── Info ── */}
+      <div style={{ padding: "16px 0 0", flex: 1, display: "flex", flexDirection: "column" }}>
+        <span style={{
+          fontFamily: "var(--wdtFontBase)", fontSize: 9,
+          letterSpacing: "0.22em", textTransform: "uppercase",
+          color: "var(--wdtMutedColor, #8C7A60)", display: "block", marginBottom: 6,
+        }}>
+          {lang === 'en' ? product.category_en : product.category} · ABV {product.abv}
+        </span>
+
+        <h3
+          onClick={onOpen}
+          style={{
+            fontFamily: "var(--wdtFontHeading)", fontSize: "0.95rem", fontWeight: 400,
+            color: "var(--wdtDarkColor, #1C1A14)", margin: "0 0 10px", cursor: "pointer",
+            transition: "color 0.2s",
+          }}
+          onMouseEnter={e => (e.currentTarget.style.color = "var(--wdtPrimaryColor, #b67e53)")}
+          onMouseLeave={e => (e.currentTarget.style.color = "var(--wdtDarkColor, #1C1A14)")}
+        >
+          {lang === 'en' ? product.name_en : product.name}
         </h3>
-        <p className="text-[#8C7A60] text-xs mb-3 leading-relaxed" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
-          {product.desc}
-        </p>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-[#C8963E] text-sm" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>
-              {product.price}
-            </span>
-            {product.oldPrice && (
-              <span className="text-[#8C7A60] text-xs line-through" style={{ fontFamily: "'Lato', sans-serif" }}>
-                {product.oldPrice}
-              </span>
-            )}
-          </div>
-          <button className="text-[#C8963E] text-[10px] tracking-widest uppercase cursor-pointer hover:underline" style={{ fontFamily: "'Lato', sans-serif" }}>
-            Chi tiết
+
+        {/* Animated underline */}
+        <div style={{
+          height: 1, background: "rgba(0,0,0,0.07)", marginBottom: 12,
+          transformOrigin: "left",
+          transform: hovered ? "scaleX(1)" : "scaleX(0.35)",
+          transition: "transform 0.45s ease",
+        }} />
+
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto" }}>
+          <span style={{
+            fontFamily: "var(--wdtFontBase)", fontWeight: 700, fontSize: 14,
+            color: "var(--wdtPrimaryColor, #b67e53)",
+          }}>
+            {product.price}
+          </span>
+          <button
+            onClick={onOpen}
+            style={{
+              fontFamily: "var(--wdtFontBase)", fontSize: 9, letterSpacing: "0.15em",
+              textTransform: "uppercase", color: "var(--wdtDarkColor, #1C1A14)",
+              background: "none", border: "none", cursor: "pointer", padding: 0,
+              opacity: hovered ? 1 : 0.35,
+              transition: "opacity 0.3s",
+            }}
+          >
+            {lang === 'en' ? "Details →" : "Chi tiết →"}
           </button>
         </div>
       </div>
+    </li>
+  );
+}
+
+// ─── Sort ─────────────────────────────────────────────────────────────────────
+const sortOptionsVi = [
+  "Thứ tự mặc định",
+  "Phổ biến nhất",
+  "Điểm đánh giá",
+  "Mới nhất",
+  "Giá: Thấp → Cao",
+  "Giá: Cao → Thấp",
+];
+
+const sortOptionsEn = [
+  "Default Sorting",
+  "Most Popular",
+  "Highest Rated",
+  "Newest",
+  "Price: Low to High",
+  "Price: High to Low",
+];
+
+function SortDropdown({ selected, setSelected, lang }: { selected: string; setSelected: (v: string) => void; lang: string }) {
+  const [open, setOpen] = useState(false);
+  const options = lang === 'en' ? sortOptionsEn : sortOptionsVi;
+
+  // ensure selected makes sense
+  const displayVal = options.includes(selected) ? selected : options[0];
+
+  return (
+    <div style={{ position: "relative" }}>
+      <button
+        onClick={() => setOpen(o => !o)}
+        style={{
+          display: "flex", alignItems: "center", gap: 8,
+          background: "transparent", border: "1px solid rgba(0,0,0,0.13)",
+          padding: "8px 14px", fontFamily: "var(--wdtFontBase)", fontSize: 13,
+          color: "var(--wdtBodyTxtColor)", cursor: "pointer",
+          minWidth: 190, justifyContent: "space-between",
+          transition: "border-color 0.2s",
+        }}
+        onMouseEnter={e => (e.currentTarget.style.borderColor = "var(--wdtPrimaryColor, #b67e53)")}
+        onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(0,0,0,0.13)")}
+      >
+        <span>{displayVal}</span>
+        <ChevronDown size={13} style={{ opacity: 0.5, transform: open ? "rotate(180deg)" : "none", transition: "transform 0.2s" }} />
+      </button>
+      {open && (
+        <>
+          <div style={{ position: "fixed", inset: 0, zIndex: 40 }} onClick={() => setOpen(false)} />
+          <div style={{
+            position: "absolute", top: "calc(100% + 6px)", right: 0,
+            minWidth: 200, background: "#fff",
+            boxShadow: "0 12px 40px rgba(0,0,0,0.11)",
+            border: "1px solid rgba(0,0,0,0.06)", zIndex: 9999,
+          }}>
+            {options.map(opt => (
+              <div
+                key={opt}
+                onClick={() => { setSelected(opt); setOpen(false); }}
+                style={{
+                  padding: "10px 16px", fontFamily: "var(--wdtFontBase)", fontSize: 13,
+                  cursor: "pointer",
+                  background: displayVal === opt ? "var(--wdtPrimaryColor, #b67e53)" : "transparent",
+                  color: displayVal === opt ? "#fff" : "var(--wdtBodyTxtColor)",
+                  transition: "background 0.15s",
+                }}
+                onMouseEnter={e => { if (displayVal !== opt) e.currentTarget.style.background = "#FAF7F4"; }}
+                onMouseLeave={e => { if (displayVal !== opt) e.currentTarget.style.background = "transparent"; }}
+              >
+                {opt}
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
 
+// ─── Products Page ─────────────────────────────────────────────────────────────
 export function Products() {
+  const { lang } = useAppLang();
+  const [cols, setCols] = useState<3 | 4>(3);
+  const [view, setView] = useState<"grid" | "list">("grid");
+  const [sort, setSort] = useState(sortOptionsVi[0]);
   const [activeCategory, setActiveCategory] = useState("Tất cả");
+  const [openSection, setOpenSection] = useState<string>("category");
 
-  const filtered =
-    activeCategory === "Tất cả"
-      ? products
-      : products.filter((p) => p.category === activeCategory);
+  // Reset category on lang change equivalent
+  const categoryMap: Record<string, string> = {
+    "Tất cả": "All",
+    "Ale": "Ale",
+    "Lager": "Lager",
+    "IPA": "IPA",
+    "Stout": "Stout",
+    "Seasonal": "Seasonal"
+  };
+
+  // build count map
+  const catCount: Record<string, number> = {};
+  products.forEach(p => { catCount[p.category] = (catCount[p.category] ?? 0) + 1; });
+
+  const filtered = activeCategory === "Tất cả" ? products : products.filter(p => p.category === activeCategory);
+
+  const sorted = [...filtered].sort((a, b) => {
+    // Both en and vi options map to same sort logic simply by index
+    const sIdx = lang === 'en' ? sortOptionsEn.indexOf(sort) : sortOptionsVi.indexOf(sort);
+    if (sIdx === 4 /* Giá: Thấp → Cao */) return parseInt(a.price) - parseInt(b.price);
+    if (sIdx === 5 /* Giá: Cao → Thấp */) return parseInt(b.price) - parseInt(a.price);
+    if (sIdx === 1 /* Phổ biến nhất */) return b.liveViewers - a.liveViewers;
+    if (sIdx === 2 /* Điểm đánh giá */) return b.reviews - a.reviews;
+    return a.id - b.id;
+  });
+
+  const sidebarToggle = (sec: string) => setOpenSection(openSection === sec ? "" : sec);
 
   return (
-    <section id="products" className="py-24 bg-[#EDE5D8]">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="w-8 h-px bg-[#C8963E]" />
-            <span className="text-[#C8963E] text-xs tracking-[0.3em] uppercase" style={{ fontFamily: "'Lato', sans-serif" }}>
-              Sản Phẩm
-            </span>
-            <span className="w-8 h-px bg-[#C8963E]" />
-          </div>
-          <h2 className="text-[#1C1A14] mb-4" style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)" }}>
-            Dòng Bia Cao Cấp
-          </h2>
-          <p className="text-[#8C7A60] max-w-md mx-auto" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
-            Khám phá bộ sưu tập bia thủ công đa dạng, mỗi chai là một tác phẩm riêng biệt.
-          </p>
-        </div>
+    <div style={{ display: "flex", gap: 52, maxWidth: 1280, margin: "0 auto", padding: "44px 24px 96px" }}>
 
-        {/* Category filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 text-xs tracking-widest uppercase transition-all duration-200 cursor-pointer ${
-                activeCategory === cat
-                  ? "bg-[#1C1A14] text-[#C8963E]"
-                  : "bg-transparent border border-[#2C2416]/20 text-[#5C4A30] hover:border-[#C8963E] hover:text-[#C8963E]"
-              }`}
-              style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+      {/* ════ SIDEBAR ════ */}
+      <aside style={{ width: 232, flexShrink: 0, position: "sticky", top: 96, alignSelf: "flex-start" }}>
 
-        {/* Product grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-
-        {/* View all */}
-        <div className="text-center mt-12">
-          <button className="px-10 py-3.5 border border-[#1C1A14] text-[#1C1A14] text-xs tracking-widest uppercase hover:bg-[#1C1A14] hover:text-[#C8963E] transition-all duration-300 cursor-pointer" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>
-            Xem Tất Cả Sản Phẩm
+        {/* Category */}
+        <div style={{ marginBottom: 28 }}>
+          <button onClick={() => sidebarToggle("category")} style={{
+            display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center",
+            background: "none", border: "none", cursor: "pointer",
+            padding: "0 0 12px 0", borderBottom: "1.5px solid #1C1A14",
+            fontFamily: "var(--wdtFontHeading)", fontSize: "0.95rem", color: "var(--wdtDarkColor)",
+            marginBottom: 14,
+          }}>
+            {lang === 'en' ? "Categories" : "Danh mục"}
+            <ChevronDown size={14} style={{ transform: openSection === "category" ? "rotate(180deg)" : "none", transition: "transform 0.3s" }} />
           </button>
+          {openSection === "category" && (
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {["Tất cả", ...Object.keys(catCount)].map(cat => (
+                <li
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  style={{
+                    display: "flex", justifyContent: "space-between", alignItems: "center",
+                    padding: "7px 0 7px 10px",
+                    borderLeft: activeCategory === cat ? "2px solid var(--wdtPrimaryColor, #b67e53)" : "2px solid transparent",
+                    fontFamily: "var(--wdtFontBase)", fontSize: 13, cursor: "pointer",
+                    color: activeCategory === cat ? "var(--wdtPrimaryColor, #b67e53)" : "var(--wdtBodyTxtColor)",
+                    fontWeight: activeCategory === cat ? 700 : 400,
+                    transition: "all 0.2s",
+                  }}
+                >
+                  <span>{lang === 'en' ? categoryMap[cat] || cat : cat}</span>
+                  <span style={{ fontSize: 11, opacity: 0.45 }}>({cat === "Tất cả" ? products.length : catCount[cat] ?? 0})</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
+
+        {/* Size */}
+        <div style={{ marginBottom: 28 }}>
+          <button onClick={() => sidebarToggle("size")} style={{
+            display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center",
+            background: "none", border: "none", cursor: "pointer",
+            padding: "0 0 12px 0", borderBottom: "1px solid rgba(0,0,0,0.08)",
+            fontFamily: "var(--wdtFontHeading)", fontSize: "0.95rem", color: "var(--wdtDarkColor)",
+            marginBottom: 14,
+          }}>
+            {lang === 'en' ? "Volume" : "Dung tích"}
+            <ChevronDown size={14} style={{ transform: openSection === "size" ? "rotate(180deg)" : "none", transition: "transform 0.3s" }} />
+          </button>
+          {openSection === "size" && (
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {(lang === 'en' ? ["330ml / Bottle", "1 Liter / Can", "B2B Keg", "Party Barrel"] : ["330ml / Chai", "1 Lít / Lon", "Keg B2B", "Bom Party"]).map(s => (
+                <li key={s} style={{ padding: "7px 10px", fontFamily: "var(--wdtFontBase)", fontSize: 13, cursor: "pointer", color: "var(--wdtBodyTxtColor)", transition: "color 0.2s" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "var(--wdtPrimaryColor)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "var(--wdtBodyTxtColor)")}
+                >{s}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* Price */}
+        <div>
+          <button onClick={() => sidebarToggle("price")} style={{
+            display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center",
+            background: "none", border: "none", cursor: "pointer",
+            padding: "0 0 12px 0", borderBottom: "1px solid rgba(0,0,0,0.08)",
+            fontFamily: "var(--wdtFontHeading)", fontSize: "0.95rem", color: "var(--wdtDarkColor)",
+            marginBottom: 14,
+          }}>
+            {lang === 'en' ? "Price Range" : "Mức giá"}
+            <ChevronDown size={14} style={{ transform: openSection === "price" ? "rotate(180deg)" : "none", transition: "transform 0.3s" }} />
+          </button>
+          {openSection === "price" && (
+            <div>
+              <div style={{ width: "100%", height: 3, background: "rgba(0,0,0,0.08)", borderRadius: 2, position: "relative", marginBottom: 14 }}>
+                <div style={{ position: "absolute", left: "10%", right: "15%", top: 0, bottom: 0, background: "var(--wdtPrimaryColor, #b67e53)", borderRadius: 2 }} />
+                {["10%", "85%"].map((pos, i) => (
+                  <div key={i} style={{ position: "absolute", left: pos, top: "50%", transform: "translate(-50%,-50%)", width: 11, height: 11, background: "var(--wdtPrimaryColor, #b67e53)", borderRadius: "50%", cursor: "pointer", boxShadow: "0 2px 5px rgba(0,0,0,0.2)" }} />
+                ))}
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--wdtFontBase)", fontSize: 12, color: "var(--wdtBodyTxtColor)" }}>
+                <span>55.000 ₫</span><span>65.000 ₫</span>
+              </div>
+            </div>
+          )}
+        </div>
+      </aside>
+
+      {/* ════ MAIN ════ */}
+      <div style={{ flex: 1, minWidth: 0 }}>
+
+        {/* Toolbar */}
+        <div style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          paddingBottom: 14, borderBottom: "1px solid rgba(0,0,0,0.07)",
+          marginBottom: 36, flexWrap: "wrap", gap: 12,
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <div style={{ display: "flex", gap: 4 }}>
+              {([3, 4] as const).map(c => (
+                <button key={c} onClick={() => { setView("grid"); setCols(c); }} title={`${c} ${lang === 'en' ? 'columns' : 'cột'}`} style={{ background: "none", border: "none", cursor: "pointer", padding: 5, opacity: view === "grid" && cols === c ? 1 : 0.28, transition: "opacity 0.2s" }}>
+                  {c === 3 ? <Grid3x3 size={16} /> : <LayoutGrid size={16} />}
+                </button>
+              ))}
+              <button onClick={() => setView("list")} style={{ background: "none", border: "none", cursor: "pointer", padding: 5, opacity: view === "list" ? 1 : 0.28, transition: "opacity 0.2s" }}>
+                <List size={16} />
+              </button>
+            </div>
+            <span style={{ fontFamily: "var(--wdtFontBase)", fontSize: 12, color: "var(--wdtBodyTxtColor)", opacity: 0.55 }}>
+              {sorted.length} {lang === 'en' ? "products" : "sản phẩm"}
+            </span>
+          </div>
+          <SortDropdown selected={sort} setSelected={setSort} lang={lang} />
+        </div>
+
+        {/* Grid view */}
+        {view === "grid" && (
+          <ul style={{
+            display: "grid",
+            gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+            gap: "52px 28px",
+            padding: 0, margin: 0, listStyle: "none",
+          }}>
+            {sorted.map((p, i) => <ProductCard key={p.id} product={p} index={i} />)}
+          </ul>
+        )}
+
+        {/* List view */}
+        {view === "list" && (
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {sorted.map(p => (
+              <div key={p.id}
+                style={{ display: "flex", gap: 24, padding: "20px 8px", borderBottom: "1px solid rgba(0,0,0,0.06)", alignItems: "flex-start", transition: "background 0.2s" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "#FAF7F4")}
+                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+              >
+                <div style={{ width: 110, flexShrink: 0, aspectRatio: "3/4", overflow: "hidden", background: "#F2EEE9" }}>
+                  <img src={p.image} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <span style={{ fontFamily: "var(--wdtFontBase)", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--wdtMutedColor, #8C7A60)", display: "block", marginBottom: 6 }}>
+                    {p.category} · ABV {p.abv}
+                  </span>
+                  <h3 style={{ fontFamily: "var(--wdtFontHeading)", fontSize: "1.1rem", fontWeight: 400, margin: "0 0 8px", color: "var(--wdtDarkColor)" }}>{lang === 'en' ? p.name_en : p.name}</h3>
+                  <p style={{ fontFamily: "var(--wdtFontBase)", fontSize: 13, color: "var(--wdtBodyTxtColor)", lineHeight: 1.7, margin: "0 0 14px", maxWidth: 460 }}>{lang === 'en' ? p.desc_en : p.desc}</p>
+                  <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                    <span style={{ fontWeight: 700, fontSize: 14, color: "var(--wdtPrimaryColor, #b67e53)" }}>{p.price}</span>
+                    <button
+                      onClick={() => (window.location.href = `/san-pham/chi-tiet?id=${p.id}`)}
+                      style={{ fontFamily: "var(--wdtFontBase)", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", background: "#1C1A14", color: "#fff", border: "none", padding: "7px 16px", cursor: "pointer" }}
+                    >
+                      {lang === 'en' ? "Details →" : "Chi tiết →"}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,25 +1,36 @@
+import { BrowserRouter, Routes, Route } from "react-router";
 import { Navbar } from "./components/Navbar";
-import { HeroSlider } from "./components/HeroSlider";
-import { About } from "./components/About";
-import { Products } from "./components/Products";
-import { BeerMenu } from "./components/BeerMenu";
-import { News } from "./components/News";
-import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { HomePage } from "./pages/HomePage";
+import { AboutPage } from "./pages/AboutPage";
+import { ProductsPage } from "./pages/ProductsPage";
+import { MenuPage } from "./pages/MenuPage";
+import { NewsPage } from "./pages/NewsPage";
+import { ContactPage } from "./pages/ContactPage";
+import { NewsDetail } from "./pages/NewsDetail";
+import { ProductDetail } from "./pages/ProductDetail";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#F8F3EB]">
-      <Navbar />
-      <main>
-        <HeroSlider />
-<About />
-        <Products />
-        <BeerMenu />
-        <News />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen flex flex-col bg-[#F8F3EB]">
+        <Navbar />
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/gioi-thieu" element={<AboutPage />} />
+            <Route path="/san-pham" element={<ProductsPage />} />
+            <Route path="/san-pham/chi-tiet" element={<ProductDetail />} />
+            <Route path="/menu" element={<MenuPage />} />
+            <Route path="/tin-tuc" element={<NewsPage />} />
+            <Route path="/tin-tuc/:slug" element={<NewsDetail />} />
+            <Route path="/lien-he" element={<ContactPage />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
