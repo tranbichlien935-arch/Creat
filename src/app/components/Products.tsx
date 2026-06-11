@@ -446,10 +446,23 @@ export function Products() {
   const sidebarToggle = (sec: string) => setOpenSection(openSection === sec ? "" : sec);
 
   return (
-    <div style={{ display: "flex", gap: 52, maxWidth: 1280, margin: "0 auto", padding: "44px 24px 96px" }}>
+    <div style={{
+      display: "flex",
+      flexDirection: window.innerWidth < 768 ? "column" : "row",
+      gap: window.innerWidth < 768 ? 24 : 52,
+      maxWidth: 1280,
+      margin: "0 auto",
+      padding: window.innerWidth < 768 ? "24px 16px 64px" : "44px 24px 96px"
+    }}>
 
       {/* ════ SIDEBAR ════ */}
-      <aside style={{ width: 232, flexShrink: 0, position: "sticky", top: 96, alignSelf: "flex-start" }}>
+      <aside style={{
+        width: window.innerWidth < 768 ? "100%" : 232,
+        flexShrink: 0,
+        position: window.innerWidth < 768 ? "relative" : "sticky",
+        top: 96,
+        alignSelf: "flex-start"
+      }}>
 
         {/* Category */}
         <div style={{ marginBottom: 28 }}>
@@ -549,16 +562,18 @@ export function Products() {
           marginBottom: 36, flexWrap: "wrap", gap: 12,
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <div style={{ display: "flex", gap: 4 }}>
-              {([3, 4] as const).map(c => (
-                <button key={c} onClick={() => { setView("grid"); setCols(c); }} title={`${c} ${lang === 'en' ? 'columns' : 'cột'}`} style={{ background: "none", border: "none", cursor: "pointer", padding: 5, opacity: view === "grid" && cols === c ? 1 : 0.28, transition: "opacity 0.2s" }}>
-                  {c === 3 ? <Grid3x3 size={16} /> : <LayoutGrid size={16} />}
+            {window.innerWidth >= 768 && (
+              <div style={{ display: "flex", gap: 4 }}>
+                {([3, 4] as const).map(c => (
+                  <button key={c} onClick={() => { setView("grid"); setCols(c); }} title={`${c} ${lang === 'en' ? 'columns' : 'cột'}`} style={{ background: "none", border: "none", cursor: "pointer", padding: 5, opacity: view === "grid" && cols === c ? 1 : 0.28, transition: "opacity 0.2s" }}>
+                    {c === 3 ? <Grid3x3 size={16} /> : <LayoutGrid size={16} />}
+                  </button>
+                ))}
+                <button onClick={() => setView("list")} style={{ background: "none", border: "none", cursor: "pointer", padding: 5, opacity: view === "list" ? 1 : 0.28, transition: "opacity 0.2s" }}>
+                  <List size={16} />
                 </button>
-              ))}
-              <button onClick={() => setView("list")} style={{ background: "none", border: "none", cursor: "pointer", padding: 5, opacity: view === "list" ? 1 : 0.28, transition: "opacity 0.2s" }}>
-                <List size={16} />
-              </button>
-            </div>
+              </div>
+            )}
             <span style={{ fontFamily: "var(--wdtFontBase)", fontSize: 12, color: "var(--wdtBodyTxtColor)", opacity: 0.55 }}>
               {sorted.length} {lang === 'en' ? "products" : "sản phẩm"}
             </span>
@@ -570,8 +585,8 @@ export function Products() {
         {view === "grid" && (
           <ul style={{
             display: "grid",
-            gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-            gap: "52px 28px",
+            gridTemplateColumns: window.innerWidth < 480 ? "1fr" : window.innerWidth < 768 ? "repeat(2, minmax(0, 1fr))" : `repeat(${cols}, minmax(0, 1fr))`,
+            gap: window.innerWidth < 768 ? "32px 16px" : "52px 28px",
             padding: 0, margin: 0, listStyle: "none",
           }}>
             {sorted.map((p, i) => <ProductCard key={p.id} product={p} index={i} />)}
