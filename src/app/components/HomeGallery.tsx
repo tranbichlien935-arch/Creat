@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const images = [
     "https://scontent.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/662712849_122246342384127186_2251280178109122592_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x1365&ctp=s1365x1365&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEmo-ur-l3zSrgXpVV5poiixOUb_2llplDE5Rv_aWWmULumfVJMaCxldQ4WeXT8V0bGHU4UOSBnNW0VSdVbQ51S&_nc_ohc=W2sRUfu5FU0Q7kNvwGJexew&_nc_oc=AdrLWCOJCQ7eBFoMrqlogOj-TCKSf4RuH5BpQveEWmiaWrJooCHoV1ooKHYoIXlrL68KUCyPoJSvavbi80IRx9lG&_nc_zt=23&_nc_ht=scontent.fsgn5-3.fna&_nc_gid=wNg_PCPSXs3VE4GI6tgkjQ&_nc_ss=7b2a8&oh=00_Af_ZlYUMkFWDQoP5IktswCjjnpVksNUJyU7hDNdqUZbKbw&oe=6A2EC639",
@@ -13,71 +13,114 @@ const images = [
     "https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/481765318_122192625920127186_5662332964891065364_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFzza5I8dxnJWj9xB-p7ri5LnKmbJpMFTAucqZsmkwVMF84DbrnSEuIimgbTNv81Wj0-pXwM5p9QUTaWlfzNpcg&_nc_ohc=75LXgjsiahcQ7kNvwEbhd0b&_nc_oc=Adonuo2LQkMtx3xZJpdSLgkYkvGifd2jvlxCQpdvSQ_lWxLJD_ojzs_SAdntCf8xQ6c092s91IsF2IRuZKuVRMVN&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=1rAExrK67it4hyXuEO9Iow&_nc_ss=7b2a8&oh=00_Af-vJyldqYaN8CkwsToDjbGnBrvB7sdn02C8iYXGRVS7mg&oe=6A2ED634"
 ];
 
-// Tạo 2 row: 1 row đi sang phải, 1 row đi sang trái
-const row1 = images.slice(0, 5);
-const row2 = images.slice(5);
+function GalleryItem({ src, index }: { src: string; index: number }) {
+    const [isVisible, setIsVisible] = useState(false);
+    const itemRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => setIsVisible(true), index * 100);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (itemRef.current) observer.observe(itemRef.current);
+        return () => observer.disconnect();
+    }, [index]);
+
+    return (
+        <div
+            ref={itemRef}
+            className="group cursor-pointer"
+            style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)',
+                transition: `all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.05}s`,
+            }}
+        >
+            <div className="relative overflow-hidden rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)] transition-all duration-500">
+                <div className="aspect-square overflow-hidden">
+                    <img
+                        src={src}
+                        alt="Creat Craft Beer Gallery"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2"
+                        loading="lazy"
+                    />
+                </div>
+                {/* Overlay gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+        </div>
+    );
+}
 
 export function HomeGallery() {
+    const [scrollY, setScrollY] = useState(0);
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (sectionRef.current) {
+                const rect = sectionRef.current.getBoundingClientRect();
+                const scrollProgress = -rect.top / (rect.height + window.innerHeight);
+                setScrollY(scrollProgress);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Chia ảnh thành 3 cột với parallax khác nhau
+    const col1 = images.filter((_, i) => i % 3 === 0);
+    const col2 = images.filter((_, i) => i % 3 === 1);
+    const col3 = images.filter((_, i) => i % 3 === 2);
+
     return (
-        <section className="w-full py-16 overflow-hidden relative">
-            <style>
-                {`
-                    @keyframes slideRight {
-                        0% { transform: translateX(0); }
-                        100% { transform: translateX(-50%); }
-                    }
-                    @keyframes slideLeft {
-                        0% { transform: translateX(-50%); }
-                        100% { transform: translateX(0); }
-                    }
-                    .animate-slideRight {
-                        display: flex;
-                        width: max-content;
-                        animation: slideRight 40s linear infinite;
-                    }
-                    .animate-slideLeft {
-                        display: flex;
-                        width: max-content;
-                        animation: slideLeft 40s linear infinite;
-                    }
-                    .animate-slideRight:hover,
-                    .animate-slideLeft:hover {
-                        animation-play-state: paused;
-                    }
-                `}
-            </style>
+        <section ref={sectionRef} className="w-full py-20 px-4 md:px-8 lg:px-12 overflow-hidden">
+            <div className="max-w-[1400px] mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    {/* Column 1 - Move up slowly */}
+                    <div
+                        className="space-y-6 lg:space-y-8"
+                        style={{
+                            transform: `translateY(${scrollY * -30}px)`,
+                            transition: 'transform 0.1s linear',
+                        }}
+                    >
+                        {col1.map((img, i) => (
+                            <GalleryItem key={i} src={img} index={i * 3} />
+                        ))}
+                    </div>
 
-            {/* Row 1: Scroll sang phải */}
-            <div className="w-full relative mb-6">
-                <div className="animate-slideRight">
-                    {[...row1, ...row1].map((img, i) => (
-                        <div key={i} className="flex-none w-[280px] md:w-[340px] lg:w-[400px] px-3">
-                            <div className="aspect-square group overflow-hidden rounded-lg shadow-lg">
-                                <img
-                                    src={img}
-                                    alt="Creat Craft Beer Gallery"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+                    {/* Column 2 - Move down slowly (opposite direction) */}
+                    <div
+                        className="space-y-6 lg:space-y-8"
+                        style={{
+                            transform: `translateY(${scrollY * 30}px)`,
+                            transition: 'transform 0.1s linear',
+                        }}
+                    >
+                        {col2.map((img, i) => (
+                            <GalleryItem key={i} src={img} index={i * 3 + 1} />
+                        ))}
+                    </div>
 
-            {/* Row 2: Scroll sang trái (ngược lại) */}
-            <div className="w-full relative">
-                <div className="animate-slideLeft">
-                    {[...row2, ...row2].map((img, i) => (
-                        <div key={i} className="flex-none w-[280px] md:w-[340px] lg:w-[400px] px-3">
-                            <div className="aspect-square group overflow-hidden rounded-lg shadow-lg">
-                                <img
-                                    src={img}
-                                    alt="Creat Craft Beer Gallery"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                            </div>
-                        </div>
-                    ))}
+                    {/* Column 3 - Move up slowly */}
+                    <div
+                        className="space-y-6 lg:space-y-8"
+                        style={{
+                            transform: `translateY(${scrollY * -30}px)`,
+                            transition: 'transform 0.1s linear',
+                        }}
+                    >
+                        {col3.map((img, i) => (
+                            <GalleryItem key={i} src={img} index={i * 3 + 2} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
