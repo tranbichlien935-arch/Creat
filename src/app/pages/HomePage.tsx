@@ -2,7 +2,7 @@ import { HeroSlider } from "../components/HeroSlider";
 import { HomeFeatures } from "../components/HomeFeatures";
 import { HomeJourney } from "../components/HomeJourney";
 import { HomeTestimonials } from "../components/HomeTestimonials";
-import { AboutGallery } from "../components/about/AboutGallery";
+import { HomeGallery } from "../components/HomeGallery";
 import { products } from "../components/Products";
 import { newsContent } from "../data/newsData";
 import { Link, useNavigate } from "react-router";
@@ -113,8 +113,8 @@ export function HomePage() {
             <HomeJourney />
             <HomeTestimonials />
 
-            {/* Gallery Section */}
-            <AboutGallery />
+            {/* Gallery Section - Different animation from About page */}
+            <HomeGallery />
 
             {/* Featured News */}
             <section className="py-24 bg-white">

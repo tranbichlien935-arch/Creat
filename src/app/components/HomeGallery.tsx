@@ -13,37 +13,69 @@ const images = [
     "https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/481765318_122192625920127186_5662332964891065364_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFzza5I8dxnJWj9xB-p7ri5LnKmbJpMFTAucqZsmkwVMF84DbrnSEuIimgbTNv81Wj0-pXwM5p9QUTaWlfzNpcg&_nc_ohc=75LXgjsiahcQ7kNvwEbhd0b&_nc_oc=Adonuo2LQkMtx3xZJpdSLgkYkvGifd2jvlxCQpdvSQ_lWxLJD_ojzs_SAdntCf8xQ6c092s91IsF2IRuZKuVRMVN&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=1rAExrK67it4hyXuEO9Iow&_nc_ss=7b2a8&oh=00_Af-vJyldqYaN8CkwsToDjbGnBrvB7sdn02C8iYXGRVS7mg&oe=6A2ED634"
 ];
 
-const duplicatedImages = [...images, ...images];
+// Tạo 2 row: 1 row đi sang phải, 1 row đi sang trái
+const row1 = images.slice(0, 5);
+const row2 = images.slice(5);
 
-export function AboutGallery() {
+export function HomeGallery() {
     return (
-        <section className="w-full py-8 overflow-hidden relative">
+        <section className="w-full py-16 overflow-hidden relative">
             <style>
                 {`
-                    @keyframes slideGallery {
+                    @keyframes slideRight {
                         0% { transform: translateX(0); }
                         100% { transform: translateX(-50%); }
                     }
-                    .animate-scrollGallery {
+                    @keyframes slideLeft {
+                        0% { transform: translateX(-50%); }
+                        100% { transform: translateX(0); }
+                    }
+                    .animate-slideRight {
                         display: flex;
                         width: max-content;
-                        animation: slideGallery 50s linear infinite;
+                        animation: slideRight 40s linear infinite;
                     }
-                    .animate-scrollGallery:hover {
+                    .animate-slideLeft {
+                        display: flex;
+                        width: max-content;
+                        animation: slideLeft 40s linear infinite;
+                    }
+                    .animate-slideRight:hover,
+                    .animate-slideLeft:hover {
                         animation-play-state: paused;
                     }
                 `}
             </style>
 
+            {/* Row 1: Scroll sang phải */}
+            <div className="w-full relative mb-6">
+                <div className="animate-slideRight">
+                    {[...row1, ...row1].map((img, i) => (
+                        <div key={i} className="flex-none w-[280px] md:w-[340px] lg:w-[400px] px-3">
+                            <div className="aspect-square group overflow-hidden rounded-lg shadow-lg">
+                                <img
+                                    src={img}
+                                    alt="Creat Craft Beer Gallery"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Row 2: Scroll sang trái (ngược lại) */}
             <div className="w-full relative">
-                <div className="animate-scrollGallery">
-                    {duplicatedImages.map((img, i) => (
-                        <div key={i} className="flex-none w-[200px] md:w-[250px] lg:w-[300px] aspect-square group overflow-hidden">
-                            <img
-                                src={img}
-                                alt="Creat Organic Elements"
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
+                <div className="animate-slideLeft">
+                    {[...row2, ...row2].map((img, i) => (
+                        <div key={i} className="flex-none w-[280px] md:w-[340px] lg:w-[400px] px-3">
+                            <div className="aspect-square group overflow-hidden rounded-lg shadow-lg">
+                                <img
+                                    src={img}
+                                    alt="Creat Craft Beer Gallery"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>
