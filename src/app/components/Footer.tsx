@@ -3,20 +3,38 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 import { useAppLang } from '../hooks/useAppLang';
 
 const footerLinks = {
-  "Danh mục": [
-    { label: "Trang chủ", href: "/" },
-    { label: "Giới thiệu", href: "/gioi-thieu" },
-    { label: "Sản phẩm", href: "/san-pham" },
-    { label: "Tin tức", href: "/tin-tuc" },
-    { label: "Liên hệ", href: "/lien-he" },
-  ],
-  "Hỗ trợ & Chính sách": [
-    { label: "Điều khoản dịch vụ", href: "#" },
-    { label: "Chính sách quyền riêng tư", href: "#" },
-    { label: "Chính sách vận chuyển & giao hàng", href: "#" },
-    { label: "Chính sách đổi trả", href: "#" },
-    { label: "Phương thức thanh toán", href: "#" },
-  ]
+  vi: {
+    "Danh mục": [
+      { label: "Trang chủ", href: "/" },
+      { label: "Giới thiệu", href: "/gioi-thieu" },
+      { label: "Sản phẩm", href: "/san-pham" },
+      { label: "Tin tức", href: "/tin-tuc" },
+      { label: "Liên hệ", href: "/lien-he" },
+    ],
+    "Hỗ trợ & Chính sách": [
+      { label: "Điều khoản dịch vụ", href: "#" },
+      { label: "Chính sách quyền riêng tư", href: "#" },
+      { label: "Chính sách vận chuyển & giao hàng", href: "#" },
+      { label: "Chính sách đổi trả", href: "#" },
+      { label: "Phương thức thanh toán", href: "#" },
+    ]
+  },
+  en: {
+    "Categories": [
+      { label: "Home", href: "/" },
+      { label: "About Us", href: "/gioi-thieu" },
+      { label: "Products", href: "/san-pham" },
+      { label: "News", href: "/tin-tuc" },
+      { label: "Contact", href: "/lien-he" },
+    ],
+    "Support & Policies": [
+      { label: "Terms of Service", href: "#" },
+      { label: "Privacy Policy", href: "#" },
+      { label: "Shipping & Delivery Policy", href: "#" },
+      { label: "Return Policy", href: "#" },
+      { label: "Payment Methods", href: "#" },
+    ]
+  }
 };
 
 export function Footer() {
@@ -47,8 +65,8 @@ export function Footer() {
           </div>
 
           {/* Dynamic Links Columns */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title} className={title === "Danh mục" ? "lg:col-span-2" : "lg:col-span-3"}>
+          {Object.entries(footerLinks[lang]).map(([title, links]) => (
+            <div key={title} className={title === "Danh mục" || title === "Categories" ? "lg:col-span-2" : "lg:col-span-3"}>
               <h4 className="font-bold text-[13px] uppercase tracking-wider mb-6 text-[#1c1a14] font-['Josefin_Sans']">
                 {title}
               </h4>
