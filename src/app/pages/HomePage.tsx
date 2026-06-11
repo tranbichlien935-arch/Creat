@@ -35,13 +35,13 @@ export function HomePage() {
                             color: "var(--wdtDarkColor, #1C1A14)",
                             margin: "0 0 12px",
                         }}>
-                            Sản Phẩm Nổi Bật
+                            {lang === 'en' ? 'Featured Products' : 'Sản Phẩm Nổi Bật'}
                         </h2>
                         <p style={{
                             fontFamily: "var(--wdtFontBase)",
                             color: "var(--wdtMutedColor)",
                         }}>
-                            Những dòng bia thủ công được yêu thích nhất
+                            {lang === 'en' ? 'Our most beloved craft beer selections' : 'Những dòng bia thủ công được yêu thích nhất'}
                         </p>
                     </div>
 
@@ -123,7 +123,7 @@ export function HomePage() {
                             color: "var(--wdtDarkColor, #1C1A14)",
                             margin: "0 0 12px",
                         }}>
-                            Tin Tức Mới Nhất
+                            {lang === 'en' ? 'Latest News' : 'Tin Tức Mới Nhất'}
                         </h2>
                     </div>
 
@@ -163,7 +163,7 @@ export function HomePage() {
                             border: "1px solid var(--wdtDarkColor)", color: "var(--wdtDarkColor)", textTransform: "uppercase",
                             letterSpacing: "0.1em", fontSize: 13, fontWeight: 700, borderRadius: 4, textDecoration: 'none'
                         }}>
-                            Xem Tất Cả Tin Tức
+                            {lang === 'en' ? 'View All News' : 'Xem Tất Cả Tin Tức'}
                         </Link>
                     </div>
                 </div>

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useAppLang } from '../hooks/useAppLang';
+import { translations } from '../translations';
 
 export function HomeJourney() {
     const [isHovered, setIsHovered] = useState(false);
+    const { lang } = useAppLang();
+    const t = translations[lang];
 
     return (
         <section className="py-24 bg-[#1C1A14] flex flex-col lg:flex-row items-center justify-center relative overflow-hidden gap-12 lg:gap-24 px-8 border-t border-b border-[#C8963E]/20">
@@ -24,7 +28,7 @@ export function HomeJourney() {
             >
                 {/* Floating Tooltip/Popup on hover */}
                 <div className={`absolute -top-12 left-1/2 -translate-x-1/2 bg-[#2C2416] border border-[#C8963E]/40 px-6 py-3 rounded text-[#dfa173] text-sm tracking-widest whitespace-nowrap shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 z-50 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-                    Quy trình cung ứng B2B tinh gọn
+                    {t.streamlinedSupply}
                 </div>
 
                 {/* Rotating SVG */}
@@ -50,10 +54,10 @@ export function HomeJourney() {
             {/* Explanatory Content / Vertical Timeline */}
             <div className="max-w-md w-full relative z-10">
                 <h2 className="text-[#C8963E] text-[10px] tracking-[0.3em] uppercase mb-4 font-bold">
-                    Quy Trình Cung Ứng
+                    {t.supplyProcess}
                 </h2>
                 <h3 className="text-white text-3xl md:text-5xl font-light mb-12 leading-tight">
-                    Giải Pháp <br /><span className="text-[#dfa173] font-medium">Đối Tác B2B</span>
+                    {t.b2bPartnerSolution} <br /><span className="text-[#dfa173] font-medium">{t.b2bPartner}</span>
                 </h3>
 
                 <div className="relative space-y-8 md:space-y-6">
@@ -61,10 +65,10 @@ export function HomeJourney() {
                     <div className="absolute left-[1.15rem] top-8 bottom-8 w-[2px] bg-gradient-to-b from-[#C8963E]/50 to-transparent md:hidden pointer-events-none"></div>
 
                     {[
-                        { tag: "01", title: "Khám phá hương vị", desc: "Tìm hiểu dòng craft beer độc bản phù hợp gu thưởng thức." },
-                        { tag: "02", title: "Thưởng thức tại Pub", desc: "Ghé thăm không gian của Creat để chill và uống bia tươi trực tiếp." },
-                        { tag: "03", title: "Mua lẻ giao tận nơi", desc: "Đặt hàng online dễ dàng để tận hưởng bia ngon ở bất kỳ đâu." },
-                        { tag: "04", title: "Hợp tác sỉ B2B", desc: "Cung ứng sản lượng lớn ổn định với chiết khấu tốt cho đối tác quán bar." },
+                        { tag: "01", titleVi: "Khám phá hương vị", titleEn: "Discover flavors", descVi: "Tìm hiểu dòng craft beer độc bản phù hợp gu thưởng thức.", descEn: "Explore our unique craft beer selection that matches your taste." },
+                        { tag: "02", titleVi: "Thưởng thức tại Pub", titleEn: "Enjoy at the Pub", descVi: "Ghé thăm không gian của Creat để chill và uống bia tươi trực tiếp.", descEn: "Visit Creat's space to chill and drink fresh draft beer directly." },
+                        { tag: "03", titleVi: "Mua lẻ giao tận nơi", titleEn: "Retail home delivery", descVi: "Đặt hàng online dễ dàng để tận hưởng bia ngon ở bất kỳ đâu.", descEn: "Order online easily to enjoy great beer anywhere." },
+                        { tag: "04", titleVi: "Hợp tác sỉ B2B", titleEn: "B2B wholesale partnership", descVi: "Cung ứng sản lượng lớn ổn định với chiết khấu tốt cho đối tác quán bar.", descEn: "Stable large-scale supply with great discounts for bar partners." },
                     ].map((item, i) => (
                         <div key={i} className={`relative flex gap-6 p-4 md:p-6 rounded-lg transition-colors duration-300 z-10 ${isHovered ? 'md:bg-white/5 md:border md:border-white/10' : 'md:border md:border-transparent'} bg-[#15130f] md:bg-transparent shadow-lg md:shadow-none border border-white/5`}>
                             {/* Number Bubble */}
@@ -72,8 +76,8 @@ export function HomeJourney() {
                                 {item.tag}
                             </div>
                             <div>
-                                <h4 className="text-white font-medium text-lg mb-2 tracking-wide shadow-black drop-shadow-md">{item.title}</h4>
-                                <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                                <h4 className="text-white font-medium text-lg mb-2 tracking-wide shadow-black drop-shadow-md">{lang === 'en' ? item.titleEn : item.titleVi}</h4>
+                                <p className="text-white/60 text-sm leading-relaxed">{lang === 'en' ? item.descEn : item.descVi}</p>
                             </div>
                         </div>
                     ))}

@@ -1,46 +1,51 @@
 import React, { useState } from 'react';
 import { Droplet, MapPin, ShieldCheck, Zap } from 'lucide-react';
 import { useAppLang } from '../hooks/useAppLang';
+import { translations } from '../translations';
 
 const features = [
     {
         id: 1,
         title: "Nguyên liệu thượng hạng",
         en: "Premium Ingredients",
-        desc: "Hương vị bùng nổ từ lúa mạch và hoa bia nhập khẩu, ủ theo công thức độc bản.",
+        descVi: "Hương vị bùng nổ từ lúa mạch và hoa bia nhập khẩu, ủ theo công thức độc bản.",
+        descEn: "Explosive flavors from imported malt and hops, brewed with proprietary recipes.",
         icon: Droplet,
-        image: "https://images.pexels.com/photos/3930616/pexels-photo-3930616.jpeg", // Ảnh hoa bia / lúa mạch
+        image: "https://images.pexels.com/photos/3930616/pexels-photo-3930616.jpeg",
     },
     {
         id: 2,
         title: "Không gian Pub cực chill",
         en: "Enjoy the chilling pub atmosphere",
-        desc: "Trực tiếp thưởng thức bia tươi mát lạnh tại không gian xưởng đậm chất F&B.",
+        descVi: "Trực tiếp thưởng thức bia tươi mát lạnh tại không gian xưởng đậm chất F&B.",
+        descEn: "Experience fresh cold draft beer directly at our brewery-style F&B space.",
         icon: MapPin,
-        image: "https://images.unsplash.com/photo-1543007631-283050bb3e8c?auto=format&fit=crop&w=800&q=80", // Ảnh Pub chill
+        image: "https://images.unsplash.com/photo-1543007631-283050bb3e8c?auto=format&fit=crop&w=800&q=80",
     },
     {
         id: 3,
         title: "Chất lượng mẻ ủ đồng đều",
         en: "Consistent Quality",
-        desc: "Bí quyết ủ lên men tự nhiên đảm bảo 100 mẻ xuất xưởng chuẩn vị từng giọt.",
+        descVi: "Bí quyết ủ lên men tự nhiên đảm bảo 100 mẻ xuất xưởng chuẩn vị từng giọt.",
+        descEn: "Natural fermentation secrets ensure 100 batches of perfect taste in every drop.",
         icon: ShieldCheck,
-        image: "https://images.pexels.com/photos/10039992/pexels-photo-10039992.jpeg", // Ảnh thùng ủ bia
+        image: "https://images.pexels.com/photos/10039992/pexels-photo-10039992.jpeg",
     },
     {
         id: 4,
         title: "Cung ứng sỉ F&B",
         en: "F&B Wholesale Supplier",
-        desc: "Chính sách giá đối tác linh hoạt, năng lực sản xuất hàng ngàn lít ổn định mỗi tháng.",
+        descVi: "Chính sách giá đối tác linh hoạt, năng lực sản xuất hàng ngàn lít ổn định mỗi tháng.",
+        descEn: "Flexible partner pricing policy, stable production capacity of thousands of liters monthly.",
         icon: Zap,
-        image: "https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg", // Ảnh thùng keg bia
+        image: "https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg",
     }
 ];
 
 export function HomeFeatures() {
-    // Mặc định cho cái thẻ đầu tiên (id: 1) mở ra
     const [active, setActive] = useState(1);
     const { lang } = useAppLang();
+    const t = translations[lang];
 
     return (
         <section className="py-24 bg-[#fdf3f2] font-quicksand">
@@ -49,10 +54,10 @@ export function HomeFeatures() {
                 {/* Header Section */}
                 <div className="text-center mb-16">
                     <p className="text-xs font-bold tracking-[0.2em] text-[#b67e53] uppercase mb-3">
-                        Tại sao chọn Creat Craft
+                        {t.whyChoose}
                     </p>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900" style={{ fontFamily: "var(--wdtFontHeading)" }}>
-                        Trải Nghiệm <span className="text-[#b67e53]">Bia Thủ Công</span> Đích Thực
+                        {t.experienceCraftBeer} <span className="text-[#b67e53]">{t.authenticCraftBeer}</span>
                     </h2>
                 </div>
 
@@ -122,7 +127,7 @@ export function HomeFeatures() {
                       ${isActive ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'}`}
                                     >
                                         <p className="text-gray-300 text-sm md:text-base leading-relaxed lg:pl-[72px]">
-                                            {item.desc}
+                                            {lang === 'en' ? item.descEn : item.descVi}
                                         </p>
                                     </div>
                                 </div>

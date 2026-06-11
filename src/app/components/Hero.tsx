@@ -1,6 +1,11 @@
 import { ChevronDown } from "lucide-react";
+import { useAppLang } from "../hooks/useAppLang";
+import { translations } from "../translations";
 
 export function Hero() {
+  const { lang } = useAppLang();
+  const t = translations[lang];
+
   const scrollToAbout = () => {
     const el = document.querySelector("#about");
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -31,8 +36,8 @@ export function Hero() {
       <div className="absolute right-16 top-1/2 -translate-y-1/2 w-72 h-72 rounded-full border border-[#C8963E]/30 hidden lg:flex items-center justify-center">
         <div className="w-56 h-56 rounded-full border border-[#C8963E]/20 flex items-center justify-center">
           <div className="text-center">
-            <div className="text-[#C8963E] text-xs tracking-[0.3em] uppercase mb-1">Khám phá</div>
-            <div className="text-white text-xs tracking-[0.2em] uppercase">Ngay</div>
+            <div className="text-[#C8963E] text-xs tracking-[0.3em] uppercase mb-1">{lang === 'en' ? 'Discover' : 'Khám phá'}</div>
+            <div className="text-white text-xs tracking-[0.2em] uppercase">{lang === 'en' ? 'Now' : 'Ngay'}</div>
           </div>
         </div>
       </div>
@@ -42,7 +47,7 @@ export function Hero() {
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-6">
             <span className="w-8 h-px bg-[#C8963E]" />
-            <span className="text-[#C8963E] text-xs tracking-[0.3em] uppercase">Bia Thủ Công Cao Cấp</span>
+            <span className="text-[#C8963E] text-xs tracking-[0.3em] uppercase">{t.premiumCraftBeer}</span>
           </div>
 
           <h1
@@ -53,17 +58,16 @@ export function Hero() {
               fontWeight: 600,
             }}
           >
-            Hương Vị Tinh Tế,
+            {t.refinedTaste}
             <br />
-            <em className="text-[#C8963E]">Được Chứng Nhận</em>
+            <em className="text-[#C8963E]">{t.certified}</em>
           </h1>
 
           <p
             className="text-[#D4C4A8] mb-10 leading-relaxed max-w-lg"
             style={{ fontFamily: "'Lato', sans-serif", fontSize: "1.05rem", fontWeight: 300 }}
           >
-            Creat Craft Beer — mỗi chai bia là một hành trình khám phá hương vị thuần túy,
-            được ủ từ nguyên liệu tự nhiên tốt nhất, tạo nên trải nghiệm đặc biệt cho người thưởng thức.
+            {t.heroDescription}
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -75,7 +79,7 @@ export function Hero() {
               className="px-8 py-3.5 bg-[#C8963E] text-white text-sm tracking-widest uppercase hover:bg-[#B8841F] transition-colors duration-300 cursor-pointer"
               style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}
             >
-              Mua Ngay
+              {t.buyNow}
             </button>
             <button
               onClick={() => {
@@ -85,7 +89,7 @@ export function Hero() {
               className="px-8 py-3.5 border border-[#C8963E]/60 text-[#C8963E] text-sm tracking-widest uppercase hover:border-[#C8963E] hover:bg-[#C8963E]/10 transition-colors duration-300 cursor-pointer"
               style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}
             >
-              Tìm Hiểu Thêm
+              {t.learnMore}
             </button>
           </div>
         </div>
@@ -97,7 +101,7 @@ export function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#8C7A60] hover:text-[#C8963E] transition-colors cursor-pointer animate-bounce"
       >
         <span className="text-xs tracking-widest uppercase" style={{ fontFamily: "'Lato', sans-serif" }}>
-          Cuộn xuống
+          {t.scrollDown}
         </span>
         <ChevronDown size={18} />
       </button>
