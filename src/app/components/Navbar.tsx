@@ -126,9 +126,8 @@ export function Navbar() {
 
           {/* Logo Container - Always visible and large */}
           <div className="flex items-center w-[160px]">
-            <Link
-              to="/"
-              onClick={() => handleNav("Trang chủ", "/")}
+            <a
+              href="/"
               className="flex items-center cursor-pointer whitespace-nowrap"
             >
               <img
@@ -137,7 +136,7 @@ export function Navbar() {
                 className="object-contain drop-shadow-[0_2px_12px_rgba(200,150,62,0.4)]"
                 style={{ maxHeight: "85px" }}
               />
-            </Link>
+            </a>
           </div>
 
           {/* Nav items — desktop */}
@@ -282,6 +281,25 @@ export function Navbar() {
             )}
           </button>
         ))}
+
+        {/* Language flags in mobile menu */}
+        <div className="flex items-center gap-4 pt-6 pb-2">
+          <span className="text-xs text-[#8C7A60] uppercase tracking-widest">Ngôn ngữ / Language</span>
+          <img
+            src="https://flagcdn.com/vn.svg"
+            alt="Tiếng Việt"
+            title="Tiếng Việt"
+            onClick={() => { changeLang('vi'); setMobileOpen(false); }}
+            className={`w-[32px] h-[22px] object-cover rounded-[2px] shadow-sm cursor-pointer transition-opacity ${lang === 'vi' ? 'opacity-100 ring-2 ring-[#C8963E]' : 'opacity-50 hover:opacity-80'}`}
+          />
+          <img
+            src="https://flagcdn.com/us.svg"
+            alt="English"
+            title="English"
+            onClick={() => { changeLang('en'); setMobileOpen(false); }}
+            className={`w-[32px] h-[22px] object-cover rounded-[2px] shadow-sm cursor-pointer transition-opacity ${lang === 'en' ? 'opacity-100 ring-2 ring-[#C8963E]' : 'opacity-50 hover:opacity-80'}`}
+          />
+        </div>
       </div>
     </>
   );

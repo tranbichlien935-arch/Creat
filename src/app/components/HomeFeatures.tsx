@@ -62,7 +62,7 @@ export function HomeFeatures() {
                 </div>
 
                 {/* Dynamic Accordion Layout */}
-                <div className="flex flex-col lg:flex-row h-[600px] gap-4 w-full">
+                <div className="flex flex-col lg:flex-row lg:h-[600px] gap-4 w-full">
                     {features.map((item) => {
                         const Icon = item.icon;
                         const isActive = active === item.id;
@@ -71,62 +71,65 @@ export function HomeFeatures() {
                             <div
                                 key={item.id}
                                 onMouseEnter={() => setActive(item.id)}
-                                className={`relative overflow-hidden rounded-3xl transition-all duration-700 ease-in-out cursor-pointer group 
-                  ${isActive ? 'lg:flex-[4] flex-[3]' : 'lg:flex-[1] flex-[1]'}`}
+                                onClick={() => setActive(item.id)}
+                                className={`relative rounded-3xl transition-all duration-700 ease-in-out cursor-pointer group overflow-hidden
+                  ${isActive ? 'lg:flex-[4]' : 'lg:flex-[1]'}`}
                             >
-                                {/* Background Image */}
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    loading="lazy"
-                                    className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 
+                                {/* Background Image — ALWAYS covers the card */}
+                                <div className="absolute inset-0 w-full h-full">
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        loading="lazy"
+                                        className={`w-full h-full object-cover transition-transform duration-700 
                     ${isActive ? 'scale-105' : 'scale-100 grayscale-[30%]'}`}
-                                />
+                                    />
+                                    {/* Gradient */}
+                                    <div className={`absolute inset-0 transition-all duration-500 
+                    ${isActive ? 'bg-gradient-to-t from-black/90 via-black/50 to-black/20' : 'bg-black/60'}`} />
+                                </div>
 
-                                {/* Gradient Overlay - Làm tối ảnh để chữ nổi lên */}
-                                <div
-                                    className={`absolute inset-0 transition-all duration-500 
-                    ${isActive
-                                            ? 'bg-gradient-to-t from-black/90 via-black/40 to-transparent'
-                                            : 'bg-black/60 group-hover:bg-black/50'}`}
-                                />
+                                {/* MOBILE CONTENT — relative flow, not clipped */}
+                                <div className="relative z-10 lg:hidden flex flex-col justify-end min-h-[200px] p-6 pointer-events-none">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <div className={`flex items-center justify-center rounded-full shrink-0 ${isActive ? 'w-10 h-10 bg-[#b67e53]' : 'w-9 h-9 bg-white/20'} text-white`}>
+                                            <Icon className="w-5 h-5" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white drop-shadow-md" style={{ fontFamily: "var(--wdtFontHeading)" }}>
+                                            {lang === 'en' ? <span className="notranslate">{item.en}</span> : <span>{item.title}</span>}
+                                        </h3>
+                                    </div>
+                                    {isActive && (
+                                        <p className="text-gray-300 text-sm leading-relaxed mt-1 ml-[52px]">
+                                            {lang === 'en' ? item.descEn : item.descVi}
+                                        </p>
+                                    )}
+                                </div>
 
-                                {/* Content */}
-                                <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 flex flex-col justify-end h-full z-10 pointer-events-none">
-                                    <div className={`flex flex-col lg:flex-row items-center lg:items-end gap-6 h-full transition-all duration-500`}>
-
-                                        {/* Icon Box */}
-                                        <div
-                                            className={`flex items-center justify-center shrink-0 rounded-full transition-all duration-500 
-                        ${isActive ? 'w-12 h-12 bg-[#b67e53] text-white self-start lg:self-end' : 'w-10 h-10 bg-white/20 text-white backdrop-blur-sm mx-auto'}`}
-                                        >
+                                {/* DESKTOP CONTENT — absolute layout for accordion effect */}
+                                <div className="absolute bottom-0 left-0 w-full p-8 hidden lg:flex flex-col justify-end h-full z-10 pointer-events-none">
+                                    <div className={`flex flex-row items-end gap-6 h-full transition-all duration-500`}>
+                                        <div className={`flex items-center justify-center shrink-0 rounded-full transition-all duration-500 ${isActive ? 'w-12 h-12 bg-[#b67e53] text-white' : 'w-10 h-10 bg-white/20 text-white backdrop-blur-sm'}`}>
                                             <Icon className={isActive ? 'w-6 h-6' : 'w-5 h-5'} />
                                         </div>
-
-                                        {/* Horizontal Title (Active or Mobile) */}
+                                        {/* Horizontal title - active only */}
                                         <h3
-                                            className={`text-2xl font-bold whitespace-nowrap drop-shadow-md text-white transition-opacity duration-300 self-start lg:self-end ${isActive ? 'opacity-100 visible' : 'opacity-100 lg:opacity-0 lg:invisible hidden lg:block'}`}
-                                            style={{ fontFamily: "var(--wdtFontHeading)", display: isActive ? 'block' : '' }}
+                                            className={`text-2xl font-bold drop-shadow-md text-white transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0 invisible'}`}
+                                            style={{ fontFamily: "var(--wdtFontHeading)" }}
                                         >
                                             {lang === 'en' ? <span className="notranslate">{item.en}</span> : <span>{item.title}</span>}
                                         </h3>
-
-                                        {/* Vertical Title (Inactive Desktop) */}
+                                        {/* Vertical title - inactive only */}
                                         <h3
-                                            className={`hidden lg:block text-white font-bold text-2xl tracking-wider whitespace-nowrap drop-shadow-md transition-opacity duration-300 absolute left-1/2 -translate-x-1/2 bottom-28 ${!isActive ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
-                                            style={{ fontFamily: "var(--wdtFontHeading)", writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                                            className={`text-white font-bold text-xl tracking-wider whitespace-nowrap drop-shadow-md transition-opacity duration-300 absolute left-1/2 bottom-20 ${!isActive ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                                            style={{ fontFamily: "var(--wdtFontHeading)", writingMode: 'vertical-rl', transform: 'translateX(-50%) rotate(180deg)' }}
                                         >
                                             {lang === 'en' ? <span className="notranslate">{item.en}</span> : <span>{item.title}</span>}
                                         </h3>
-
                                     </div>
-
-                                    {/* Description - Chỉ hiện ra khi thẻ đang active */}
-                                    <div
-                                        className={`transition-all duration-500 ease-in-out overflow-hidden self-start
-                      ${isActive ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'}`}
-                                    >
-                                        <p className="text-gray-300 text-sm md:text-base leading-relaxed lg:pl-[72px]">
+                                    {/* Description - desktop active only */}
+                                    <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isActive ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'}`}>
+                                        <p className="text-gray-300 text-sm md:text-base leading-relaxed pl-[72px]">
                                             {lang === 'en' ? item.descEn : item.descVi}
                                         </p>
                                     </div>

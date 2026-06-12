@@ -9,7 +9,7 @@ export function AboutFeatureProducts() {
     const { lang } = useAppLang();
     const t = translations[lang];
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(1);
 
     const handleScroll = () => {
         if (!scrollRef.current) return;
@@ -63,6 +63,12 @@ export function AboutFeatureProducts() {
         }, 3500);
         return () => clearInterval(timer);
     }, [activeIndex]);
+
+    // Scroll to product 2 on mount
+    useEffect(() => {
+        const timeout = setTimeout(() => scrollToIndex(1), 100);
+        return () => clearTimeout(timeout);
+    }, []);
 
     return (
         <section className="bg-[#EBE5DB] w-full py-24 px-6 md:px-12 lg:px-24">

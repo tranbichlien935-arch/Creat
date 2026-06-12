@@ -99,7 +99,7 @@ export const translations = {
         // About Story
         aboutUsLabel: "Về Chúng Tôi",
         aboutTitle: "Giới Thiệu Về Creat Craft Beer",
-        aboutParagraph1: "Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.",
+        aboutParagraph1: "Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 2 chi nhánh: CN1 ở 93 Đường số 11, Phường Tây Thạnh, và CN2 ở 545 Nguyễn Xiển, Long Bình, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.",
         aboutParagraph2: "CREAT Craft Beer được xây dựng với định hướng trở thành nơi hội tụ của cộng đồng yêu bia thủ công tại Tân Phú nói riêng và TP.HCM nói chung. Quán sở hữu danh sách bia được chọn lọc kỹ càng từ các microbrewery uy tín trong và ngoài nước, đảm bảo mỗi dòng bia đều mang hương vị độc đáo và câu chuyện riêng.",
         aboutSignature: "Creat Craft Beer",
 
@@ -142,7 +142,7 @@ export const translations = {
         hotlineLabel: "Hotline",
         emailLabel: "Email",
         addressLabel: "Địa Chỉ",
-        addressValue: "93 Đường số 11, P. Tây Thạnh, TP.HCM",
+        addressValue: "CN1: 93 Đường số 11 | CN2: 545 Nguyễn Xiển",
 
         // About Feature Products
         productListLabel: "Danh Sách Sản Phẩm",

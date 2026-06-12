@@ -51,7 +51,7 @@ export function HomePage() {
                             return (
                                 <motion.div
                                     key={product.id}
-                                    onClick={() => navigate('/san-pham')}
+                                    onClick={() => navigate(`/san-pham/chi-tiet?id=${product.id}`)}
                                     className="bg-transparent transition-all duration-500 group flex flex-col cursor-pointer hover:-translate-y-2 focus:outline-none select-none"
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +83,6 @@ export function HomePage() {
                                             <span>ABV {product.abv}</span>
                                         </div>
                                         <h3 className="text-2xl font-light mb-2" style={{ fontFamily: "var(--wdtFontHeading)", color: "var(--wdtDarkColor, #1C1A14)" }}>{product.name}</h3>
-                                        <p className="text-[#b67e53] font-bold text-lg mb-6 flex-grow">{product.price}</p>
 
                                         {/* Nút bấm */}
                                         <div className="w-full h-[1px] bg-gray-200 mb-4 opacity-50"></div>

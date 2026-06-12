@@ -307,13 +307,7 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
           transition: "transform 0.45s ease",
         }} />
 
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto", flexWrap: "wrap", gap: 16 }}>
-          <span style={{
-            fontFamily: "var(--wdtFontBase)", fontWeight: 700, fontSize: 14,
-            color: "var(--wdtPrimaryColor, #b67e53)",
-          }}>
-            {product.price}
-          </span>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginTop: "auto" }}>
           <button
             onClick={onOpen}
             className="hover:bg-[#C8963E] hover:text-white hover:shadow-[0_4px_12px_rgba(200,150,62,0.3)] hover:-translate-y-0.5 rounded-sm"
@@ -527,32 +521,6 @@ export function Products() {
           )}
         </div>
 
-        {/* Price */}
-        <div>
-          <button onClick={() => sidebarToggle("price")} style={{
-            display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center",
-            background: "none", border: "none", cursor: "pointer",
-            padding: "0 0 12px 0", borderBottom: "1px solid rgba(0,0,0,0.08)",
-            fontFamily: "var(--wdtFontHeading)", fontSize: "0.95rem", color: "var(--wdtDarkColor)",
-            marginBottom: 14,
-          }}>
-            {lang === 'en' ? "Price Range" : "Mức giá"}
-            <ChevronDown size={14} style={{ transform: openSection === "price" ? "rotate(180deg)" : "none", transition: "transform 0.3s" }} />
-          </button>
-          {openSection === "price" && (
-            <div>
-              <div style={{ width: "100%", height: 3, background: "rgba(0,0,0,0.08)", borderRadius: 2, position: "relative", marginBottom: 14 }}>
-                <div style={{ position: "absolute", left: "10%", right: "15%", top: 0, bottom: 0, background: "var(--wdtPrimaryColor, #b67e53)", borderRadius: 2 }} />
-                {["10%", "85%"].map((pos, i) => (
-                  <div key={i} style={{ position: "absolute", left: pos, top: "50%", transform: "translate(-50%,-50%)", width: 11, height: 11, background: "var(--wdtPrimaryColor, #b67e53)", borderRadius: "50%", cursor: "pointer", boxShadow: "0 2px 5px rgba(0,0,0,0.2)" }} />
-                ))}
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--wdtFontBase)", fontSize: 12, color: "var(--wdtBodyTxtColor)" }}>
-                <span>55.000 ₫</span><span>65.000 ₫</span>
-              </div>
-            </div>
-          )}
-        </div>
       </aside>
 
       {/* ════ MAIN ════ */}

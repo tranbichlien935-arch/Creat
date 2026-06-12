@@ -369,7 +369,7 @@
                 <ul className="mb-8 pl-4 space-y-2 border-l-2 border-[#C8963E]">
                     <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                     <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                    <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                    <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                 </ul>
 
                 <h2 className="text-2xl font-bold text-[#1C1A14] mb-4 mt-10" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
@@ -601,7 +601,7 @@
                     Thông tin liên hệ Creat Craft Beer
                 </h2>
                 <p className="mb-4">
-                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo.
+                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh và 545 Nguyễn Xiển, Long Bình, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo.
                 </p>
 
                 <div className="bg-white p-6 border-l-4 border-[#C8963E] shadow-sm my-8">
@@ -609,7 +609,7 @@
                     <ul className="space-y-2 text-[#2C2416]">
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                     </ul>
                 </div>
 
@@ -823,7 +823,7 @@
                     Thông tin liên hệ Creat Craft Beer
                 </h2>
                 <p className="mb-4">
-                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo.
+                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh và 545 Nguyễn Xiển, Long Bình, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo.
                 </p>
 
                 <div className="bg-white p-6 border-l-4 border-[#C8963E] shadow-sm my-8">
@@ -831,7 +831,7 @@
                     <ul className="space-y-2 text-[#2C2416]">
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                     </ul>
                 </div>
 
@@ -1072,7 +1072,7 @@
                     Địa chỉ quán bia thủ công tại TP.HCM
                 </h2>
                 <p className="mb-4">
-                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
+                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh và 545 Nguyễn Xiển, Long Bình, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
                 </p>
 
                 <div className="bg-white p-6 border-l-4 border-[#C8963E] shadow-sm my-8">
@@ -1080,7 +1080,7 @@
                     <ul className="space-y-2 text-[#2C2416]">
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                     </ul>
                 </div>
 
@@ -1295,7 +1295,7 @@
                     Xưởng nấu bia thủ công tại TP.HCM
                 </h2>
                 <p className="mb-4">
-                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
+                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh và 545 Nguyễn Xiển, Long Bình, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
                 </p>
 
                 <div className="bg-white p-6 border-l-4 border-[#C8963E] shadow-sm my-8">
@@ -1303,7 +1303,7 @@
                     <ul className="space-y-2 text-[#2C2416]">
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                     </ul>
                 </div>
 
@@ -1556,7 +1556,7 @@
                     <ul className="space-y-2 text-[#2C2416]">
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                     </ul>
                 </div>
 
@@ -1896,7 +1896,7 @@
                     Xưởng nấu bia thủ công tại TP.HCM
                 </h2>
                 <p className="mb-4">
-                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
+                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh và 545 Nguyễn Xiển, Long Bình, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
                 </p>
 
                 <div className="bg-white p-6 border-l-4 border-[#C8963E] shadow-sm my-8">
@@ -1904,7 +1904,7 @@
                     <ul className="space-y-2 text-[#2C2416]">
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                     </ul>
                 </div>
 
@@ -2213,7 +2213,7 @@
                     Xưởng nấu bia thủ công tại TP.HCM
                 </h2>
                 <p className="mb-4">
-                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
+                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh và 545 Nguyễn Xiển, Long Bình, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
                 </p>
                 <p className="mb-6">
                     CREAT Craft Beer được xây dựng với định hướng trở thành nơi hội tụ của cộng đồng yêu bia thủ công tại Tân Phú nói riêng và TP.HCM nói chung. Quán sở hữu danh sách bia được chọn lọc kỹ càng từ các microbrewery uy tín trong và ngoài nước, đảm bảo mỗi dòng bia đều mang hương vị độc đáo và câu chuyện riêng. Từ IPA thơm ngát hoa bia, Stout đậm vị cà phê, cacao, Wheat Ale nhẹ nhàng, cho đến các dòng Saison, Sour hay những loại bia theo mùa được cập nhật liên tục, tất cả đều được tuyển chọn nhằm mang đến trải nghiệm “đúng chất” craft beer.
@@ -2277,7 +2277,7 @@
                     <ul className="space-y-2 text-[#2C2416]">
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                     </ul>
                 </div>
 
@@ -2469,7 +2469,7 @@
                     Quán bia thủ công tại TP.HCM
                 </h2>
                 <p className="mb-4">
-                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
+                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh và 545 Nguyễn Xiển, Long Bình, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
                 </p>
                 <p className="mb-6">
                     CREAT Craft Beer được xây dựng với định hướng trở thành nơi hội tụ của cộng đồng yêu bia thủ công tại Tân Phú nói riêng và TP.HCM nói chung. Quán sở hữu danh sách bia được chọn lọc kỹ càng từ các microbrewery uy tín trong và ngoài nước, đảm bảo mỗi dòng bia đều mang hương vị độc đáo và câu chuyện riêng. Từ IPA thơm ngát hoa bia, Stout đậm vị cà phê, cacao, Wheat Ale nhẹ nhàng, cho đến các dòng Saison, Sour hay những loại bia theo mùa được cập nhật liên tục, tất cả đều được tuyển chọn nhằm mang đến trải nghiệm “đúng chất” craft beer.
@@ -2486,7 +2486,7 @@
                     <ul className="space-y-2 text-[#2C2416]">
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                     </ul>
                 </div>
 
@@ -2613,7 +2613,7 @@
                     Xưởng nấu bia thủ công chất lượng tại TP.HCM
                 </h2>
                 <p className="mb-4">
-                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
+                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh và 545 Nguyễn Xiển, Long Bình, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
                 </p>
                 <p className="mb-6">
                     CREAT Craft Beer được xây dựng với định hướng trở thành nơi hội tụ của cộng đồng yêu bia thủ công tại Tân Phú nói riêng và TP.HCM nói chung. Quán sở hữu danh sách bia được chọn lọc kỹ càng từ các microbrewery uy tín trong và ngoài nước, đảm bảo mỗi dòng bia đều mang hương vị độc đáo và câu chuyện riêng. Từ IPA thơm ngát hoa bia, Stout đậm vị cà phê, cacao, Wheat Ale nhẹ nhàng, cho đến các dòng Saison, Sour hay những loại bia theo mùa được cập nhật liên tục, tất cả đều được tuyển chọn nhằm mang đến trải nghiệm “đúng chất” craft beer.
@@ -2630,7 +2630,7 @@
                     <ul className="space-y-2 text-[#2C2416]">
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                     </ul>
                 </div>
 
@@ -2836,7 +2836,7 @@
                     Xưởng nấu bia thủ công chất lượng tại TP.HCM
                 </h2>
                 <p className="mb-4">
-                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
+                    Nếu bạn đang tìm một địa chỉ thưởng thức bia thủ công tại Phường Tân Phú, CREAT Craft Beer chính là điểm đến bạn không nên bỏ qua. Tọa lạc tại 93 Đường số 11, Phường Tây Thạnh và 545 Nguyễn Xiển, Long Bình, CREAT mang đến một không gian thưởng bia vừa gần gũi, vừa sáng tạo, phù hợp cho những ai muốn khám phá thế giới craft beer theo cách chân thật và chất lượng nhất.
                 </p>
                 <p className="mb-6">
                     CREAT Craft Beer được xây dựng với định hướng trở thành nơi hội tụ của cộng đồng yêu bia thủ công tại Tân Phú nói riêng và TP.HCM nói chung. Quán sở hữu danh sách bia được chọn lọc kỹ càng từ các microbrewery uy tín trong và ngoài nước, đảm bảo mỗi dòng bia đều mang hương vị độc đáo và câu chuyện riêng. Từ IPA thơm ngát hoa bia, Stout đậm vị cà phê, cacao, Wheat Ale nhẹ nhàng, cho đến các dòng Saison, Sour hay những loại bia theo mùa được cập nhật liên tục, tất cả đều được tuyển chọn nhằm mang đến trải nghiệm “đúng chất” craft beer.
@@ -2853,7 +2853,7 @@
                     <ul className="space-y-2 text-[#2C2416]">
                         <li><strong>Hotline:</strong> 0989 354 444 (Mr. Nghị)</li>
                         <li><strong>Email:</strong> creatcraftbeer@gmail.com</li>
-                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh, Thành Phố Hồ Chí Minh</li>
+                        <li><strong>Địa Chỉ:</strong> 93 Đường số 11, P. Tây Thạnh (CN1) và 545 Nguyễn Xiển, Long Bình (CN2), Thành Phố Hồ Chí Minh</li>
                     </ul>
                 </div>
 
