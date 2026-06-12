@@ -135,7 +135,7 @@ export function HeroSlider() {
             {slide.cta}
           </button>
           <button
-            onClick={() => handleCTA("/gioi-thieu")}
+            onClick={() => handleCTA("/lien-he")}
             className="px-6 py-3 md:px-8 md:py-4 bg-transparent border border-white/30 text-white text-[11px] md:text-[13px] tracking-[0.15em] uppercase hover:bg-white/10 hover:-translate-y-1 transform transition-all duration-300 cursor-pointer outline-none"
             style={{ fontFamily: "'Lato', sans-serif", fontWeight: 600 }}
           >
