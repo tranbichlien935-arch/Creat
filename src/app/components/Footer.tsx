@@ -97,10 +97,11 @@ export function Footer() {
             <ul className="space-y-5 text-[14px] text-[#5a5a5a]">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 shrink-0 text-[#b67e53] mt-0.5" strokeWidth={2} />
-                <div className="flex flex-col space-y-1.5 leading-relaxed">
-                  <div><strong className="text-[#b67e53]">CN1:</strong> 93 Đường số 11, P.Tây Thạnh, Q. Tân Phú, TP.HCM</div>
-                  <div><strong className="text-[#b67e53]">CN2:</strong> 545 Nguyễn Xiển, P. Long Bình, TP. Thủ Đức, TP.HCM</div>
-                </div>
+                <div><strong className="text-[#b67e53]">CN1:</strong> 93 Đường số 11, P.Tây Thạnh, Q. Tân Phú, TP.HCM</div>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 shrink-0 text-[#b67e53] mt-0.5" strokeWidth={2} />
+                <div><strong className="text-[#b67e53]">CN2:</strong> 545 Nguyễn Xiển, P. Long Bình, TP. Thủ Đức, TP.HCM</div>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 shrink-0 text-[#b67e53]" strokeWidth={2} />
