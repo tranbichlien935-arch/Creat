@@ -118,7 +118,7 @@ export function AboutFeatureProducts() {
                                     to={`/san-pham/chi-tiet?id=${product.id}`}
                                     key={product.id}
                                     data-index={idx}
-                                    className={`carousel-item flex-none w-[280px] md:w-[320px] bg-[#F8F3EB] rounded-sm flex flex-col snap-center border border-[#D4C4A8]/40 transition-all duration-500 ease-out cursor-pointer ${isActive ? 'scale-110 opacity-100 shadow-2xl z-20' : 'scale-90 opacity-40 hover:opacity-70 z-10'}`}
+                                    className={`carousel-item flex-none w-[280px] md:w-[320px] bg-[#F8F3EB] rounded-sm flex flex-col snap-center transition-all duration-500 ease-out cursor-pointer ${isActive ? 'scale-110 opacity-100 shadow-2xl z-20' : 'scale-90 opacity-40 hover:opacity-70 z-10'}`}
                                 >
                                     <div className="relative w-full aspect-[4/5] bg-[#1C1A14] overflow-hidden p-4">
                                         <span className="absolute top-4 left-4 bg-[#F8F3EB] text-[#1C1A14] text-[10px] font-bold px-2 py-1 uppercase tracking-widest z-20">
@@ -134,13 +134,13 @@ export function AboutFeatureProducts() {
                                     <div className="p-6 flex flex-col flex-1">
                                         <div className="flex items-center justify-between mb-3 text-[10px] font-bold text-[#8C7A60] tracking-widest">
                                             <span>ABV {product.abv}</span>
-                                            <span>IBU {product.details.find(d => d.label === 'Độ đắng')?.value}</span>
+                                            <span>IBU {(lang === 'en' ? product.details_en.find(d => d.label === 'IBU') : product.details.find(d => d.label === 'Độ đắng'))?.value}</span>
                                         </div>
                                         <h3 className="font-['Fira_Sans'] text-[#1C1A14] text-xl font-medium mb-3">
-                                            {product.name}
+                                            {lang === 'en' ? product.name_en || product.name : product.name}
                                         </h3>
                                         <p className="font-['Josefin_Sans'] text-[#5C4A30] text-sm font-light leading-relaxed mb-4 line-clamp-3">
-                                            {product.desc}
+                                            {lang === 'en' ? product.desc_en || product.desc : product.desc}
                                         </p>
                                         <div className="mt-auto pt-4 border-t border-[#D4C4A8]/50 text-xs font-semibold text-[#1C1A14] uppercase tracking-widest hover:text-[#b67e53] transition-colors">
                                             {t.detailsLink}
@@ -155,6 +155,6 @@ export function AboutFeatureProducts() {
 
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

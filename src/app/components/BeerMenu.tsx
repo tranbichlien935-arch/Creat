@@ -84,15 +84,38 @@ export function BeerMenu() {
     const handleMouseEnter = () => isHovering = true;
     const handleMouseLeave = () => isHovering = false;
 
-    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
-    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
+    let isDown = false;
+    let startX = 0;
+    let scrollLeftState = 0;
+
+    const handleMouseDown = (e: MouseEvent) => {
+      isDown = true;
+      scrollContainer.classList.add('cursor-grabbing');
+      startX = e.pageX - scrollContainer.offsetLeft;
+      scrollLeftState = scrollContainer.scrollLeft;
+    };
+
+    const handleMouseUp = () => {
+      isDown = false;
+      isHovering = false;
+      scrollContainer.classList.remove('cursor-grabbing');
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX) * 2;
+      scrollContainer.scrollLeft = scrollLeftState - walk;
+    };
+
+    scrollContainer.addEventListener('mousedown', handleMouseDown);
+    scrollContainer.addEventListener('mouseup', handleMouseUp);
+    scrollContainer.addEventListener('mousemove', handleMouseMove);
 
     const step = () => {
-      if (!isHovering && scrollContainer) {
-        scrollContainer.scrollLeft += 1; // 1px per frame speed
-
-        // Loop back to start when we scrolled exactly half the total width 
-        // (since we duplicated the array items exactly once)
+      if (!isHovering && scrollContainer && !isDown) {
+        scrollContainer.scrollLeft += 1;
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0;
         }
@@ -106,12 +129,15 @@ export function BeerMenu() {
       if (typeof window !== 'undefined') {
         scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
         scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
+        scrollContainer.removeEventListener('mousedown', handleMouseDown);
+        scrollContainer.removeEventListener('mouseup', handleMouseUp);
+        scrollContainer.removeEventListener('mousemove', handleMouseMove);
       }
     };
   }, []);
 
   return (
-    <section id="menu" className="relative font-sans py-24 min-h-[90vh] bg-[#FCFAF8] text-[#1C1A14] flex flex-col justify-center">
+    <section id="menu" className="relative font-sans py-12 min-h-screen bg-[#FCFAF8] text-[#1C1A14] flex flex-col justify-center">
       <style>{`
         /* Ẩn thanh cuộn mặc định của trình duyệt */
         .hide-scrollbar::-webkit-scrollbar {
@@ -125,7 +151,7 @@ export function BeerMenu() {
       <div className="relative z-10 w-full flex flex-col max-w-[140rem] mx-auto">
 
         {/* TIÊU ĐỀ */}
-        <div className="text-center mb-12 md:mb-20 px-6 relative z-10">
+        <div className="text-center mb-8 px-6 relative z-10">
           <span className="text-[#b67e53] font-['Josefin_Sans'] text-xs font-semibold tracking-widest uppercase mb-4 block">
             {t.menuSectionLabel}
           </span>
@@ -140,7 +166,7 @@ export function BeerMenu() {
         {/* CONTAINER CHẠY NGANG */}
         <div
           ref={sliderRef}
-          className="w-full flex gap-6 md:gap-8 overflow-x-auto px-6 md:px-[10vw] pb-16 pt-4 hide-scrollbar cursor-grab active:cursor-grabbing"
+          className="w-full flex gap-6 md:gap-8 overflow-x-auto px-6 md:px-[10vw] pb-8 pt-4 hide-scrollbar cursor-grab"
           style={{ scrollbarWidth: 'none' }}
         >
           {menuItems.map((item, idx) => (
@@ -150,14 +176,18 @@ export function BeerMenu() {
             >
 
               {/* HÌNH ẢNH MÓN ĂN - THAY ĐỔI TỪ HÌNH TRÒN SANG BO GÓC ĐỂ KHÔNG BỊ CẮT CHỮ GÓC NHƯ SỤN GÀ HONGKONG */}
-              <div className="w-full aspect-square rounded-2xl overflow-hidden mb-6 shadow-md border-4 border-white transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-xl z-10 bg-white flex items-center justify-center">
+              <div className="w-full aspect-square rounded-2xl overflow-hidden mb-6 shadow-md transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-xl z-10 bg-white flex items-center justify-center">
                 <img src={item.image} alt={item.title} className="w-full h-full object-cover object-center" />
               </div>
 
               {/* NỘI DUNG CHUẨN DESIGN: TIẾNG VIỆT - TIẾNG ANH */}
               <div className="text-center w-full mt-2 flex flex-col flex-1 pb-4">
-                <h3 className="font-bold text-[20px] md:text-[22px] text-[#11202e] mb-2" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>{item.title}</h3>
-                <p className="text-[#8C7A60] text-sm md:text-[15px]" style={{ fontFamily: "'Lato', sans-serif" }}>{item.sub}</p>
+                <h3 className="font-bold text-[20px] md:text-[22px] text-[#11202e] mb-2" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
+                  {lang === 'en' ? item.sub : item.title}
+                </h3>
+                {lang !== 'en' && (
+                  <p className="text-[#8C7A60] text-sm md:text-[15px]" style={{ fontFamily: "'Lato', sans-serif" }}>{item.sub}</p>
+                )}
               </div>
 
             </div>

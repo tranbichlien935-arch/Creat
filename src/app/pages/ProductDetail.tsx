@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingCart } from "lucide-react";
-import { useLocation } from "react-router";
+import { useLocation, Link } from "react-router";
 import { products } from '../components/Products';
 import { useAppLang } from '../hooks/useAppLang';
 
@@ -56,7 +56,7 @@ export function ProductDetail() {
                 {/* Left Side: Images */}
                 <div className="w-full lg:w-1/2 flex flex-col gap-4">
                     {/* Thumbs container could go here. For now just main image */}
-                    <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#F9F7F4] flex justify-center p-8">
+                    <div className="rounded-xl overflow-hidden shadow-sm bg-[#F9F7F4] flex justify-center p-8">
                         <img src={product.image} alt={product.name} className="w-full max-w-[400px] h-auto object-cover hover:scale-105 transition-transform duration-700" />
                     </div>
                 </div>
@@ -92,40 +92,6 @@ export function ProductDetail() {
                         )}
                     </div>
 
-                    {/* Social Share Group as requested - Redesigned for premium aesthetic */}
-                    <div className="flex items-center gap-6 mb-8 pt-4 pb-8 border-b border-gray-200">
-                        <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400">Share</span>
-                        <div className="flex items-center gap-4">
-                            <button onClick={() => {
-                                const url = encodeURIComponent(window.location.href);
-                                window.open(`https://zalo.me/share/?title=${encodeURIComponent(product.name)}&url=${url}`, '_blank', 'width=600,height=400');
-                            }} className="text-gray-400 hover:text-[#0068FF] transition-colors duration-300 flex items-center justify-center">
-                                <span className="font-bold text-sm tracking-wide">ZALO</span>
-                            </button>
-                            <span className="text-gray-300">•</span>
-                            <button onClick={() => {
-                                const url = encodeURIComponent(window.location.href);
-                                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
-                            }} className="text-gray-400 hover:text-[#4267B2] transition-colors duration-300 flex items-center justify-center">
-                                <span className="font-bold text-sm tracking-wide">FACEBOOK</span>
-                            </button>
-                            <span className="text-gray-300">•</span>
-                            <button onClick={() => {
-                                if (navigator.share) {
-                                    navigator.share({
-                                        title: product.name,
-                                        text: `Khám phá ngay sản phẩm ${product.name} tại Creat Craft Beer!`,
-                                        url: window.location.href
-                                    }).catch(console.error);
-                                } else {
-                                    navigator.clipboard.writeText(window.location.href);
-                                    alert("Đã copy đường dẫn sản phẩm!");
-                                }
-                            }} className="text-gray-400 hover:text-[#C8963E] transition-colors duration-300 flex items-center justify-center">
-                                <span className="font-bold text-sm tracking-wide">COPY LINK</span>
-                            </button>
-                        </div>
-                    </div>
 
                     <div className="flex items-center gap-4 mb-10 text-xl mt-4">
                         <span className="text-[#1C1A14] font-medium text-[13px] tracking-widest uppercase">{lang === 'en' ? 'Price: ' : 'Giá: '}</span>
@@ -168,7 +134,7 @@ export function ProductDetail() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
                     {similarProducts.map((item) => (
-                        <div key={item.id} className="flex flex-col items-center text-center group cursor-pointer">
+                        <Link to={`/san-pham/chi-tiet?id=${item.id}`} key={item.id} className="flex flex-col items-center text-center group cursor-pointer no-underline">
                             <div className="w-full relative rounded-xl overflow-hidden bg-[#F9F7F4] mb-4 aspect-[4/5]">
                                 <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
                                 <img src={item.imageAlt} alt={`${item.name} alt`} className="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -197,7 +163,7 @@ export function ProductDetail() {
                                 )}
                                 <span className="text-[#E03C31] text-md font-medium">{item.price}</span>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

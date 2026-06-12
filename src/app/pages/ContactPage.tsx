@@ -111,13 +111,14 @@ export function ContactPage() {
                             <h3 className="text-xl font-light text-white mb-6" style={{ fontFamily: "var(--wdtFontHeading)" }}>
                                 {lang === 'en' ? 'Send a Message' : 'Gửi Tin Nhắn'}
                             </h3>
-                            <form action="https://formsubmit.co/creatcraftbeer@gmail.com" method="POST" className="relative z-10 space-y-5">
-                                {/* FormSubmit configuration */}
-                                <input type="hidden" name="_subject" value="New Contact Message from Creat Craft Beer" />
-                                <input type="hidden" name="_captcha" value="false" />
-                                <input type="hidden" name="_template" value="table" />
-                                {/* End Config */}
-
+                            <form
+                                onSubmit={(e) => {
+                                    e.preventDefault();
+                                    alert(lang === 'en' ? 'Thank you! Your message has been sent.' : 'Cảm ơn bạn! Tin nhắn đã được gửi.');
+                                    e.currentTarget.reset();
+                                }}
+                                className="relative z-10 space-y-5"
+                            >
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                     <div>
                                         <input

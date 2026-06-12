@@ -82,7 +82,7 @@ export function HomePage() {
                                             <span className="w-1 h-1 bg-[#b67e53] rounded-full"></span>
                                             <span>ABV {product.abv}</span>
                                         </div>
-                                        <h3 className="text-2xl font-light mb-2" style={{ fontFamily: "var(--wdtFontHeading)", color: "var(--wdtDarkColor, #1C1A14)" }}>{product.name}</h3>
+                                        <h3 className="text-2xl font-light mb-2" style={{ fontFamily: "var(--wdtFontHeading)", color: "var(--wdtDarkColor, #1C1A14)" }}>{lang === 'en' ? product.name_en || product.name : product.name}</h3>
 
                                         {/* Nút bấm */}
                                         <div className="w-full h-[1px] bg-gray-200 mb-4 opacity-50"></div>
@@ -160,7 +160,6 @@ export function HomePage() {
                             );
                         })}
                     </div>
-
                     <div style={{ textAlign: "center", marginTop: 40 }}>
                         <Link to="/tin-tuc" style={{
                             display: "inline-flex", alignItems: "center", gap: 8, padding: "12px 30px",

@@ -192,10 +192,7 @@ export function News() {
               {t.newsSubtitle}<br /><em className="text-[#C8963E]">{t.newsTitle}</em>
             </h2>
           </div>
-          <button className="flex items-center gap-2 text-[#C8963E] text-xs tracking-widest uppercase hover:gap-4 transition-all duration-300 cursor-pointer" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>
-            {t.viewAllNews}
-            <ArrowRight size={14} />
-          </button>
+
         </div>
 
         {/* News grid */}

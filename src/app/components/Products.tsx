@@ -54,7 +54,7 @@ export const products = [
     oldPrice: null,
     abv: "5.0%",
     image: "https://www.creatcraft.com.vn/upload/product/dsc02050-1-1-4865.jpg",
-    imageAlt: "https://www.creatcraft.com.vn/thumbs/600x800x2/upload/product/bai-dang-1312-1000-x-1000-px-600-x-800-px-2-5076.png",
+    imageAlt: "https://www.creatcraft.com.vn/upload/product/untitled-session4780-2851.jpg",
     tag: "Best Seller",
     desc: "Pilsner Fruity mang hương vị ngọt ngào, dễ thưởng thức với cốt chanh dây tự nhiên và men tươi.",
     desc_en: "Pilsner Fruity offers a sweet, highly approachable craft experience crafted with natural passion fruit extract and fresh brewing yeast.",
@@ -443,23 +443,10 @@ export function Products() {
   const sidebarToggle = (sec: string) => setOpenSection(openSection === sec ? "" : sec);
 
   return (
-    <div style={{
-      display: "flex",
-      flexDirection: window.innerWidth < 768 ? "column" : "row",
-      gap: window.innerWidth < 768 ? 24 : 52,
-      maxWidth: 1280,
-      margin: "0 auto",
-      padding: window.innerWidth < 768 ? "24px 16px 64px" : "44px 24px 96px"
-    }}>
+    <div className="flex flex-col md:flex-row max-w-[1280px] mx-auto px-4 md:px-6 pt-6 pb-16 md:pt-11 md:pb-24 gap-6 md:gap-[52px]">
 
       {/* ════ SIDEBAR ════ */}
-      <aside style={{
-        width: window.innerWidth < 768 ? "100%" : 180,
-        flexShrink: 0,
-        position: window.innerWidth < 768 ? "relative" : "sticky",
-        top: 96,
-        alignSelf: "flex-start"
-      }}>
+      <aside className="w-full md:w-[180px] shrink-0 relative md:sticky md:top-[96px] self-start">
 
         {/* Category */}
         <div style={{ marginBottom: 28 }}>
@@ -497,29 +484,7 @@ export function Products() {
           )}
         </div>
 
-        {/* Size */}
-        <div style={{ marginBottom: 28 }}>
-          <button onClick={() => sidebarToggle("size")} style={{
-            display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center",
-            background: "none", border: "none", cursor: "pointer",
-            padding: "0 0 12px 0", borderBottom: "1px solid rgba(0,0,0,0.08)",
-            fontFamily: "var(--wdtFontHeading)", fontSize: "0.95rem", color: "var(--wdtDarkColor)",
-            marginBottom: 14,
-          }}>
-            {lang === 'en' ? "Volume" : "Dung tích"}
-            <ChevronDown size={14} style={{ transform: openSection === "size" ? "rotate(180deg)" : "none", transition: "transform 0.3s" }} />
-          </button>
-          {openSection === "size" && (
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              {(lang === 'en' ? ["330ml / Bottle", "1 Liter / Can", "B2B Keg", "Party Barrel"] : ["330ml / Chai", "1 Lít / Lon", "Keg B2B", "Bom Party"]).map(s => (
-                <li key={s} style={{ padding: "7px 10px", fontFamily: "var(--wdtFontBase)", fontSize: 13, cursor: "pointer", color: "var(--wdtBodyTxtColor)", transition: "color 0.2s" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "var(--wdtPrimaryColor)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "var(--wdtBodyTxtColor)")}
-                >{s}</li>
-              ))}
-            </ul>
-          )}
-        </div>
+
 
       </aside>
 
@@ -533,18 +498,16 @@ export function Products() {
           marginBottom: 36, flexWrap: "wrap", gap: 12,
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            {window.innerWidth >= 768 && (
-              <div style={{ display: "flex", gap: 4 }}>
-                {([3, 4] as const).map(c => (
-                  <button key={c} onClick={() => { setView("grid"); setCols(c); }} title={`${c} ${lang === 'en' ? 'columns' : 'cột'}`} style={{ background: "none", border: "none", cursor: "pointer", padding: 5, opacity: view === "grid" && cols === c ? 1 : 0.28, transition: "opacity 0.2s" }}>
-                    {c === 3 ? <Grid3x3 size={16} /> : <LayoutGrid size={16} />}
-                  </button>
-                ))}
-                <button onClick={() => setView("list")} style={{ background: "none", border: "none", cursor: "pointer", padding: 5, opacity: view === "list" ? 1 : 0.28, transition: "opacity 0.2s" }}>
-                  <List size={16} />
+            <div className="hidden md:flex gap-1">
+              {([3, 4] as const).map(c => (
+                <button key={c} onClick={() => { setView("grid"); setCols(c); }} title={`${c} ${lang === 'en' ? 'columns' : 'cột'}`} style={{ background: "none", border: "none", cursor: "pointer", padding: 5, opacity: view === "grid" && cols === c ? 1 : 0.28, transition: "opacity 0.2s" }}>
+                  {c === 3 ? <Grid3x3 size={16} /> : <LayoutGrid size={16} />}
                 </button>
-              </div>
-            )}
+              ))}
+              <button onClick={() => setView("list")} style={{ background: "none", border: "none", cursor: "pointer", padding: 5, opacity: view === "list" ? 1 : 0.28, transition: "opacity 0.2s" }}>
+                <List size={16} />
+              </button>
+            </div>
             <span style={{ fontFamily: "var(--wdtFontBase)", fontSize: 12, color: "var(--wdtBodyTxtColor)", opacity: 0.55 }}>
               {sorted.length} {lang === 'en' ? "products" : "sản phẩm"}
             </span>
@@ -554,12 +517,10 @@ export function Products() {
 
         {/* Grid view */}
         {view === "grid" && (
-          <ul style={{
-            display: "grid",
-            gridTemplateColumns: window.innerWidth < 480 ? "1fr" : window.innerWidth < 768 ? "repeat(2, minmax(0, 1fr))" : `repeat(${cols}, minmax(0, 1fr))`,
-            gap: window.innerWidth < 768 ? "48px 20px" : "52px 28px",
-            padding: 0, margin: 0, listStyle: "none",
-          }}>
+          <ul
+            className={`grid gap-y-12 gap-x-5 md:gap-y-[52px] md:gap-x-7 grid-cols-1 sm:grid-cols-2 ${cols === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}
+            style={{ padding: 0, margin: 0, listStyle: "none" }}
+          >
             {sorted.map((p, i) => <ProductCard key={p.id} product={p} index={i} />)}
           </ul>
         )}
