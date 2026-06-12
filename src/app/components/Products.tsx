@@ -25,8 +25,8 @@ export const products = [
     price: "62.000 ₫",
     oldPrice: null,
     abv: "6.8%",
-    image: "https://www.creatcraft.com.vn/upload/product/untitled-session6920-2907.jpg",
-    imageAlt: "https://www.creatcraft.com.vn/upload/product/untitled-session89811-8635.jpg",
+    image: "https://www.creatcraft.com.vn/upload/product/untitled-session89811-8635.jpg",
+    imageAlt: "https://www.creatcraft.com.vn/upload/product/untitled-session1072-8370.jpg",
     tag: "Signature",
     desc: "IPA mang phong cách sáng tạo từ vị trứ danh India Pale Ale. Công thức kết hợp giữa lúa mạch, hoa bia đắng, lan toả hương cỏ nồng nàn nơi vòm họng.",
     desc_en: "Our Signature IPA infused with the iconic India Pale Ale style. A bold blend of premium malt and bitter hops, delivering an intense, grassy hop aroma on the palate.",
@@ -217,9 +217,10 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
         <img
           src={product.image}
           alt={product.name}
+          loading="lazy"
           style={{
             position: "absolute", inset: 0,
-            width: "100%", height: "100%", objectFit: "cover",
+            width: "100%", height: "100%", objectFit: "contain",
             transition: "opacity 0.55s ease, transform 0.7s ease",
             opacity: hovered ? 0 : 1,
             transform: hovered ? "scale(1.06)" : "scale(1)",
@@ -230,7 +231,7 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
           alt=""
           style={{
             position: "absolute", inset: 0,
-            width: "100%", height: "100%", objectFit: "cover",
+            width: "100%", height: "100%", objectFit: "contain",
             transition: "opacity 0.55s ease, transform 0.7s ease",
             opacity: hovered ? 1 : 0,
             transform: hovered ? "scale(1)" : "scale(1.06)",
@@ -289,7 +290,7 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
           onClick={onOpen}
           style={{
             fontFamily: "var(--wdtFontHeading)", fontSize: "0.95rem", fontWeight: 400,
-            color: "var(--wdtDarkColor, #1C1A14)", margin: "0 0 10px", cursor: "pointer",
+            color: "var(--wdtDarkColor, #1C1A14)", margin: "0 0 20px", cursor: "pointer",
             transition: "color 0.2s",
           }}
           onMouseEnter={e => (e.currentTarget.style.color = "var(--wdtPrimaryColor, #b67e53)")}
@@ -306,7 +307,7 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
           transition: "transform 0.45s ease",
         }} />
 
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto", flexWrap: "wrap", gap: 16 }}>
           <span style={{
             fontFamily: "var(--wdtFontBase)", fontWeight: 700, fontSize: 14,
             color: "var(--wdtPrimaryColor, #b67e53)",
@@ -315,12 +316,14 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
           </span>
           <button
             onClick={onOpen}
+            className="hover:bg-[#C8963E] hover:text-white hover:shadow-[0_4px_12px_rgba(200,150,62,0.3)] hover:-translate-y-0.5 rounded-sm"
             style={{
               fontFamily: "var(--wdtFontBase)", fontSize: 9, letterSpacing: "0.15em",
               textTransform: "uppercase", color: "var(--wdtDarkColor, #1C1A14)",
-              background: "none", border: "none", cursor: "pointer", padding: 0,
-              opacity: hovered ? 1 : 0.35,
-              transition: "opacity 0.3s",
+              background: "transparent", border: "1px solid rgba(0,0,0,0.1)",
+              cursor: "pointer", padding: "6px 12px",
+              opacity: hovered ? 1 : 0.5,
+              transition: "all 0.3s ease",
             }}
           >
             {lang === 'en' ? "Details →" : "Chi tiết →"}
@@ -457,7 +460,7 @@ export function Products() {
 
       {/* ════ SIDEBAR ════ */}
       <aside style={{
-        width: window.innerWidth < 768 ? "100%" : 232,
+        width: window.innerWidth < 768 ? "100%" : 180,
         flexShrink: 0,
         position: window.innerWidth < 768 ? "relative" : "sticky",
         top: 96,
@@ -586,7 +589,7 @@ export function Products() {
           <ul style={{
             display: "grid",
             gridTemplateColumns: window.innerWidth < 480 ? "1fr" : window.innerWidth < 768 ? "repeat(2, minmax(0, 1fr))" : `repeat(${cols}, minmax(0, 1fr))`,
-            gap: window.innerWidth < 768 ? "32px 16px" : "52px 28px",
+            gap: window.innerWidth < 768 ? "48px 20px" : "52px 28px",
             padding: 0, margin: 0, listStyle: "none",
           }}>
             {sorted.map((p, i) => <ProductCard key={p.id} product={p} index={i} />)}
@@ -603,7 +606,7 @@ export function Products() {
                 onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
                 <div style={{ width: 110, flexShrink: 0, aspectRatio: "3/4", overflow: "hidden", background: "#F2EEE9" }}>
-                  <img src={p.image} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <img src={p.image} alt={p.name} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <span style={{ fontFamily: "var(--wdtFontBase)", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--wdtMutedColor, #8C7A60)", display: "block", marginBottom: 6 }}>
@@ -615,7 +618,8 @@ export function Products() {
                     <span style={{ fontWeight: 700, fontSize: 14, color: "var(--wdtPrimaryColor, #b67e53)" }}>{p.price}</span>
                     <button
                       onClick={() => (window.location.href = `/san-pham/chi-tiet?id=${p.id}`)}
-                      style={{ fontFamily: "var(--wdtFontBase)", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", background: "#1C1A14", color: "#fff", border: "none", padding: "7px 16px", cursor: "pointer" }}
+                      className="hover:bg-[#C8963E] hover:shadow-[0_6px_15px_rgba(200,150,62,0.3)] hover:-translate-y-1 transition-all duration-300"
+                      style={{ fontFamily: "var(--wdtFontBase)", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", background: "#1C1A14", color: "#fff", border: "none", padding: "8px 20px", cursor: "pointer", borderRadius: 2 }}
                     >
                       {lang === 'en' ? "Details →" : "Chi tiết →"}
                     </button>
