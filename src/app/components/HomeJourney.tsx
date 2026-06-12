@@ -75,9 +75,9 @@ export function HomeJourney() {
                             <div className="w-10 h-10 shrink-0 rounded-full bg-[#2C2416] border border-[#C8963E]/40 flex items-center justify-center text-[#dfa173] font-bold shadow-[0_0_15px_rgba(200,150,62,0.15)] mt-1">
                                 {item.tag}
                             </div>
-                            <div>
-                                <h4 className="text-white font-medium text-lg mb-2 tracking-wide shadow-black drop-shadow-md">{lang === 'en' ? item.titleEn : item.titleVi}</h4>
-                                <p className="text-white/60 text-sm leading-relaxed">{lang === 'en' ? item.descEn : item.descVi}</p>
+                            <div className="flex-1 flex flex-col justify-center">
+                                <h4 className="text-white font-medium text-lg mb-2 tracking-wide shadow-black drop-shadow-md text-balance">{lang === 'en' ? item.titleEn : item.titleVi}</h4>
+                                <p className="text-white/60 text-[13px] md:text-sm leading-relaxed text-balance">{lang === 'en' ? item.descEn : item.descVi}</p>
                             </div>
                         </div>
                     ))}

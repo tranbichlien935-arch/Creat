@@ -7,55 +7,64 @@ export const menuItems = [
     id: 1,
     image: "https://creatcraft.com.vn/upload/elfinder/ducpham0981973533-04375-1731392319-2.jpg",
     title: "Beef Steak",
-    sub: "Premium Beef Steak"
+    sub: "Premium Beef Steak",
+    price: "350,000đ"
   },
   {
     id: 2,
     image: "https://creatcraft.com.vn/upload/elfinder/471224956_122181063116127186_6835408613328349828_n.jpg",
     title: "Sườn Nướng Đặc Biệt",
-    sub: "Signature BBQ Ribs"
+    sub: "Signature BBQ Ribs",
+    price: "250,000đ"
   },
   {
     id: 4,
     image: "https://creatcraft.com.vn/upload/elfinder/471276054_122181062552127186_3906534986553256707_n.jpg",
     title: "Xiên Nướng Rau Củ",
-    sub: "Grilled Veggie Skewers"
+    sub: "Grilled Veggie Skewers",
+    price: "85,000đ"
   },
   {
     id: 5,
     image: "https://creatcraft.com.vn/upload/elfinder/471284434_122181050696127186_5485605934704400712_n.jpg",
     title: "Cơm Chiên Cá Mặn",
-    sub: "Salted Fish Fried Rice"
+    sub: "Salted Fish Fried Rice",
+    price: "120,000đ"
   },
   {
     id: 6,
     image: "https://creatcraft.com.vn/upload/elfinder/471312317_122181063080127186_4257549939694959512_n.jpg",
     title: "Mực Ống Hấp",
-    sub: "Steamed Squid"
+    sub: "Steamed Squid",
+    price: "180,000đ"
   },
   {
     id: 7,
     image: "https://creatcraft.com.vn/upload/elfinder/471324722_122181050024127186_3269747421325517719_n.jpg",
     title: "Lòng Gà Xào Bánh Đa",
-    sub: "Stir-fried Chicken Giblets with Rice Paper"
+    sub: "Stir-fried Chicken Giblets with Rice Paper",
+    price: "140,000đ"
   },
   {
     id: 8,
     image: "https://creatcraft.com.vn/upload/elfinder/471326959_122181049970127186_8656627144969005209_n.jpg",
     title: "Mực Một Nắng Nướng Muối Ớt",
-    sub: "Grilled Sun-dried Squid with Chili"
+    sub: "Grilled Sun-dried Squid with Chili",
+    price: "200,000đ"
   },
   {
     id: 9,
     image: "https://creatcraft.com.vn/upload/elfinder/471182876_122181063050127186_1166998085643520039_n.jpg",
     title: "Sụn Gà Rang Muối Hongkong",
-    sub: "Hongkong Style Salted Chicken Cartilage"
+    sub: "Hongkong Style Salted Chicken Cartilage",
+    price: "150,000đ"
   },
   {
     id: 10,
     image: "https://creatcraft.com.vn/upload/elfinder/471259097_122181062372127186_8454474257599718691_n.jpg",
     title: "Cá Đù Một Nắng",
-    sub: "Sun-dried Croaker Fish"
+    sub: "Sun-dried Croaker Fish",
+    price: "190,000đ"
   }
 ];
 
@@ -94,28 +103,16 @@ export function BeerMenu() {
     animationId = requestAnimationFrame(step);
 
     return () => {
-      cancelAnimationFrame(animationId);
-      scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
-      scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
+      if (typeof window !== 'undefined') {
+        scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
+        scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
+      }
     };
   }, []);
 
-  const duplicatedItems = [...menuItems, ...menuItems];
-
   return (
-    <section id="menu" className="relative font-sans py-24 min-h-[90vh] bg-[#FCFAF8] text-[#1C1A14] overflow-hidden flex flex-col justify-center">
-
-      {/* 
-        CHỮ NỀN CHUYỂN ĐỘNG TO MỜ PHÍA SAU
-      */}
+    <section id="menu" className="relative font-sans py-24 min-h-[90vh] bg-[#FCFAF8] text-[#1C1A14] flex flex-col justify-center">
       <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 80s linear infinite;
-        }
         /* Ẩn thanh cuộn mặc định của trình duyệt */
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
@@ -125,18 +122,6 @@ export function BeerMenu() {
           scrollbar-width: none;
         }
       `}</style>
-
-      <div className="absolute inset-0 z-0 flex items-center pointer-events-none opacity-5">
-        <div className="flex whitespace-nowrap animate-marquee">
-          <h1 className="text-[15rem] md:text-[22rem] font-bold tracking-tighter uppercase mr-16" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
-            {t.menuMarquee}
-          </h1>
-          <h1 className="text-[15rem] md:text-[22rem] font-bold tracking-tighter uppercase mr-16" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>
-            {t.menuMarquee}
-          </h1>
-        </div>
-      </div>
-
       <div className="relative z-10 w-full flex flex-col max-w-[140rem] mx-auto">
 
         {/* TIÊU ĐỀ */}
@@ -152,27 +137,25 @@ export function BeerMenu() {
           </p>
         </div>
 
-        {/* CONTAINER CHẠY NGANG (Continuous Smooth Scroll) */}
+        {/* CONTAINER CHẠY NGANG */}
         <div
           ref={sliderRef}
           className="w-full flex gap-6 md:gap-8 overflow-x-auto px-6 md:px-[10vw] pb-16 pt-4 hide-scrollbar cursor-grab active:cursor-grabbing"
           style={{ scrollbarWidth: 'none' }}
         >
-          {duplicatedItems.map((item, idx) => (
+          {menuItems.map((item, idx) => (
             <div
               key={`${item.id}-${idx}`}
               className="snap-center shrink-0 w-[280px] md:w-[320px] bg-[#F9F7F4] rounded-lg shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col items-center p-8 relative"
             >
 
-              {/* SALE TAG ĐỎ ĐẬM (Bỏ theo yêu cầu bỏ giá) */}
-
-              {/* HÌNH ẢNH MÓN ĂN - CẮT TRÒN GIỐNG CHIẾC ĐĨA */}
-              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 shadow-[0_15px_30px_rgba(0,0,0,0.2)] border-4 border-white transition-transform duration-500 hover:scale-105 z-10 bg-white">
-                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+              {/* HÌNH ẢNH MÓN ĂN - THAY ĐỔI TỪ HÌNH TRÒN SANG BO GÓC ĐỂ KHÔNG BỊ CẮT CHỮ GÓC NHƯ SỤN GÀ HONGKONG */}
+              <div className="w-full aspect-square rounded-2xl overflow-hidden mb-6 shadow-md border-4 border-white transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-xl z-10 bg-white flex items-center justify-center">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover object-center" />
               </div>
 
-              {/* NỘI DUNG CHUẨN DESIGN - KHÔNG CHỨA GIÁ CẢ */}
-              <div className="text-center w-full mt-2">
+              {/* NỘI DUNG CHUẨN DESIGN: TIẾNG VIỆT - TIẾNG ANH */}
+              <div className="text-center w-full mt-2 flex flex-col flex-1 pb-4">
                 <h3 className="font-bold text-[20px] md:text-[22px] text-[#11202e] mb-2" style={{ fontFamily: "'Josefin Sans', sans-serif" }}>{item.title}</h3>
                 <p className="text-[#8C7A60] text-sm md:text-[15px]" style={{ fontFamily: "'Lato', sans-serif" }}>{item.sub}</p>
               </div>

@@ -41,6 +41,10 @@ export function Footer() {
   const { lang } = useAppLang();
 
   const scrollTo = (href: string) => {
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     if (href.startsWith('/')) {
       window.location.href = href;
       return;
@@ -120,7 +124,7 @@ export function Footer() {
       {/* Floating Scroll to Top Button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-[#1C1A14] text-[#C8963E] border border-[#C8963E]/30 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-[#C8963E] hover:text-[#1C1A14] hover:shadow-[0_8px_20px_rgba(200,150,62,0.3)] transition-all duration-300 z-[90] group"
+        className="fixed bottom-12 md:bottom-16 right-6 md:right-10 w-12 h-12 bg-[#1C1A14] text-[#C8963E] border border-[#C8963E]/30 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-[#C8963E] hover:text-[#1C1A14] hover:shadow-[0_8px_20px_rgba(200,150,62,0.3)] transition-all duration-300 z-[90] group"
         aria-label="Scroll to top"
       >
         <div className="w-2.5 h-2.5 border-t-[2px] border-l-[2px] border-current transform rotate-45 group-hover:-translate-y-1 transition-transform" />

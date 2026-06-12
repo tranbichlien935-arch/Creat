@@ -252,10 +252,11 @@ export function Navbar() {
             </div>
 
             <button
-              className="p-2 transition-colors cursor-pointer lg:hidden text-white/90 hover:text-[#C8963E]"
+              className="p-3 bg-[#1C1A14]/40 border border-white/10 rounded-md transition-all duration-300 cursor-pointer lg:hidden text-white hover:bg-[#C8963E] hover:border-[#C8963E] hover:shadow-[0_4px_12px_rgba(200,150,62,0.3)]"
               onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle Menu"
             >
-              {mobileOpen ? <X size={20} /> : <MenuIcon size={20} />}
+              {mobileOpen ? <X size={24} /> : <MenuIcon size={24} />}
             </button>
           </div>
         </div>

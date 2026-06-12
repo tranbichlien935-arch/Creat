@@ -99,10 +99,11 @@ export function HomePage() {
                     </div>
 
                     <div style={{ textAlign: "center", marginTop: 40 }}>
-                        <Link to="/san-pham" style={{
+                        <Link to="/san-pham" className="hover:shadow-[0_8px_25px_rgba(200,150,62,0.4)] hover:-translate-y-1 transition-all duration-300" style={{
                             display: "inline-flex", alignItems: "center", gap: 8, padding: "12px 30px",
                             background: "var(--wdtGoldColor)", color: "#fff", textTransform: "uppercase",
-                            letterSpacing: "0.1em", fontSize: 13, fontWeight: 700, borderRadius: 4, textDecoration: 'none'
+                            letterSpacing: "0.1em", fontSize: 13, fontWeight: 700, borderRadius: 4, textDecoration: 'none',
+                            boxShadow: "0 4px 10px rgba(200,150,62,0.2)"
                         }}>
                             {lang === 'en' ? <span className="notranslate">VIEW ALL PRODUCTS</span> : <span>Xem Tất Cả Sản Phẩm</span>} <ArrowRight size={16} />
                         </Link>

@@ -1,7 +1,12 @@
 const fs = require('fs');
+fs.mkdirSync('D:\\creatcraft\\Creat\\public\\images\\products', { recursive: true });
+
+const b = 'C:\\Users\\admin\\.gemini\\antigravity\\brain\\2143cfff-d270-4221-aa34-b36c0b547992';
 try {
-    let list = fs.readdirSync('C:/Users/admin/.gemini/antigravity/brain/508269ca-226b-48e9-8cb5-7163a9378198');
-    fs.writeFileSync('d:/creatcraft/Creat/debug.txt', list.join('\n'));
+    fs.copyFileSync(`${b}\\uploaded_image_0_1781236216952.png`, 'D:\\creatcraft\\Creat\\public\\images\\products\\signature_new.jpg');
+    fs.copyFileSync(`${b}\\uploaded_image_1_1781236216952.png`, 'D:\\creatcraft\\Creat\\public\\images\\products\\bestseller_new.png');
+    fs.copyFileSync(`${b}\\uploaded_image_0_1781236216952.png`, 'D:\\creatcraft\\Creat\\public\\images\\products\\stout_new.png');
+    console.log("Success!");
 } catch (e) {
-    fs.writeFileSync('d:/creatcraft/Creat/debug.txt', e.toString());
+    console.log("Error:", e);
 }

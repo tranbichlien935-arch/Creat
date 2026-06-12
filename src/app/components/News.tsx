@@ -201,26 +201,15 @@ export function News() {
         {/* News grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {currentNews.map((item) => (
-            <Link to={item.link} key={item.id} className="group cursor-pointer block">
-              <article>
+            <Link to={item.link} key={item.id} className="group cursor-pointer block h-full">
+              <article className="flex flex-col h-full">
                 {/* Image */}
-                <div className="overflow-hidden aspect-[16/10] mb-5">
+                <div className="overflow-hidden aspect-[16/10] mb-4">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                </div>
-
-                {/* Meta */}
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="bg-[#C8963E] text-white text-[10px] tracking-widest uppercase px-2 py-1" style={{ fontFamily: "'Lato', sans-serif" }}>
-                    {lang === 'en' ? item.category_en : item.category}
-                  </span>
-                  <div className="flex items-center gap-1.5 text-[#8C7A60] text-xs" style={{ fontFamily: "'Lato', sans-serif" }}>
-                    <Calendar size={12} />
-                    {lang === 'en' ? item.date_en : item.date}
-                  </div>
                 </div>
 
                 {/* Title */}
@@ -229,12 +218,24 @@ export function News() {
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-[#8C7A60] text-sm leading-relaxed mb-4" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
+                <p className="text-[#5a5a5a] text-[13px] md:text-sm leading-relaxed mb-4 text-balance break-words line-clamp-3" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 400 }}>
                   {lang === 'en' ? item.excerpt_en : item.excerpt}
                 </p>
 
-                <div className="flex items-center gap-2 text-[#C8963E] text-xs tracking-widest uppercase cursor-pointer group-hover:gap-4 transition-all duration-300" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>
-                  {t.readMore} <span className="w-5 h-px bg-[#C8963E]" />
+                {/* Meta */}
+                <div className="flex items-center gap-3 mb-5 mt-auto">
+                  <span className="bg-[#C8963E] text-white text-[10px] tracking-widest uppercase px-2 py-1" style={{ fontFamily: "'Lato', sans-serif" }}>
+                    {lang === 'en' ? item.category_en : item.category}
+                  </span>
+                  <div className="flex items-center gap-1.5 text-[#5a5a5a] text-xs" style={{ fontFamily: "'Lato', sans-serif" }}>
+                    <Calendar size={12} />
+                    {lang === 'en' ? item.date_en : item.date}
+                  </div>
+                </div>
+
+                {/* Read More */}
+                <div className="inline-flex items-center justify-center px-6 py-2.5 bg-white border border-[#C8963E] text-[#C8963E] rounded-md hover:bg-[#C8963E] hover:text-white transition-all duration-300 text-xs tracking-widest uppercase w-max" style={{ fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>
+                  {t.readMore}
                 </div>
               </article>
             </Link>
