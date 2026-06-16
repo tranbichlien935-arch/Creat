@@ -198,7 +198,6 @@ export const translations = {
         newsLabel: "Tin Tức",
         newsTitle: "Creat Craft Beer",
         newsSubtitle: "Tổng Hợp Tin Tức",
-        viewAllNews: "Xem tất cả tin tức",
         readMore: "Đọc thêm",
     },
     en: {
@@ -400,12 +399,9 @@ export const translations = {
         newsLabel: "News",
         newsTitle: "Creat Craft Beer",
         newsSubtitle: "Latest Updates",
-        viewAllNews: "View All News",
         readMore: "Read More",
 
         // Contact & Footer
-        termsOfService: "Terms of Service",
-        privacyPolicy: "Privacy Policy",
     }
 };
 
